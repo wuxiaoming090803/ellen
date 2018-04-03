@@ -13,58 +13,49 @@
     </script>
 </head>
 <style>
-	.scoreProgress .mui-input-row.mui-input-range{
-			overflow: visible;
-		    width: 6.6rem;
-		    padding: 0;
-		    margin: 0 auto;
-		    z-index: 100;
-		}
-		.scoreProgress .mui-input-row.mui-input-range:nth-child(1){
-			margin-top:0.37rem;
-		}
-		.scoreProgress .mui-input-row.mui-input-range span{
-			margin-left: 0.3rem;
-		}
-		.scoreProgress .mui-input-row.mui-input-range .circle{
-			margin-top:-0.2rem;
-			height: 0.49rem;
-		}
-		.scoreProgress .mui-input-row label{
-			font-family: 'Helvetica Neue',Helvetica,sans-serif;
-			line-height: 0;
-		    float: none; 
-		    padding: 0;
-    			font-size: 0.32rem;
-		}
-		.scoreProgress .mui-input-row label~input{
-			    width: 1rem;
-			    float: none;
-			    margin-bottom: 0;
-			    padding: 0;
-			    border: 0;
-			    font-size: 0.32rem;
-			    margin-left: 0;
-			    height: 0.6rem;
-			    line-height: 0.6rem;
-		}
-		.scoreProgress .mui-input-range input[type=range]{
-		        margin: 0;
-		    		padding: 0;
-			    height: 0.02rem;
-			    background-color: #f3c55d;
-		}
-		
-		.scoreProgress input[type=range]::-webkit-slider-thumb {
-	       -webkit-appearance: none;
-	       height: 20px;
-	       width: 20px;
-	       margin-top: -0.06rem; /*使滑块超出轨道部分的偏移量相等*/
-	       background: #d9270b; 
-	   }
-	   .mui-tooltip{
-	   	display: none!important;
-	   }
+	body{
+            background: #e7eff4;
+            overflow: hidden;
+        }
+        .content{
+            width: 95%;
+            height: 95%;
+            margin: 10px auto 0 auto;
+            padding: 1px;
+            border: 0 solid #c5d2db;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 1px 2px rgba(31,35,37,.08);
+        }
+        .content .panel-header{
+            padding: 9px 25px;
+            font-size: 18px;
+            border-bottom: 1px solid #e7eff4;
+            border-radius: 4px 4px 0 0;
+            height: 56px;
+        }
+        .panel-header button{
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+        .grid-content{
+            height: calc(100% - 90px);
+            margin: 18px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .grid-content .gridCls.table-bordered{
+            border: none;
+        }
+        #dialog .coral-form-default{
+            width: 70%;
+            margin: 10px auto;
+        }
+        #dialog .coral-form-default .row{
+            margin-bottom: 15px;
+        }
+        .row label{
+                text-align: right;
+        }
 </style>
 <body>
 <!--产品大赛-->
