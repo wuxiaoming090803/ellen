@@ -37,7 +37,7 @@ body {
 .productPage {
   width: 100%;
   height: 100%;
-  background: url(../../images/productImages/homeBg.jpg) no-repeat;
+  background: url(../images/homeBg.jpg) no-repeat;
   background-size: 100% 100%;
   position: relative;
   overflow: hidden;
@@ -114,7 +114,7 @@ body {
   margin-top: 0 !important;
   width: 0.29rem !important;
   height: 0.54rem !important;
-  background: url(../../images/productImages/arrow1.png) no-repeat !important;
+  background: url(../images/arrow1.png) no-repeat !important;
   background-size: 100% 100% !important;
   background-position: 0 0 !important;
   color: rgba(255, 255, 255, 0.1);
@@ -124,12 +124,12 @@ body {
   margin: 0 auto;
   width: 3rem;
   height: 3rem;
-  background: url(../../images/productImages/circular.png) no-repeat;
+  background: url(../images/circular.png) no-repeat;
   background-size: 100% 100%;
   position: relative;
 }
 .productGary {
-  background: url(../../images/productImages/circular2.png) no-repeat;
+  background: url(../images/circular2.png) no-repeat;
   background-size: 100% 100%;
 }
 .productGary .productTime {
@@ -142,14 +142,14 @@ body {
   transform: translate(-50%, -50%);
   width: 4.55rem;
   height: 1.34rem;
-  background: url(../../images/productImages/butBg.png) no-repeat;
+  background: url(../images/butBg.png) no-repeat;
   background-size: 100% 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .productGary .productContent {
-  background: url(../../images/productImages/butBg2.png) no-repeat;
+  background: url(../images/butBg2.png) no-repeat;
   background-size: 100% 100%;
 }
 .productMain .productContent div {
@@ -333,7 +333,7 @@ button{
   width: 100%;
   height: 3rem;
   display: block;
-  background: url(../../images/productImages/scoreH4.png) no-repeat;
+  background: url(../images/scoreH4.png) no-repeat;
   background-size: 100% 100%;
   position: absolute;
   left: 0;
@@ -448,11 +448,11 @@ button{
   width: 0.7rem;
   height: 0.7rem;
   margin: 0 auto;
-  background: url(../../images/productImages/circular_normal.png) no-repeat;
+  background: url(../images/circular_normal.png) no-repeat;
   background-size: 100% 100%;
 }
 .checkActive .checkImg {
-  background: url(../../images/productImages/circular_fg.png) no-repeat;
+  background: url(../images/circular_fg.png) no-repeat;
   background-size: 100% 100%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -522,7 +522,7 @@ button{
 .submit {
   width: 2.22rem;
   height: 0.68rem;
-  background: url(../../images/productImages/submit.png) no-repeat;
+  background: url(../images/submit.png) no-repeat;
   background-size: 100% 100%;
 }
 .submit1 {
@@ -532,7 +532,7 @@ button{
   bottom: 0.84rem;
   width: 2.22rem;
   height: 0.68rem;
-  background: url(../../images/productImages/submit.png) no-repeat;
+  background: url(../images/submit.png) no-repeat;
   background-size: 100% 100%;
   opacity: 0;
 }
@@ -577,7 +577,7 @@ button{
   left: 0.4rem;
   width: 0.15rem;
   height: 0.29rem;
-  background: url(../../images/productImages/arrow.png) no-repeat;
+  background: url(../images/arrow.png) no-repeat;
   background-size: 100% 100%;
   opacity: 0;
 }
@@ -844,7 +844,7 @@ button{
   height: 3.63rem;
   display: inline-block;
   margin-top: -1.46rem;
-  background: url(../../images/productImages/popbg.png) no-repeat;
+  background: url(../images/popbg.png) no-repeat;
   background-size: 100% 100%;
 }
 .dialogMax {
@@ -907,7 +907,7 @@ button{
 .corner {
   width: 0.3rem;
   height: 0.3rem;
-  background: url(../../images/productImages/popj.png) no-repeat;
+  background: url(../images/popj.png) no-repeat;
   background-size: 100% 100%;
   position: absolute;
 }
@@ -996,7 +996,7 @@ button{
   height: 3.63rem;
   display: inline-block;
   margin-top: -1.46rem;
-  background: url(../../images/productImages/popbg.png) no-repeat;
+  background: url(../images/popbg.png) no-repeat;
   background-size: 100% 100%;
 }
 .dialogMax {
@@ -1059,7 +1059,7 @@ button{
 .disable-btn{
     width: 2.22rem;
     height: 0.68rem;
-    background: url(../../images/productImages/submit-disabled.png) no-repeat;
+    background: url(../images/submit-disabled.png) no-repeat;
 }
 @media only screen  and (max-width: 320px) {
   @keyframes productBut1 {
@@ -1212,7 +1212,7 @@ button{
         left: 6.5%;
         top: 20%;
         z-index: 999;
-        background-image: url(../../images/productImages/alert.png);
+        background-image: url(../images/alert.png);
         background-size: 100% 100%;
         background-repeat: no-repeat;
     }
