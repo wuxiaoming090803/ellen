@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+	name="viewport" />
+<title>技术擂台</title>
+<link rel="stylesheet" href="css/animate.css" />
+<link rel="stylesheet" href="css/mystyle.css" />
+<link rel="stylesheet" href="css/mui.min.css" />
+<script type="text/javascript" src="js/modernizr.js"></script>
+<script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+	<style type="text/css">
+			@media screen and (max-width: 321px) {
+				.user_img {
+				    width: 22%;
+				    /* position: absolute; */
+				    box-sizing: border-box;
+				    margin-left: 39%;
+				    padding-top: 14%;
+				}
+				.check_btn{
+					margin-top: 14% !important;
+				}
+			}
+			@media screen and (min-width: 321px) {
+				
+				.check_btn{
+					margin-top: 14% !important;
+				}
+			}
+			.mui-toast-container {bottom: 50% !important;}
+	</style>
+</head>
+<body>
+	<div class="loading_box">
+		<div id="ajaxbar1">
+			<div id="block1" class="barlittle"></div>
+			<div id="block2" class="barlittle"></div>
+			<div id="block3" class="barlittle"></div>
+			<div id="block4" class="barlittle"></div>
+			<div id="block5" class="barlittle"></div>
+		</div>
+	</div>
+	<!--左上角-->
+	<div id="left_top" class="left_top">
+		<img src="img/left-top.png">
+	</div>
+	<!--右上角榜单-->
+	<div class="score_btn">
+		<img src="img/right-top1.png" class="score_btn1">
+		<img id="right_top" src="img/right-top2.png"
+			class="right_top">
+	</div>
+
+	<!--下拉模块-->
+	<div id="s_down" class="s_down">
+		<input type="hidden" id="commit_id" />
+		<input type="hidden" id="commit_name" />
+		<input type="hidden" id="current_lecturer_name" />
+		<input type="hidden" id="commit_vote"/>
+		<div class="user_img">
+			<img src="img/user.png" class="img_special" /> <span><img
+				src="" class="img_special" /></span>
+		</div>
+		<div class="check_btn">
+			<img id="no" src="img/no.png" style="float: left;">
+			<img id="yes" src="img/yes.png"
+				style="float: right; margin-right: 6%;">
+		</div>
+	</div>
+
+
+	 <!--中间标题-->
+        <img src="img/title.png" class="mid_title">
+        <!--底部轮播上榜人-->
+        <div class="foot_slideBtn">
+	        <ul class="vmcarousel-centered-infitine vmc-centered">
+			    <li class="card-list"><img class="name_box" src="img/name-1.png"></li>
+			    <li class="card-list"><img class="name_box" src="img/name-2.png"></li>
+			    <li class="card-list"><img class="name_box" src="img/name-3.png"></li>
+			    <li class="card-list"><img class="name_box" src="img/name-4.png"></li>
+			    <li class="card-list"><img class="name_box" src="img/name-5.png"></li>
+			    <li class="card-list"><img class="name_box" src="img/name-6.png"></li>
+			    <li class="card-list"><img class="name_box" src="img/name-7.png"></li>
+			    <li class="card-list"><img class="name_box" src="img/name-8.png"></li>
+			    <li class="card-list"><img class="name_box" src="img/name9.png"></li>
+		    </ul>
+	    </div>
+
+	<div class="warp_dialog warp_dialogQ">
+        <!--弹出窗口主体-->
+        <div class="dialogMain">
+            <div class="dialogContent">
+                <!--弹出窗口主要内容-->
+                <div class="dialogCenter" id="dialogCenter">
+                  <h4>提交成功</h4>
+                  <h6></h6>
+                </div>
+                <!--弹出窗口四个角-->
+                <div class="corner cornerTL"></div>
+                <div class="corner cornerTR"></div>
+                <div class="corner cornerBL"></div>
+                <div class="corner cornerBR"></div>
+            </div>
+            <!--弹出窗口底部-->
+            <div class="dialogFooter" id="dialogFooter">
+                <button id="cancel"><img src="img/pop_qx.png" alt="取消"></button>
+                <button id="submit"><img src="img/pop_qr.png" alt="确认"></button>    
+            </div>
+        </div>
+    </div>
+    <div class="warp_dialog warp_dialogL">
+    <!--弹出窗口主体-->
+    <div id="hide_window" class="hide_window">
+        <img class="congratulation animated" src="img/congratulation.png">
+        <div class="score-text animated">
+            <span class="coin-text-m">+</span>
+            <span id="coin-text">1.00</span>
+            <span class="coin-text-s">stc</span>
+        </div>
+        <audio style="display:none" id="musicBox" preload="metadata" autoplay="false"></audio>
+        <img class="coin animated" src="img/coin.png">
+        <img class="closebtn animated" src="img/closebtn.png"/>
+    </div>
+</div>
+		<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+        <!--<script src="js/device.js"></script>-->
+        <script src="js/jquery.vm-carousel.js"></script>
+		<script src="js/mui.min.js"></script>
+	<script type="text/javascript">
+		var t_img; // 定时器
+		var isLoad = true; // 控制变量
+		var flag = null; //提交内容标记yes/no
+		var submit_flag = true; //提交确认按钮开关
+		var isLeader = false;
+
+		// 判断图片加载状况，加载完成后回调
+		isImgLoad(function() {
+			// 加载完成
+		});
+
+		// 判断图片加载的函数
+		function isImgLoad(callback) {
+			// 查找所有图，迭代处理
+			$('img').each(function() {
+				if($(this).hasClass("img_special")){
+					isLoad= true;
+					return true;
+				
+				/* 
+					// 找到为0就将isLoad设为false，并退出each
+						if (this.height === 0 && ) {
+							isLoad = false;
+							return false;
+						} */
+				} else {
+					if (this.height === 0) {
+						isLoad = false;
+						return false;
+					}
+					
+				}
+			});
+			// 为true，没有发现为0的。加载完毕
+			if (isLoad) {
+				clearTimeout(t_img); // 清除定时器
+				//			        console.log("加载完成");
+				//			        alert("加载完成");
+				$(document)
+						.ready(
+								function() {
+									$('.loading_box').hide();
+									//下拉框尺寸
+						var screenlimit = $(document.body).outerWidth();
+						//alert(screenlimit);
+						if(screenlimit>=321){
+							//alert("大屏");
+							var downWidth = $(document.body).outerWidth(true)*0.96 +'px';
+							var downHeight = ($(document.body).outerWidth(true))*792/727 +'px';
+							var downHeight1 = ($(document.body).outerWidth(true))*-792/727 +'px';
+							var up_top = ($(document.body).outerWidth(true))*(-0.945) +'px';
+							var down_top = ($(document.body).outerWidth(true))*(0.055) +'px';
+						}else{
+							//alert("小屏");
+							var downWidth = $(document.body).outerWidth(true)*0.96 +'px';
+							var downHeight = ($(document.body).outerWidth(true))*695/727 +'px';
+							var downHeight1 = ($(document.body).outerWidth(true))*-695/727 +'px';
+							var up_top = ($(document.body).outerWidth(true))*(-0.85) +'px';
+							var down_top = ($(document.body).outerWidth(true))*(0.15) +'px';
+						}
+						
+						$('#s_down').css({"width":downWidth,"height":downHeight,"top":downHeight1})
+						$('#s_down').animate({
+							"top" : up_top
+						})
+						//$('#s_down').animate({top:"down_top"});
+						//效果
+						$('.left_top').addClass(
+								'animated slideInDown');
+						//九大高手
+						$('.mid_title').addClass(
+								'animated fadeInUpBig');
+						$('.foot_slideBtn').addClass(
+								'animated slideInLeft');
+						
+						 $('.foot_slideBtn ul li').click(function(){
+							 var that = this;
+						 	if($(this).hasClass('cur-li')){
+							
+						 		$(this).removeClass('cur-li');
+						 		$('#s_down').animate({top:up_top},350);
+								
+						 	}else{
+								
+						 		$(this).addClass('cur-li').siblings().removeClass('cur-li');
+						 		$('#s_down').animate({top:up_top},350);
+						 		$('#s_down').animate({top:"0"},700);
+						 		setTimeout("$('.user_img3').addClass('animated zoomIn');",1000);
+						 		setTimeout("$('.user_img3').removeClass('animated zoomIn');",1000);
+						 	}
+						 });
+						
+
+									//所言极是/不敢苟同
+									$('#no').click(function() {
+										if($('#no').hasClass("disable-btn")){
+							       		 	return false;
+							       	 	}
+										var name = $("#commit_name").val();
+										
+										var msg = "阁下真的认为不敢苟同吗？";
+							            openDailog();
+							            $(".confirm").attr("id", "scoreConfirm");
+							            $("#dialogCenter").html('' +
+							                ' <h4>阁下真的认为不敢苟同吗？</h4>' +
+							                '<h6></h6>');
+
+							            $("#scoreConfirm").click(function () {
+							                dialogFooter();
+							                $(".productPage").addClass("completePage");
+							            })
+							           
+							            	//commitVote("no");
+							    	    
+									})
+									$('#yes').click(function() {
+										if($('#yes').hasClass("disable-btn")){
+							       		 	return false;
+							       	 	}
+										var name = $("#commit_name").val();
+										
+										var msg = "阁下真的认为所言极是？";
+							            openDailog();
+							            $(".confirm").attr("id", "scoreConfirm");
+							            $("#dialogCenter").html('' +
+							                ' <h4>阁下真的认为所言极是？</h4>' +
+							                '<h6></h6>');
+
+							            $("#scoreConfirm").click(function () {
+							                dialogFooter();
+							                $(".productPage").addClass("completePage");
+							            })
+									})
+									//
+									$("#right_top").click(function() {
+										var url = 'score.html'
+										
+										window.location.href = url;
+									});
+
+								});
+				// 回调函数
+				callback();
+				lingguangalert();
+				// 为false，因为找到了没有加载完成的图，将调用定时器递归
+			} else {
+				isLoad = true;
+				t_img = setTimeout(function() {
+					isImgLoad(callback); // 递归扫描
+				}, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+			}
+		}
+		function openDailogL() {
+                        $(".warp_dialogL").removeClass("warp_dialog3");
+                        $(".warp_dialogL").removeClass("warp_dialog4");
+                        $(".warp_dialogL").addClass("warp_dialog1");
+                        $(".dialogMain").removeClass("dialogMax");
+                        setTimeout(function () {
+                            $(".warp_dialogL").addClass("warp_dialog2");
+                        }, 300);
+                        show_window();
+                    };
+             function lingguangalert(){
+               //弹出层尺寸
+                   var alertHeight = ($(document.body).outerWidth(true))*656*0.87/666 +'px';
+                   $('#hide_window').height(alertHeight);
+
+                   //文字行高
+                   var boxH = $('.score-text').outerHeight();
+                   var lineH = boxH +'px';
+                   $('.score-text span').css('line-height',lineH);
+                   //关闭弹出层
+                   $('.closebtn').click(function(){
+                       dialogFooterL();
+                   });
+               }
+                 function dialogFooterL() {
+                    $(".warp_dialogL").addClass("warp_dialog3");
+                    setTimeout(function () {
+                        $(".warp_dialogL").addClass("warp_dialog4");
+                        $(".warp_dialogL").removeClass("warp_dialog2");
+                        $(".warp_dialogL").removeClass("warp_dialog1");
+                    }, 300);
+                };
+                function show_window(){
+                        //文字行高
+                   var boxH = $('.score-text').outerHeight();
+                   var lineH = boxH +'px';
+                   $('.score-text span').css('line-height',lineH);
+                   //弹出层动画
+                  $('.coin').addClass('flipInY');
+                  $('.congratulation').addClass('slideInUp');
+                  $('.score-text').addClass('fadeInUp');
+                  document.getElementById('musicBox').src = ""; 
+                  document.getElementById('musicBox').src = "img/5.mp3";  
+                  document.getElementById('musicBox').play();
+                  setTimeout(function(){
+	                   $('.coin').removeClass('flipInY');
+	                   $('.congratulation').removeClass('slideInUp');
+	                   $('.score-text').removeClass('fadeInUp');
+                  },1000);
+                  setInterval(function(){
+                   $('.coin').addClass('flipInY');
+                   setTimeout(function(){
+                    $('.coin').removeClass('flipInY');
+                   },2900);
+                  },3000)
+                }
+                $(".closebtn").click(function(){
+                    dialogFooterL();
+                })
+		function openDailog() {
+	        $(".warp_dialogQ").removeClass("warp_dialog3");
+	        $(".warp_dialogQ").removeClass("warp_dialog4");
+	        $(".warp_dialogQ").addClass("warp_dialog1");
+
+	        $(".dialogMain").removeClass("dialogMax");
+	        setTimeout(function () {
+	            $(".warp_dialog").addClass("warp_dialog2");
+	        }, 300);
+	    };
+	    $(".closebtn").click(function(){
+	    	dialogFooterL();
+	    })
+	    function dialogFooter() {
+	         $(".warp_dialogQ").addClass("warp_dialog3");
+	         setTimeout(function () {
+	             $(".warp_dialogQ").addClass("warp_dialog4");
+	             $(".warp_dialogQ").removeClass("warp_dialog2");
+	             $(".warp_dialogQ").removeClass("warp_dialog1");
+	         }, 300);
+	    };
+	    $("#cancel").click(function () {
+	        dialogFooter();
+	    });
+	    $("#submit").click(function () {
+	    	if(!submit_flag) {
+				return false;
+			}
+			submit_flag = false;
+        	commitVote(flag);
+	    });
+		// 投票
+		function commitVote(vote) {
+			var id = $("#commit_id").val();
+			var name = $("#commit_name").val();
+			var data = {
+				id : id,
+				name : name,
+				vote : vote
+			}
+			mui.toast("提交成功");
+			openDailogL();
+			// $.ajax({
+			// 	type : "post",
+			// 	url : "${ctx}/tech/castAudienctVote",
+			// 	dataType : "json",
+			// 	data : data,
+			// 	success : function(data) {
+			// 		if (JSON.stringify(data) != "{}") {
+			// 			$("#commit_vote").val(JSON.stringify(data));
+			// 			dialogFooter();
+			// 			if ("yes" === vote) {
+			// 				$('#no').fadeOut(0);
+			// 				$('#yes').animate({
+			// 					marginRight : "31%"
+			// 				}).attr("src", "${ctx}/static/img/tech/yes-disabled.png");
+			// 			}
+			// 			if ("no" === vote) {
+			// 				$('#yes').fadeOut(0);
+			// 				$('#no').animate({
+			// 					marginLeft : "31%"
+			// 				}).attr("src", "${ctx}/static/img/tech/no-disabled.png");
+			// 			}
+			// 			submit_flag = true;
+			// 			mui.toast("提交成功");
+			// 			if(data['coin']) {
+			// 				//mui.toast("获取灵光币" + data['coin']);
+			// 				$('#coin-text').text(data['coin']);
+			// 				openDailogL();
+			// 			}
+			// 			return;
+			// 		}
+			// 		mui.toast("提交失败")
+			// 	},
+			// 	error : function() {
+			// 		mui.toast("提交失败")
+			// 	}
+			// });
+		}
+		
+		//获取当前用户所有的投票
+		// function getUserVotes() {
+		// 	return JSON.parse($('#commit_vote').val());
+		// }
+		
+		// //获取可以打分的当前讲师
+		// function getCurrentLecturerName() {
+		// 	return JSON.parse($('#current_lecturer_name').val())
+		// }
+		
+		//还原投票界面
+		function revert() {
+			if(isLeader) {
+				$('#no').show().css("marginLeft", "8%").attr("src", "img/no-disabled.png")
+					.addClass("disable-btn");
+				$('#yes').show().css("marginRight", "8%").attr("src", "img/yes-disabled.png")
+					.addClass("disable-btn");
+				return;
+			}
+			$('#no').show().css("marginLeft", "8%").attr("src", "img/no.png");
+			$('#yes').show().css("marginRight", "8%").attr("src", "img/yes.png");
+		}
+	</script>
+</body>
+</html>

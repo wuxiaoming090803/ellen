@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="./js/jquery.js"></script>
+  <!--  <script src="./js/homepage.js"></script>-->
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+</head>
+<style>
+	.btn{
+		position: absolute;
+	    left: 50%;
+	    top: 50%;
+	    transform: translate(-50%,-50%);
+	    z-index: 10;
+	}
+	.sign{
+		position: absolute;
+	    display: block;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%,-50%);
+	    height: 100%;
+	    width: 100%;
+	    font-size: 20px;
+	}
+	h3{
+		position: absolute;
+	    top: 32%;
+	    left: 50%;
+	    transform: translate(-50%,-50%);
+	    font-size: 0.58rem;
+	}
+	#sign{
+		width: 4rem;
+	}
+	#sign img{
+		width: 100%;
+	}
+	.chanpin{
+		position: absolute;
+	    top: 2.5rem;  
+	    width: 100%;   
+	    text-align: center;
+        z-index: 1000;
+	}
+	h3{
+		height: 0.62rem;
+	    line-height: 0.62rem;
+	    margin-top: 0.15rem;
+	}
+	.jishu{
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        z-index: 100;
+        transform: translateY(-50%);
+	}
+	.zixun{
+		position: absolute;
+		bottom: 2.5rem;
+		width: 100%;
+		text-align: center;
+	}
+    .chaoA{
+        position: absolute;
+        margin-top: -8px;
+        width: 90%;
+        left: 50%;
+        font-size: 0.2rem;
+        transform: translateX(-50%);
+    }
+    .chaoA a{
+        font-size: 0.35rem;
+    }
+    .chaoA a:nth-child(2){
+        margin-left: 0.4rem;
+    }
+</style>
+<body>
+<div class="warp">
+    <!--头部-->
+    <div class="header">
+        <!--<img src="images/b1.png" alt="" class="b1">-->
+        <img src="images/b2.png" alt="" class="b2">
+    </div>
+    <!--云右-->
+    <div class="cloudRight">
+        <img src="images/c6.png" alt="">
+    </div>
+    <!--山1-->
+    <div class="mountain1">
+        <img src="images/t1.png" alt="" class="t1">
+
+    </div>
+    <!--山3-->
+    <div class="mountain3">
+        <img src="images/t2.png" alt="" class="t2">
+    </div>
+    <!--云左-->
+    <div class="cloudLeft">
+        <img src="images/c3.png" alt="">
+    </div>
+    <!--山2-->
+ 	<div class="mountain2">
+        <img src="images/c4.png" alt="">
+    </div>
+	<div class="mountain2">
+        <img src="images/c4.png" alt="">
+    </div>
+    <div class="chanpin">
+    		<img src="images/back-bg.png" alt=""/>
+    		<h3>产品</h3>
+        <div class="chaoA"><a href="chanpin/index.html">评委页面</a>
+        <a href="chanpin/index_copy.html">观众页面</a></div>
+    </div>
+      <div class="jishu">
+    		<img src="images/back-bg.png" alt=""/>
+    		<h3>技术</h3>
+          <div class="chaoA"><a href="jishu/index.html">评委页面</a>
+        <a href="jishu/mark.html">观众页面</a></div>
+    </div>
+    
+      <div class="zixun">
+    		<img src="images/back-bg.png" alt=""/>
+    		<h3><a href="zixun-fly/index.html">咨询</a></h3>
+    </div>
+</div>
+
+<script>
+	// $(document).ready(function (){	
+	// 	$(".jishu").click(function(){		
+	// 		window.location.href = '${ctx}tech/score?type=1'
+	// 	})
+	// 	$(".zixun").click(function(){		
+	// 		window.location.href = '${ctx}consult/wx/index'
+	// 	})
+		
+		
+	// })
+</script>
+</body>
+</html>

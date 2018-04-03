@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper-4.1.6.min.css">
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+</head>
+<style>
+	.scoreProgress .mui-input-row.mui-input-range{
+			overflow: visible;
+		    width: 6.6rem;
+		    padding: 0;
+		    margin: 0 auto;
+		    z-index: 100;
+		}
+		.scoreProgress .mui-input-row.mui-input-range:nth-child(1){
+			margin-top:0.37rem;
+		}
+		.scoreProgress .mui-input-row.mui-input-range span{
+			margin-left: 0.3rem;
+		}
+		.scoreProgress .mui-input-row.mui-input-range .circle{
+			margin-top:-0.2rem;
+			height: 0.49rem;
+		}
+		.scoreProgress .mui-input-row label{
+			font-family: 'Helvetica Neue',Helvetica,sans-serif;
+			line-height: 0;
+		    float: none; 
+		    padding: 0;
+    			font-size: 0.32rem;
+		}
+		.scoreProgress .mui-input-row label~input{
+			    width: 1rem;
+			    float: none;
+			    margin-bottom: 0;
+			    padding: 0;
+			    border: 0;
+			    font-size: 0.32rem;
+			    margin-left: 0;
+			    height: 0.6rem;
+			    line-height: 0.6rem;
+		}
+		.scoreProgress .mui-input-range input[type=range]{
+		        margin: 0;
+		    		padding: 0;
+			    height: 0.02rem;
+			    background-color: #f3c55d;
+		}
+		
+		.scoreProgress input[type=range]::-webkit-slider-thumb {
+	       -webkit-appearance: none;
+	       height: 20px;
+	       width: 20px;
+	       margin-top: -0.06rem; /*使滑块超出轨道部分的偏移量相等*/
+	       background: #d9270b; 
+	   }
+	   .mui-tooltip{
+	   	display: none!important;
+	   }
+</style>
+<body>
+<!--产品大赛-->
+<div class="productPage productPage1">
+    <!--头部标题-->
+    <div class="productHeader">
+        <img src="./images/homeTitle.png" alt="">
+    </div>
+    <!--lantern-->
+    <div class="lantern">
+        <div class="lanternLf">
+            <img src="images/lanternLf.png" alt="">
+            <img src="images/lanternLf.png" alt="">
+            <span class="arrow"></span>
+        </div>
+        <div class="lanternRh">
+            <img src="images/lanternRh.png" alt="">
+            <img src="images/lanternRh.png" alt="">
+        </div>
+    </div>
+    <!--第二组评分-->
+    <div class="scoreMain">
+        <div class="scoreTitle">
+            <h5>第一组评分</h5>
+            <h4><span class="scoreB" id="point_sum0">8.3</span> <span class="scoreS">分</span></h4>
+        </div>
+    </div>
+    <!--结果-->
+    <div class="resultPage">
+        <h5>选出三组您认可的</h5>
+        <h4>改进思路</h4>
+    </div>
+
+    <!--说明-->
+    <div class="productExplain">
+        <img src="./images/homeTxt.png" alt="">
+    </div>
+    <!--人物-->
+    <div class="productCharacter">
+        <div class="productUl">
+            <div class="swiper-container swiperLi" id="">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide character1 productLi">
+                        <span class="checkBox checkBox0" data-value="1">
+                            <span class="checkImg"></span>
+                            <img src="images/ez1.png" alt="">
+                        </span>
+                        <img src="images/character1.png" alt="" class="character">
+                        <span class="productSpan">
+                           <img src="images/swiperTxt1.png" alt="">
+                        </span>
+                    </div>
+                    <div class="swiper-slide character2 productLi">
+                         <span class="checkBox checkBox1" data-value="2">
+                            <span class="checkImg"></span>
+                            <img src="images/ez2.png" alt="">
+                        </span>
+                        <img src="images/character2.png" alt="" class="character">
+                         <span class="productSpan">
+                             <img src="images/swiperTxt2.png" alt="">
+                        </span>
+                    </div>
+                    <div class="swiper-slide character3 productLi">
+                        <span class="checkBox checkBox2" data-value="3">
+                            <span class="checkImg"></span>
+                             <img src="images/ez3.png" alt="">
+                        </span>
+                        <img src="images/character3.png" alt="" class="character">
+                         <span class="productSpan">
+                            <img src="images/swiperTxt3.png" alt="">
+                        </span>
+                    </div>
+                    <div class="swiper-slide character4 productLi">
+                        <span class="checkBox checkBox3" data-value="4">
+                            <span class="checkImg"></span>
+                           <img src="images/ez4.png" alt="">
+                        </span>
+                        <img src="images/character4.png" alt="" class="character">
+                         <span class="productSpan">
+                            <img src="images/swiperTxt4.png" alt="">
+                        </span>
+                    </div>
+                    <div class="swiper-slide character5 productLi">
+                        <span class="checkBox checkBox4" data-value="5">
+                            <span class="checkImg"></span>
+                            <img src="images/ez5.png" alt="">
+                        </span>
+                        <img src="images/character5.png" alt="" class="character">
+                         <span class="productSpan">
+                            <img src="images/swiperTxt5.png" alt="">
+                        </span>
+                    </div>
+                    <div class="swiper-slide character6 productLi">
+                        <span class="checkBox checkBox5" data-value="6">
+                            <span class="checkImg"></span>
+                             <img src="images/ez6.png" alt="">
+                        </span>
+                        <img src="images/character6.png" alt="" class="character">
+                         <span class="productSpan">
+                           <img src="images/swiperTxt6.png" alt="">
+                        </span>
+                    </div>
+                </div>
+
+                <!-- 前后箭头 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+    <!--提交-->
+    <button class="submit submit1"></button>
+    <!--按钮-入口-->
+    <div class="productBut">
+        <div class="swiper-container" id="productBut">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" id="score">
+                    <div class="productMain">
+                        <span class="productContent">
+                            <div>
+                                <span class="productImg"><img src="images/butTxt.png" alt=""></span>
+                                <span class="productTime">2018年3月31日 下午</span>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="swiper-slide" id="checkBox">
+                    <div class="productMain productGary">
+                        <span class="productContent">
+                            <div>
+                                <span class="productImg"><img src="images/butTxt2.png" alt=""></span>
+                                <span class="productTime">2018年4月1日 下午</span>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- 前后箭头 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <!--弹出窗口html-->
+    <!--弹出窗口-->
+    <div class="warp_dialog">
+        <!--弹出窗口主体-->
+        <div class="dialogMain">
+            <div class="dialogContent">
+                <!--弹出窗口主要内容-->
+                <div class="dialogCenter" id="dialogCenter">
+                  <h4>是否提交</h4>
+                  <h6></h6>
+                </div>
+                <!--弹出窗口四个角-->
+                <div class="corner cornerTL"></div>
+                <div class="corner cornerTR"></div>
+                <div class="corner cornerBL"></div>
+                <div class="corner cornerBR"></div>
+            </div>
+            <!--弹出窗口底部-->
+            <div class="dialogFooter" id="dialogFooter">
+                <button id="cancel"><img src="images/pop_qx.png" alt="取消"></button>
+                <button><img src="images/pop_qr.png" alt="确认"></button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/swiper-4.1.6.min.js"></script>
+<script src="js/homePage_copy.js"></script>
+<script src="js/mui.min.js"></script>
+</html>

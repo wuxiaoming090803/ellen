@@ -1,0 +1,816 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>登录页面</title>
+	<link href="css/mui.min.css" rel="stylesheet" />
+	
+	<script type="text/javascript">
+   	 	document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+	</script>
+	<style>
+		.mui-toast-container {bottom: 50% !important;}
+		.area {
+			margin: 20px auto 0px auto;
+		}
+		
+		.mui-input-group {
+			margin-top: 10px;
+		}
+		
+		.mui-input-group:first-child {
+			margin-top: 20px;
+		}
+		
+		.mui-input-group label {
+			width: 27%;
+		}
+		#login-form .mui-input-row input{
+			width:72%;
+		}
+		.mui-input-row label~input,
+		.mui-input-row label~select,
+		.mui-input-row label~textarea {
+			width: 78%;
+		}
+		
+		.mui-checkbox input[type=checkbox],
+		.mui-radio input[type=radio] {
+			top: 6px;
+		}
+		.mui-content{
+			color: #96a0c4;
+		}
+		.mui-content-padded {
+			margin-top: 25px;
+		}
+		
+		.mui-btn {
+			padding: 12px;
+		}
+		
+		.link-area {
+			display: block;
+			margin-top: 25px;
+			text-align: center;
+		}
+		#login-form{
+			background: transparent;
+    		margin-top: 1.3rem;
+		}
+		.spliter {
+			color: #bbb;
+			padding: 0px 8px;
+		}
+		
+		.form1.mui-input-group .mui-input-row:after {
+		    position: absolute;
+		    right: 0.2rem;
+		    bottom: 0;
+		    left: 0.2rem;
+		    height: 1px;
+		    content: '';
+		    -webkit-transform: scaleY(.5);
+		    transform: scaleY(.5);
+		    background-color: #c8c7cc;
+		}
+		.mui-input-group .mui-input-row{
+			height: 47px;
+		}
+		.form1.mui-input-group:after {
+		    position: absolute;
+		    right: 0.2rem;
+		    bottom: 0;
+		    left: 0.2rem;
+		    height: 1px;
+		    content: '';
+		    -webkit-transform: scaleY(.5);
+		    transform: scaleY(.5);
+		    background-color: #c8c7cc;
+		}
+		.form1.mui-input-group:before {
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+		    left: 0;
+		    height: 1px;
+		    content: none;
+		    -webkit-transform: scaleY(.5);
+		    transform: scaleY(.5);
+		    background-color: #c8c7cc;
+		}
+		.form1 .mui-input-row:nth-child(2){
+			margin-top:0.3rem;
+		}
+		#login-form1.mui-input-group .mui-input-row{
+			height: 53px;
+		}
+		#login{
+			background: #d2d8e4;
+    		border: #d2d8e4;
+		}
+		#login{
+			background: #d2d8e4;
+    		border: #d2d8e4;
+		}
+		#login.bgBtn{
+			border: 1px solid #007aff;
+			background: #007aff;
+		}
+		#login-form1 .mui-input-row.special .info{
+            padding: 11px 5px 5px 5px;
+			 font-size: 16px;
+			 /*text-align: left;*/
+		}
+		.mui-input-group:after {
+		    position: absolute;
+		    right: 0.3rem;
+		    bottom: 0;
+		    left: 0.3rem;
+		    height: 1px;
+		    content: none;
+		    -webkit-transform: scaleY(.5);
+		    transform: scaleY(.5);
+		    background-color: #c8c7cc;
+		}
+		#login-form1.mui-input-group .mui-input-row:after{
+		    position: absolute;
+		    right: 0;
+		    bottom: 0;
+		    left: 0;
+		    height: 1px;
+		    content: '';
+		    -webkit-transform: scaleY(.5);
+		    transform: scaleY(.5);
+		    background-color: #c8c7cc;
+		}
+		.mui-input-row .info{
+			float: right;
+			width: 65%;
+			text-align: right;
+			word-wrap: break-word;
+			text-overflow:ellipsis;
+			overflow:hidden;
+		}
+		.mui-input-group .label1{
+			width: 33%;
+		}
+		#login-form1 .mui-input-row label{
+			padding:18px 15px;
+		}
+		.info-content{
+			color: #000;
+		}
+		#lgbUrl{
+			font-size: 16px;
+		}
+		.hide_window{
+	        width: 87%;
+	        height: auto;
+	        position: absolute;
+	        left: 6.5%;
+	        top: 20%;
+	        z-index: 999;
+	        background-image: url(images/alert.png);
+	        background-size: 100% 100%;
+	        background-repeat: no-repeat;
+	    }
+	    .congratulation{
+	        width: 52%;
+	        margin-left: 24%;
+	        margin-top: 9%;
+	    }
+	    .score-text{
+	        height: 31%;
+	        overflow: hidden;
+	        margin: auto;
+	        color: #ffffff;
+	        text-align: center;
+	    }
+	    .score-text span{
+	        display: block;
+	        float: left;
+	    }
+	    .coin{
+	        width: 28%;
+	        margin-left: 36%;
+	    }
+	
+	    .closebtn{
+	        width: 20%;
+	        margin-left: 40%;
+	        margin-top: 5%;
+	    }
+	    #coin-text{
+	        font-size: 1.0rem;
+	        height: 1.0rem;
+	    }
+	    .coin-text-m{
+	        font-size: 0.8rem;
+	        margin-top: 0.1rem;
+	        margin-left: 2rem;
+	    }
+	    .coin-text-s{
+	        font-size: 0.4rem;
+	        margin-top: 0.15rem;
+	    }
+	    .coin:hover{
+	        transform: rotateY(180deg);
+	    }
+	  
+	   
+	    .warp_dialog1 .hide_window {
+	        animation: warp_dialog1 0.2s forwards;
+	    }
+	    .warp_dialog3 .hide_window {
+	        animation: warp_dialog3 0.2s forwards;
+	    }
+	
+	    .animated {
+	        -webkit-animation-duration: 1s;
+	        animation-duration: 1s;
+	        -webkit-animation-fill-mode: both;
+	        animation-fill-mode: both;
+	    }
+	
+	    .animated.infinite {
+	        -webkit-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+	    }
+	    @-webkit-keyframes zoomIn {
+	        from {
+	            opacity: 0;
+	            -webkit-transform: scale3d(0.3, 0.3, 0.3);
+	            transform: scale3d(0.3, 0.3, 0.3);
+	        }
+	
+	        50% {
+	            opacity: 1;
+	    }
+	    }
+	
+	    @keyframes zoomIn {
+	        from {
+	            opacity: 0;
+	            -webkit-transform: scale3d(0.3, 0.3, 0.3);
+	            transform: scale3d(0.3, 0.3, 0.3);
+	        }
+	
+	        50% {
+	            opacity: 1;
+	    }
+	    }
+	
+	    .zoomIn {
+	        -webkit-animation-name: zoomIn;
+	        animation-name: zoomIn;
+	    }
+	    @-webkit-keyframes slideInUp {
+	        from {
+	            -webkit-transform: translate3d(0, 100%, 0);
+	            transform: translate3d(0, 100%, 0);
+	            visibility: visible;
+	        }
+	
+	        to {
+	            -webkit-transform: translate3d(0, 0, 0);
+	            transform: translate3d(0, 0, 0);
+	        }
+	    }
+	
+	    @keyframes slideInUp {
+	        from {
+	            -webkit-transform: translate3d(0, 100%, 0);
+	            transform: translate3d(0, 100%, 0);
+	            visibility: visible;
+	        }
+	
+	        to {
+	            -webkit-transform: translate3d(0, 0, 0);
+	            transform: translate3d(0, 0, 0);
+	        }
+	    }
+	
+	    .slideInUp {
+	        -webkit-animation-name: slideInUp;
+	        animation-name: slideInUp;
+	    }
+	    @-webkit-keyframes flipInY {
+			  from {
+			    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 0deg);
+			    transform: perspective(400px) rotate3d(0, 1, 0, 0deg);
+			    -webkit-animation-timing-function: ease-in;
+			    animation-timing-function: ease-in;
+			    opacity: 1;
+			  }
+			  50% {
+			    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 180deg);
+			    transform: perspective(400px) rotate3d(0, 1, 0, 180deg);
+			    opacity: 1;
+			  }
+			
+			  to {
+			    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 360deg);
+			    transform: perspective(400px) rotate3d(0, 1, 0, 360deg);
+			    opacity: 1;
+			  }
+			}
+			
+			@keyframes flipInY {
+			  from {
+			    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 0deg);
+			    transform: perspective(400px) rotate3d(0, 1, 0, 0deg);
+			    -webkit-animation-timing-function: ease-in;
+			    animation-timing-function: ease-in;
+			    opacity: 1;
+			  }
+			  50% {
+			    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 180deg);
+			    transform: perspective(400px) rotate3d(0, 1, 0, 180deg);
+			    opacity: 1;
+			  }
+			
+			  to {
+			    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 360deg);
+			    transform: perspective(400px) rotate3d(0, 1, 0, 360deg);
+			    opacity: 1;
+			  }
+			}
+			
+			.flipInY {
+			  -webkit-backface-visibility: visible !important;
+			  backface-visibility: visible !important;
+			  -webkit-animation-name: flipInY;
+			  animation-name: flipInY;
+			}
+			@keyframes fadeInUp {
+			  from {
+			    opacity: 0;
+			    -webkit-transform: translate3d(0, 100%, 0);
+			    transform: translate3d(0, 100%, 0);
+			  }
+			
+			  to {
+			    opacity: 1;
+			    -webkit-transform: translate3d(0, 0, 0);
+			    transform: translate3d(0, 0, 0);
+			  }
+			}
+			
+			.fadeInUp {
+			  -webkit-animation-name: fadeInUp;
+			  animation-name: fadeInUp;
+			}
+	    .warp_dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 100;
+}
+.warp_dialog1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.warp_dialog2 {
+  animation: warp_dialog2 0.2s forwards 0.1s;
+}
+.warp_dialog4 {
+  animation: warp_dialog4 0.2s forwards 0.1s;
+}
+.warp_dialog1 .dialogMain {
+  animation: warp_dialog1 0.2s forwards;
+}
+.warp_dialog3 .dialogMain {
+  animation: warp_dialog3 0.2s forwards;
+}
+@keyframes warp_dialog1 {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes warp_dialog2 {
+  0% {
+    background: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+@keyframes warp_dialog3 {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+@keyframes warp_dialog4 {
+  0% {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+.dialogMain {
+  opacity: 0;
+  width: 6.56rem;
+  height: 3.63rem;
+  display: inline-block;
+  margin-top: -1.46rem;
+  background: url(images/popbg.png) no-repeat;
+  background-size: 100% 100%;
+}
+.dialogMax {
+  height: 70%;
+}
+.dialogContent {
+  border: 0.02rem solid #362319;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+}
+.dialogCenter {
+  height: 2.36rem;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.dialogCenter h4 {
+  text-align: center;
+  font-size: 0.5rem;
+  color: #2f1915;
+  font-weight: 500;
+}
+.dialogCenter h6 {
+  font-size: 0.3rem;
+}
+.dialogFooter button {
+  width: 2.22rem;
+  height: 0.68rem;
+  display: inline-block;
+  padding: 0;
+  margin: 0 0.4rem;
+}
+.dialogFooter button img {
+  width: 100%;
+  height: 100%;
+}
+.dialogFooter {
+  width: 100%;
+  height: 1.2rem;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #3c291e;
+}
+.dialogFooter .close1 {
+  width: 1.32rem;
+  height: 1.32rem;
+}
+.dialogFooter .close2 {
+  width: 1.32rem;
+  height: 1.46rem;
+  position: absolute;
+  left: 0;
+  top: 1.32rem;
+}
+.corner {
+  width: 0.3rem;
+  height: 0.3rem;
+  background: url(images/popj.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+}
+.cornerTL {
+  left: -0.07rem;
+  top: -0.07rem;
+}
+.cornerTR {
+  right: -0.07rem;
+  top: -0.07rem;
+}
+.cornerBL {
+  left: -0.07rem;
+  bottom: -0.07rem;
+}
+.cornerBR {
+  right: -0.07rem;
+  bottom: -0.07rem;
+}
+/*灵光币正反效果*/
+			@keyframes coin_num {
+				from {
+					-webkit-transform: rotate3d(0, 1, 0, 0deg);
+					transform: rotate3d(0, 1, 0, 0deg);
+					-webkit-animation-timing-function: ease-in;
+					animation-timing-function: ease-in;
+					opacity: 1;
+				}
+				25% {
+					-webkit-transform: rotate3d(0, 1, 0, 90deg);
+					transform: rotate3d(0, 1, 0, 90deg);
+					opacity: 1;
+				}
+				25.1% {
+					opacity: 0;
+				}
+				50% {
+					-webkit-transform: rotate3d(0, 1, 0, 180deg);
+					transform: rotate3d(0, 1, 0, 180deg);
+					opacity: 0;
+				}
+				74.9% {
+					opacity: 0;
+				}
+				75% {
+					-webkit-transform: rotate3d(0, 1, 0, 270deg);
+					transform: rotate3d(0, 1, 0, 270deg);
+					opacity: 1;
+				}
+				to {
+					-webkit-transform: rotate3d(0, 1, 0, 360deg);
+					transform: rotate3d(0, 1, 0, 360deg);
+					opacity: 1;
+				}
+			}
+			
+			@keyframes coin_flo {
+				from {
+					-webkit-transform: rotate3d(0, 1, 0, 0deg);
+					transform: rotate3d(0, 1, 0, 0deg);
+					-webkit-animation-timing-function: ease-in;
+					animation-timing-function: ease-in;
+					opacity: 0;
+				}
+				25% {
+					-webkit-transform: rotate3d(0, 1, 0, 90deg);
+					transform: rotate3d(0, 1, 0, 90deg);
+					opacity: 0;
+				}
+				25.1% {
+					opacity: 1;
+				}
+				50% {
+					-webkit-transform: rotate3d(0, 1, 0, 180deg);
+					transform: rotate3d(0, 1, 0, 180deg);
+					opacity: 1;
+				}
+				74.9% {
+					opacity: 1;
+				}
+				75% {
+					-webkit-transform: rotate3d(0, 1, 0, 270deg);
+					transform: rotate3d(0, 1, 0, 270deg);
+					opacity: 0;
+				}
+				to {
+					-webkit-transform: rotate3d(0, 1, 0, 360deg);
+					transform: rotate3d(0, 1, 0, 360deg);
+					opacity: 0;
+				}
+			}
+			
+			.coin-animate1 {
+				-webkit-animation: coin_num 2.4s infinite linear;
+				/*animation-delay:2s;
+				-webkit-animation-delay:2s;*/
+			}
+			.coin-animate2 {
+				-webkit-animation: coin_flo 2.4s infinite linear;
+				/*animation-delay:2s;
+				-webkit-animation-delay:2s;*/
+			}
+			
+			.coin-picbox{
+				width: 28%;
+				position: relative;
+				left: 36%;
+			}
+			.coin-pic1 {
+				position: absolute;
+				left: 0;
+				top: 0;
+				z-index: 1;
+				width: 100%;
+			}
+			
+			.coin-pic2 {
+				position: absolute;
+				left: 0;
+				top: 0;
+				z-index: 2;
+				width: 100%;
+			}
+	</style>
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">登录</h1>
+		</header>
+		<div class="mui-content container">
+			<form id='login-form' class="form1 mui-input-group">
+				<div class="mui-input-row">
+					<label>用户名</label>
+					<input id='user' type="text" class="mui-input-clear mui-input" placeholder="请输入姓名">
+				</div>
+				<div class="mui-input-row">
+					<label>手机号</label>
+					<input id='phone' type="text" class="mui-input-clear mui-input" placeholder="请输入手机号">
+				</div>
+			</form>
+			
+			<div class="mui-content-padded">
+				<button id='login' class="mui-btn mui-btn-block mui-btn-primary">登录</button>
+			</div>
+		</div> 
+		<div class="mui-content info-content mui-hidden">
+			<form id='login-form1' class="mui-input-group">
+				<div class="mui-input-row">
+					<label class="label1">姓名</label>
+					<label class="info" id="xm"></label>
+				</div>
+				<div class="mui-input-row">
+					<label class="label1">部门</label>
+					<label class="info" id="org"></label>
+				</div>
+				<div class="mui-input-row">
+					<label class="label1">手机号</label>
+					<label class="info" id="mobile">15221360072</label>
+				</div>
+				<div class="mui-input-row">
+					<label class="label1">灵光币值</label>
+					<label class="info" id="lgb">6</label>
+				</div>
+				<div class="mui-input-row special">
+					<label class="label1">钱包地址</label>
+					<label class="info" id="lgbUrl">0X567789990X567789990X567789990X</label>
+				</div>
+			</form>
+			<button type="button" class="mui-btn mui-btn-blue mui-btn-block" id="tryLuck">试试手气</button>
+		</div>
+		<div class="warp_dialog warp_dialogL">
+		    <!--弹出窗口主体-->
+	    	<div id="hide_window" class="hide_window">
+	            <img class="congratulation animated" src="images/congratulation.png">
+	            <div class="score-text animated">
+		            <span class="coin-text-m">+</span>
+		            <span id="coin-text">1.00</span>
+		            <span class="coin-text-s">stc</span>
+	            </div>
+	            <audio style="display:none" id="musicBox" preload="metadata" autoplay="false"></audio>
+	            <div id="coin1" class="coin-picbox">
+		    		<img class="coin-pic1" src="images/coin-1.png"/>
+			    </div>
+			    <div id="coin2" class="coin-picbox">
+					<img class="coin-pic2" src="images/coin-2.png"/>
+			    </div>
+			    <!--占位而已。。。-->
+			    <img style="visibility: hidden;" class="coin animated" src="images/coin.png">
+	            <img class="closebtn animated" src="images/closebtn.png"/>
+	        </div>
+		</div>
+		<script src="js/mui.min.js"></script>
+<!-- 		<script src="js/app.js"></script> -->
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script>
+			document.getElementById("user").addEventListener('input',function(){
+				$("#login").addClass("bgBtn");
+			});
+			document.getElementById("phone").addEventListener('input',function(){
+				$("#login").addClass("bgBtn");
+			});
+			function openDailogL() {
+		        $(".warp_dialogL").removeClass("warp_dialog3");
+		        $(".warp_dialogL").removeClass("warp_dialog4");
+		        $(".warp_dialogL").addClass("warp_dialog1");
+		        $(".dialogMain").removeClass("dialogMax");
+		        setTimeout(function () {
+		            $(".warp_dialogL").addClass("warp_dialog2");
+		        }, 300);
+		        show_window();
+		    };
+		     function lingguangalert(){
+		       //弹出层尺寸
+			       var alertHeight = ($(document.body).outerWidth(true))*656*0.87/666 +'px';
+			       $('#hide_window').height(alertHeight);
+
+			       //文字行高
+			       var boxH = $('.score-text').outerHeight();
+			       var lineH = boxH +'px';
+			       $('.score-text span').css('line-height',lineH);
+			       //关闭弹出层
+			       $('.closebtn').click(function(){
+			    	   dialogFooterL();
+			       });
+			   }
+		     function dialogFooterL() {
+		        $(".warp_dialogL").addClass("warp_dialog3");
+		        setTimeout(function () {
+		            $(".warp_dialogL").addClass("warp_dialog4");
+		            $(".warp_dialogL").removeClass("warp_dialog2");
+		            $(".warp_dialogL").removeClass("warp_dialog1");
+		        }, 300);
+			};
+		    function show_window(){
+			        //文字行高
+		       var boxH = $('.score-text').outerHeight();
+	           var lineH = boxH +'px';
+	           $('.score-text span').css('line-height',lineH);
+	           //弹出层动画
+		      $('.coin').addClass('flipInY');
+		      $('.congratulation').addClass('slideInUp');
+		      $('.score-text').addClass('fadeInUp');
+		      document.getElementById('musicBox').src = "";	
+		      document.getElementById('musicBox').src = "img/5.mp3";	
+		      document.getElementById('musicBox').play();
+		      //初始增加灵光币效果
+				$('#coin1').addClass('coin-animate1');
+				$('#coin2').addClass('coin-animate2');
+				setTimeout(function(){
+					$('.congratulation').removeClass('slideInUp');
+					$('.score-text').removeClass('fadeInUp');
+				},1000);
+
+			}
+		    $(".closebtn").click(function(){
+		    	dialogFooterL();
+		    	window.location.href = "selectGroup.html";
+		    })
+			$("#login").bind("click",function(){
+				
+	            var name = document.getElementById("user").value;
+	            var phone = document.getElementById("phone").value;
+				if(name==''||phone==''){
+					mui.alert("请输入用户名和手机号");
+					return;
+				}
+
+				$(".container").addClass("mui-hidden");
+            	  $(".info-content").removeClass("mui-hidden");
+            	  $(".mui-title").html("我的信息");
+	     //        $.ajax({
+	     //        	url:"${ctx}/user/signIn",
+			   //   	type:'post',
+			   //   	data: {
+	     //                userName: name,
+	     //                phone: phone,
+	     //                openId: "${openId}",
+	     //                headimgurl: "${headimgurl}"
+	     //            },
+	     //            success : function(data) {
+	                	
+	     //            	if(data == '2'){
+						// 	mui.alert("用户名手机号不匹配！");
+						// }else{
+						// 	$(".container").addClass("mui-hidden");
+		    //             	  $(".info-content").removeClass("mui-hidden");
+		    //             	  $(".mui-title").html("我的信息");
+		    //             	  var xm = document.getElementById('xm');
+						// 	  var org = document.getElementById("org");
+						// 	  var mobile = document.getElementById("mobile");
+						// 	  var lgb = document.getElementById("lgb");
+						// 	  var lgbUrl = document.getElementById("lgbUrl");
+						// 	  var dat = JSON.parse(data);
+						// 	  xm.innerText = dat.userName;
+						// 	  org.innerHTML = dat.org;
+						// 	  mobile.innerText = dat.phone;
+						// 	  lgb.innerHTML = dat.zxb+"stc";
+						// 	  lgbUrl.innerText = dat.zxbUrl;
+						
+						// }
+	                	
+	                	  
+      //                },
+	     //            error : function(e) {
+	     //                /* error(e);
+	     //                hide(); */
+	     //            }
+	     //        });
+        	})
+        	
+        	$("#tryLuck").click(function(){
+        		 openDailogL();
+			
+				});
+		    lingguangalert();
+		</script>
+	</body>
+
+</html>

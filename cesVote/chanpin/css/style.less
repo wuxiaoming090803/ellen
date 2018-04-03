@@ -1,0 +1,1061 @@
+html, body, div, ul, li, a, h4, h5,h6 p {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: all 1s;
+}
+
+b, i {
+  display: block;
+  font-style: normal;
+}
+
+button {
+  display: block;
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+  border: 0;
+}
+
+img {
+  display: block;
+  border: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.productPage {
+  width: 100%;
+  height: 100%;
+  background: url(../images/homeBg.jpg) no-repeat;
+  //background: url(../images/产品.jpg) no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.productHeader {
+  padding-top: 2/100rem;
+}
+
+.productHeader img {
+  width: 245/100rem;
+  height: 79/100rem;
+  margin: 0 auto;
+}
+
+.productExplain img {
+  width: 687/100rem;
+  height: 321/100rem;
+  margin: 0 auto;
+}
+
+.productCharacter img {
+  //-webkit-mask: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}
+
+.productCharacter .character {
+  height: 100%;
+}
+
+.productCharacter .productUl {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.productCharacter .productLi {
+  position: absolute;
+  height: 120%;
+  width: auto;
+}
+
+.character1 {
+  left: -4%;
+}
+
+.character2 {
+  left: 10%;
+  top: 5%;
+}
+
+.character3 {
+  left: 22.33333%;
+  top: 6%;
+}
+
+.character4 {
+  right: 22.33333%;
+  top: 5%;
+}
+
+.character5 {
+  right: 7.66666%;
+  top: 10%;
+}
+
+.character6 {
+  right: -6%;
+}
+
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+  opacity: 0 !important;
+}
+
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+  background-image: none !important;
+  left: 32/100rem !important;
+  transform: rotate(-180deg) translateY(50%) !important;
+}
+
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+  background-image: none !important;
+  right: 32/100rem !important;
+  transform: rotate(0deg) translateY(-50%) !important;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  width: auto !important;
+  height: auto !important;
+  font-family: SimSun-ExtB;
+  margin-top: 0 !important;
+  width: 29/100rem !important;
+  height: 54/100rem !important;
+  background: url(../images/arrow1.png) no-repeat !important;
+  background-size: 100% 100% !important;
+  background-position: 0 0 !important;
+  color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-50%);
+}
+
+.productMain {
+  margin: 0 auto;
+  width: 300/100rem;
+  height: 300/100rem;
+  background: url(../images/circular.png) no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.productGary {
+  background: url(../images/circular2.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.productGary .productTime {
+  color: #c5c5c5;
+}
+
+.productMain .productContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 455/100rem;
+  height: 134/100rem;
+  background: url(../images/butBg.png) no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productGary .productContent {
+  background: url(../images/butBg2.png) no-repeat;
+  background-size: 100% 100%;
+
+}
+
+.productMain .productContent div {
+  display: inline-block;
+}
+
+.productContent span {
+  display: block;
+  text-align: center;
+}
+
+.productTime {
+  font-size: 22/100rem;
+  color: #ffe88c;
+  margin-top: 8/100rem;
+}
+
+.productImg {
+  display: block;
+  width: 246/100rem;
+  height: 53/100rem;
+}
+
+.productImg img {
+  width: 100%;
+  height: 100%;
+}
+
+.productUl .swiper-container {
+  height: 100%;
+}
+
+.scorePage {
+  overflow: hidden;
+}
+
+//向上隐藏
+.scorePage .productExplain {
+  animation: productExplain 0.8s forwards;
+}
+
+//向下隐藏
+.scorePage .productBut {
+  animation: productBut 0.8s forwards;
+}
+
+//向下移动
+.scorePage .productCharacter {
+  animation: productCharacter2 1s forwards;
+}
+
+.scorePage .productCharacter {
+  height: 450/100rem;
+}
+
+.scorePage .productCharacter .productLi {
+  transition: all 0.5s;
+  position: relative;
+  height: auto;
+  top: 0;
+}
+
+.scorePage .productLi {
+  left: auto;
+  right: auto;
+  //padding-bottom: 100/100rem;
+  box-sizing: border-box;
+}
+
+.scorePage .productCharacter .character {
+  margin: 0 auto;
+}
+
+.scorePage .productCharacter .character {
+  height: auto;
+  width: 90%;
+}
+
+.scorePage .productCharacter {
+  -webkit-mask: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#000000));
+}
+
+.scorePage .swiper-slide-prev {
+  -webkit-mask: -webkit-gradient(linear, left top, right bottom, from(#000000), to(rgba(0, 0, 0, 0)));
+  opacity: 0.5;
+}
+
+.scorePage .swiper-slide-next {
+  -webkit-mask: -webkit-gradient(linear, left top, left bottom, from(#000000), to(rgba(0, 0, 0, 0)));
+  opacity: 0.5;
+}
+
+.productLi .productSpan {
+  color: #f3c55d;
+  text-align: center;
+  width: 100%;
+  display: block;
+  bottom: 40/100rem;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+}
+.productSpan img{
+  width:170/100rem;
+  height:67/100rem;
+  margin:0 auto;
+}
+.scorePage .swiper-slide-active .productSpan {
+  animation: productSpan 0.8s forwards;
+}
+
+.scorePage .productLi .productSpan b {
+  font-size: 40/100rem;
+}
+
+.scorePage .productLi .productSpan i {
+  font-size: 24/100rem;
+}
+
+.scorePage .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+  left: 20/100rem;
+}
+
+.scorePage .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+  right: 20/100rem;
+}
+
+.scorePage .swiper-button-next, .scorePage .swiper-button-prev {
+  top: 35%;
+}
+
+.scorePage .scoreMain {
+  animation: scoreMain 0.3s forwards 0.8s;
+}
+
+.scoreMain {
+  position: absolute;
+  top: -100%;
+  width: 100%;
+  opacity: 0;
+}
+
+.scoreProgress {
+  position: absolute;
+  top: -100%;
+  width: 100%;
+  opacity: 0;
+}
+
+.scoreProgress button {
+  padding: 15/100rem 76/100rem;
+  margin:40/100rem auto 0;
+  //background: url(../images/butBg.png) no-repeat;
+  background-size: 100% 100%;
+  font-size: 40/100rem;
+  color: #ffe88c;
+  //font-family: 创艺简魏碑;
+}
+
+.scorePage .scoreProgress {
+  animation: scoreProgress 0.3s forwards 0.8s;
+}
+
+.scoreProgress img {
+  width: 100%;
+}
+
+@keyframes scoreProgress {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  100% {
+    top: 260/100rem;
+    opacity: 1;
+  }
+}
+
+@keyframes scoreMain {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  100% {
+    top: 120/100rem;
+    opacity: 1;
+  }
+}
+
+.scoreTitle {
+  font-family: 微软雅黑;
+}
+
+.scoreTitle h5 {
+  font-size: 30/100rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.scoreTitle h4 {
+  text-align: center;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+
+.scoreTitle h4:after {
+  content: "";
+  width: 100%;
+  height: 300/100rem;
+  display: block;
+  background: url(../images/scoreH4.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: -1;
+}
+
+.scoreTitle h4 span {
+  display: inline-block;
+}
+
+.scoreTitle .scoreB {
+  font-size: 104/100rem;
+  font-family: Arial;
+  line-height: 100/100rem;
+}
+
+.scoreTitle .scoreS {
+  font-size: 52/100rem;
+  margin-bottom: 10/100rem;
+}
+
+@keyframes productSpan {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+@keyframes productBut {
+  0% {
+    bottom: 100/100rem;
+    opacity: 1;
+  }
+  100% {
+    bottom: -300/100rem;
+    opacity: 0;
+  }
+}
+
+@keyframes productCharacter2 {
+  0% {
+    bottom: 400/100rem;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+.resultPage h5 {
+  font-size: 40/100rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+}
+
+.resultPage h4 {
+  font-size: 81/100rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+}
+
+.resultPage {
+  position: absolute;
+  top: -100%;
+  width: 100%;
+
+}
+
+.checkPage .resultPage {
+  animation: resultPage 0.3s forwards 0.8s;
+}
+
+.checkPage .productExplain {
+  animation: productExplain 0.8s forwards;
+}
+@keyframes productExplain {
+  0% {
+    transform: translateY(181/100rem);
+    opacity: 1;
+  }
+  80%{
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+.checkPage .productBut {
+  animation: productBut 0.8s forwards;
+}
+
+@keyframes resultPage {
+  0% {
+    opacity: 0;
+    top: -100%;
+  }
+  100% {
+    opacity: 1;
+    top: 165/100rem;
+  }
+}
+
+.checkBox {
+  position: absolute;
+  top: -150/100rem;
+  left: 50%;
+  transform: translate(-50%);
+  opacity: 0;
+  width:120/100rem;
+}
+.checkBox2{
+  left: 64%;
+}
+.checkBox span {
+  display: block;
+}
+
+.checkBox .checkImg {
+  width: 70/100rem;
+  height: 70/100rem;
+  margin: 0 auto;
+  background: url(../images/circular_normal.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.checkActive .checkImg {
+  background: url(../images/circular_fg.png) no-repeat;
+  background-size: 100% 100%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  box-shadow: 0 0 50/100rem 1/100rem #fdf8cc;
+}
+
+.checkBox span {
+  text-align: center;
+}
+
+.checkBox .checkImg img {
+  width: 100%;
+  height: 100%;
+}
+
+.checkTitle {
+  font-size: 26/100rem;
+  color: #f3c55d;
+}
+
+.checkPage {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.checkSpan {
+  font-size: 16/100rem;
+  color: #f3c55d;
+}
+
+.checkPage .swiper-container {
+  overflow: inherit;
+}
+
+.checkPage .productCharacter {
+  animation: checkPage 0.8s forwards;
+  -webkit-mask: none;
+}
+
+@keyframes checkPage {
+  0% {
+    bottom: 4rem;
+  }
+  100% {
+    bottom: 300/100rem;
+  }
+}
+
+@keyframes submit1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes checkBox1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.checkBox img {
+  width: 100%;
+}
+
+.checkPage .checkBox {
+  animation: checkBox1 0.8s forwards 0.8s;
+}
+
+.checkPage .submit1 {
+  animation: submit1 0.8s forwards 0.8s;
+}
+
+.submit {
+  width: 222/100rem;
+  height: 68/100rem;
+  background: url(../images/submit.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.submit1 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 84/100rem;
+  width: 222/100rem;
+  height: 68/100rem;
+  background: url(../images/submit.png) no-repeat;
+  background-size: 100% 100%;
+  opacity: 0;
+}
+
+.lantern {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+.lanternLf img {
+  width: 195/100rem;
+  height: 195/100rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+}
+
+.lanternRh img {
+  width: 278/100rem;
+  height: 215/100rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.lanternRh {
+  position: absolute;
+  right: 0;
+  top: 0;
+  animation: lantern 0.8s infinite alternate;
+}
+
+@keyframes lantern {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.productPage .arrow {
+  display: block;
+  position: absolute;
+  top: 15/100rem;
+  left: 40/100rem;
+  width: 15/100rem;
+  height: 29/100rem;
+  background: url(../images/arrow.png) no-repeat;
+  background-size: 100% 100%;
+  opacity: 0;
+}
+
+
+.lanternLf {
+  position: absolute;
+  left: 0;
+  top: -40/100rem;
+  width: 195/100rem;
+  height: 195/100rem;
+}
+
+.scorePage .lanternLf {
+  animation: lanternLf1 0.8s forwards;
+}
+
+.scorePage .arrow, .checkPage .arrow {
+  opacity: 1;
+}
+
+.returnPage1 .arrow, .returnPage2 .arrow {
+  opacity: 0;
+  transition: all 3s;
+}
+
+.checkPage .lanternLf {
+  animation: lanternLf1 0.8s forwards;
+}
+
+.returnPage1 .lanternLf, .returnPage2 .lanternLf {
+  animation: lanternLf2 0.8s forwards;
+
+}
+
+@keyframes lanternLf1 {
+  0% {
+    top: -45/100rem;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes lanternLf2 {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -45/100rem;
+  }
+}
+
+.swiperLi {
+  height: 100%;
+}
+
+.swiperL {
+  height: 100%;
+  transform: translate3d(0px, 0px, 0px) !important;
+}
+
+.productExplain {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  animation: productExplain1 0.8s forwards;
+
+}
+
+@keyframes productExplain1 {
+  0% {
+    opacity: 0;
+    top: 0;
+  }
+  100% {
+    opacity: 1;
+    top: 161/100rem;
+  }
+}
+
+.productBut {
+  height: 300/100rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  animation: productBut1 0.8s forwards;
+}
+
+@keyframes productBut1 {
+  0% {
+    opacity: 0;
+    bottom: 0;
+  }
+  100% {
+    opacity: 1;
+    bottom: 100/100rem;
+  }
+}
+
+.productCharacter {
+  width: 100%;
+  height: 360/100rem;
+  position: absolute;
+  bottom: 400/100rem;
+  -webkit-mask: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+
+}
+
+.productPage1 .productCharacter {
+  opacity: 0;
+  animation: productCharacter1 0.8s forwards 0.8s;
+}
+
+.scorePage .productCharacter, .checkPage .productCharacter {
+  opacity: 1;
+}
+
+
+
+@keyframes productCharacter1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.returnPage1 .scoreMain {
+  animation: returnPage_scoreMain 1s forwards;
+}
+
+@keyframes returnPage_scoreMain {
+  0% {
+    top: 120/100rem;
+    opacity: 1;
+  }
+  100% {
+    top: -100%;
+    opacity: 0;
+  }
+}
+
+.returnPage1 .scoreProgress {
+  animation: returnPage_scoreProgress 1s forwards;
+}
+
+@keyframes returnPage_scoreProgress {
+  0% {
+    top: 230/100rem;
+    opacity: 1;
+  }
+  100% {
+    top:-100%;
+    opacity: 0;
+  }
+}
+
+.returnPage2 .resultPage {
+  animation: returnPage_resultPage 0.5s forwards;
+}
+
+@keyframes returnPage_resultPage {
+  0% {
+    opacity: 1;
+    top: 165/100rem;
+  }
+  100% {
+    opacity: 0;
+    top: -100%;
+  }
+}
+
+.returnPage2 .productCharacter {
+  animation: returnPage_checkPage 0.8s forwards;
+}
+
+@keyframes returnPage_checkPage {
+  0% {
+    bottom: 300/100rem;
+  }
+  100% {
+    bottom: 4rem;
+  }
+}
+.productPage .productCharacter .swiper-button-prev,
+.productPage .productCharacter .swiper-button-next{
+  opacity:0;
+}
+
+.scorePage .productCharacter .swiper-button-prev,
+.scorePage .productCharacter .swiper-button-next{
+  opacity:1;
+}
+.checkBox4,.checkBox2{
+  margin-top: 20/100rem;
+}
+.checkBox3,.checkBox1{
+  margin-top: 10/100rem;
+}
+.swiper-button-next{
+  animation: swiper_button1 0.6s alternate infinite linear;
+}
+.swiper-button-prev{
+  animation: swiper_button2 0.6s alternate infinite linear;
+}
+
+@keyframes swiper_button1 {
+  0% {
+    transform: translateX(0) translateY(-50%);
+  }
+  100% {
+    transform: translateX(10/100rem) translateY(-50%);
+  }
+}
+@keyframes swiper_button2 {
+  0% {
+    transform: translateX(0) translateY(-50%) rotate(-180deg);
+  }
+  100% {
+    transform: translateX(10/100rem) translateY(-50%) rotate(-180deg);
+  }
+}
+
+
+
+//弹出窗口css
+.warp_dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  //background: rgba(0, 0, 0, 0.8);
+  display: none;
+  z-index: 100;
+}
+.warp_dialog1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.warp_dialog2{
+  animation: warp_dialog2 0.2s forwards 0.1s;
+}
+.warp_dialog4{
+  animation: warp_dialog4 0.2s forwards 0.1s;
+
+}
+.warp_dialog1 .dialogMain{
+  animation: warp_dialog1 0.2s forwards;
+}
+.warp_dialog3 .dialogMain{
+  animation: warp_dialog3 0.2s forwards;
+}
+
+@keyframes warp_dialog1 {
+  0% {
+    opacity: 0;
+    transform:scale(0);
+  }
+  100% {
+    opacity:1;
+    transform:scale(1);
+  }
+}
+@keyframes warp_dialog2 {
+  0% {
+    background: rgba(0,0,0,0);
+  }
+  100% {
+    background: rgba(0,0,0,0.8);
+  }
+}
+@keyframes warp_dialog3 {
+  0% {
+    opacity: 1;
+    transform:scale(1);
+  }
+  100% {
+    opacity:0;
+    transform:scale(0);
+  }
+}
+@keyframes warp_dialog4 {
+  0% {
+    background: rgba(0,0,0,0.8);
+  }
+  100% {
+    background: rgba(0,0,0,0);
+  }
+}
+.dialogMain {
+  opacity: 0;
+  width: 656/100rem;
+  height:363/100rem;
+  display: inline-block;
+  margin-top: -146/100rem;
+  background: url(../images/popbg.png) no-repeat;
+  background-size: 100% 100%;
+}
+.dialogMax{
+  height:70%;
+}
+.dialogContent {
+  border: 2/100rem solid #362319;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+
+}
+.dialogCenter {
+  height: 236/100rem;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.dialogCenter h4{
+  text-align: center;
+  font-size: 50/100rem;
+  color:#2f1915;
+  font-weight: 500;
+}
+.dialogCenter h6{
+  font-size: 30/100rem;
+}
+.dialogFooter button{
+  width:222/100rem;
+  height:68/100rem;
+  display: inline-block;
+  padding:0;
+  margin: 0 40/100rem;
+}
+.dialogFooter button img{
+  width: 100%;
+  height: 100%;
+}
+.dialogFooter {
+  width: 100%;
+  height:120/100rem;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top:1px solid #3c291e;
+}
+
+.dialogFooter .close1 {
+  width: 132/100rem;
+  height: 132/100rem;
+}
+
+.dialogFooter .close2 {
+  width: 132/100rem;
+  height: 146/100rem;
+  position: absolute;
+  left: 0;
+  top: 132/100rem;
+}
+.corner {
+  width: 30/100rem;
+  height: 30/100rem;
+  background: url(../images/popj.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+}
+
+.cornerTL {
+  left: -7/100rem;
+  top: -7/100rem;
+}
+
+.cornerTR {
+  right: -7/100rem;
+  top: -7/100rem;
+}
+
+.cornerBL {
+  left: -7/100rem;
+  bottom: -7/100rem;
+}
+
+.cornerBR {
+  right: -7/100rem;
+  bottom: -7/100rem;
+}

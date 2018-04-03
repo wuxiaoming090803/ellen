@@ -1,0 +1,959 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background: url(../img/new_bg.png) no-repeat 0px 0px;
+    background-size: 100% 100%;
+}
+
+.wrap {
+    width: 100%;
+    height: 100%;
+    background: url(../img/flower.png) no-repeat 0px -21px;
+    background-size: 100% 100%;
+    position: relative;
+    overflow: hidden;
+}
+.wrap:after{
+	content:"";
+	width:3.39rem;
+	height:1.58rem;
+	display:block;
+	background:url(../img/taohua.png) no-repeat 0 0;
+	background-size:100% 100%;
+	position:absolute;
+	top:0;
+	left:0;
+	opacity:0.5;
+}
+.mainContent1 {
+    width: 100%;
+    height: 100%;
+    background: url(../img/new_bg_top.png) no-repeat 0px 0px;
+    background-size: 100% 60%;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.productHeader {
+    padding-top: 0.29rem;
+    text-align: center;
+}
+
+.productHeader img {
+    width: 1.17rem;
+    height: 0.38rem;
+    margin: 0 auto;
+}
+
+.quesName {
+    height: 41%;
+    padding-top: 40%;
+
+}
+
+.quesName span {
+    color: #fff;
+    font-size: 40px;
+}
+
+label {
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+.score-content {
+    position: absolute;
+    width: 2.78rem;
+    height: 2.15rem;
+    right: 0;
+    top: 0;
+    animation: fadeInScore 0.8s forwards;
+}
+
+@-webkit-keyframes fadeInScore {
+    0% {
+        opacity: 0;
+        top: -10%;
+    }
+
+    100% {
+        opacity: 1;
+        top: 0
+    }
+}
+
+@-webkit-keyframes fadeOutLatern {
+    0% {
+        opacity: 1;
+        top: 0;
+    }
+
+    100% {
+        opacity: 0;
+        top: -10%
+    }
+}
+
+.back-latern {
+    position: absolute;
+    left: 0;
+    width: 3.5rem;
+    height: 2.93rem;
+    opacity: 0;
+}
+
+.back-latern.clickFocus {
+    animation: fadeInCommit1 1s forwards;
+}
+
+@-webkit-keyframes fadeInCommit1 {
+    0% {
+        opacity: 0;
+        top: -100%;
+    }
+
+    100% {
+        opacity: 1;
+        top: 0
+    }
+}
+
+.back-latern img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.score-lantern {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.score-content.mui-animation-scoreLatern {
+    animation: fadeOutLatern 0.8s forwards;
+}
+
+.score-icon {
+    position: absolute;
+    right: 11.7%;
+    width: 12%;
+    top: 29.5%;
+}
+
+.top-text-content {
+    position: absolute;
+    top: 19%;
+    width: 6.73rem;
+    height: 2.70rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadeIn 0.8s forwards;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+        top: 0;
+    }
+
+    100% {
+        opacity: 1;
+        top: 19%
+    }
+}
+
+.top-text-content.mui-animation-top {
+    animation: fadeOut 0.8s forwards;
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1;
+        top: 19%;
+    }
+
+    100% {
+        opacity: 0;
+        top: -100%
+    }
+}
+
+.top-text-content img {
+    width: 100%;
+    height: 100%;
+}
+
+.top-title {
+    position: absolute;
+    left: 52%;
+    transform: translateX(-50%);
+    height: 3%;
+    top: 2%;
+}
+
+.animateCls {
+    opacity: 0;
+    animation-name: fadeInOut;
+    -webkit-animation-name: fadeInOut;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-direction: alternate;
+}
+
+@-webkit-keyframes fadeInOut {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+}
+
+.optionBox {
+    height: 2.73rem;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform:translateY(-50%);
+    margin-top:0.7rem;
+    width: 100%;
+    right: -100%;
+    z-index: 100;
+    overflow: hidden;
+}
+
+@-webkit-keyframes fadeInOptionBox {
+    0% {
+        opacity: 0;
+        right: -100%;
+    }
+
+    100% {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+@-webkit-keyframes fadeOutOptionBox {
+    0% {
+        opacity: 1;
+        right: 0;
+    }
+
+    100% {
+        opacity: 0;
+        right: -100%;
+    }
+}
+
+.optionBox.mui-animation-optionBox {
+    animation: fadeInOptionBox 0.8s forwards;
+}
+
+.optionBox.mui-animation-optionBoxOut {
+    animation: fadeOutOptionBox 0.8s forwards;
+}
+
+.optionBox .line-cls {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0.1rem;
+    height: 0.1rem;
+}
+
+.optionBox span {
+    display: inline-block;
+    position: relative;
+    width: 1rem;
+    text-align: center;
+    height: 2.68rem;
+}
+
+.optionBox input {
+    display: none !important;
+}
+
+.optionBox span label {
+    height: 100%;
+}
+
+.optionBox .checkLabel1 {
+    background: url(../img/items-a.png) no-repeat 0 0;
+    background-size: auto 100%;
+}
+
+.optionBox .checkLabel2 {
+    background: url(../img/items-b.png) no-repeat 0 0;
+    background-size: auto 100%;
+}
+
+.optionBox .checkLabel3 {
+    background: url(../img/items-c.png) no-repeat 0 0;
+    background-size: auto 100%;
+}
+
+.optionBox .checkLabel4 {
+    background: url(../img/items-d.png) no-repeat 0 0;
+    background-size: auto 100%;
+}
+
+.optionBox .checkLabel5 {
+    background: url(../img/items-e.png) no-repeat 0 0;
+    background-size: auto 100%;
+}
+
+.optionBox .checkLabel6 {
+    background: url(../img/items-f.png) no-repeat 0 0;
+    background-size: auto 100%;
+}
+
+.optionBox label.checkLabelCli1 {
+    background: url(../img/items-a.png) no-repeat -1rem 0;
+    background-size: auto 100%;
+}
+
+.optionBox label.checkLabelCli2 {
+    background: url(../img/items-b.png) no-repeat -1rem 0;
+    background-size: auto 100%;
+}
+
+.optionBox label.checkLabelCli3 {
+    background: url(../img/items-c.png) no-repeat -1rem 0;
+    background-size: auto 100%;
+}
+
+.optionBox label.checkLabelCli4 {
+    background: url(../img/items-d.png) no-repeat -1rem 0;
+    background-size: auto 100%;
+}
+
+.optionBox label.checkLabelCli5 {
+    background: url(../img/items-e.png) no-repeat -1rem 0;
+    background-size: auto 100%;
+}
+
+.optionBox label.checkLabelCli6 {
+    background: url(../img/items-f.png) no-repeat -1rem 0;
+    background-size: auto 100%;
+}
+
+.commitBtn {
+    height: 2.2rem;
+    text-align: center;
+    position: absolute;
+    bottom: 1.3rem;
+    left: 0;
+    right: 0;
+}
+
+.commitBtn.start {
+    z-index: 10;
+    animation: fadeInStart 0.8s forwards;
+}
+
+@-webkit-keyframes fadeInStart {
+    0% {
+        opacity: 0;
+        bottom: -100%;
+    }
+
+    100% {
+        opacity: 1;
+        bottom: 1.3rem;
+    }
+}
+
+@-webkit-keyframes fadeInEnd {
+    0% {
+        opacity: 1;
+        bottom: 1.3rem;
+    }
+
+    100% {
+        opacity: 0;
+        bottom: -100%;
+    }
+}
+
+.commitBtn .startBtn {
+    top: 0;
+    position: absolute;
+    left: 50%;
+    height: 1.99rem;
+    width: 2.75rem;
+    background: url(../img/items-start.png) no-repeat 0 0;
+    transform: translateX(-50%);
+    background-size: 100% 100%;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.commitBtn.start.focusCls {
+    animation: fadeInEnd 0.8s forwards;
+}
+
+.commitBtn .startBtn:enabled:active {
+    background: url(../img/items-startBtn.png) no-repeat 0 0;
+    background-size: 100% 100%;
+    border: none;
+}
+
+.commitBtn .commitCls {
+    width: 2.75rem;
+    position: absolute;
+    left: 50%;
+    height: 1.99rem;
+    background: url(../img/submit.png) no-repeat 0 0;
+    transform: translateX(-50%);
+    background-size: 100% 100%;
+    border: 0;
+    opacity: 0;
+}
+
+@-webkit-keyframes fadeInCommit {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.commitBtn .commitCls.mui-animation-commitBtn {
+    animation: fadeInCommit 1s forwards;
+}
+
+.commitBtn .commitCls:enabled:active {
+    background: url(../img/commit-active.png) no-repeat 0 0;
+    background-size: 100% 100%;
+    border: none;
+}
+
+.arrow {
+    display: block;
+    position: absolute;
+    top: 7%;
+    left: 11%;
+    width: 0.15rem;
+    height: 0.29rem;
+    background: url(../img/arrow.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+/*loading*/
+
+.loading_box {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    /*background-image: url(../img/bg.jpg);
+    background-size: 100% 100%;*/
+}
+
+#ajaxbar1 {
+    overflow: hidden;
+    width: 90px;
+    position: absolute;
+    left: 50%;
+    margin-left: -45px;
+    top: 50%;
+}
+
+#ajaxbar1 .barlittle {
+    background-color: #ffffff;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@color1', endColorstr='@color2');
+    background-image: -webkit-linear-gradient(45deg, #ffffff 25%, #f1ffea);
+    background-image: -moz-linear-gradient(45deg, #ffffff 25%, #f1ffea);
+    /*border: 1px solid #111;*/
+    width: 10px;
+    height: 10px;
+    float: left;
+    margin-left: 5px;
+    opacity: 0.1;
+    -webkit-animation: pulse 1s linear infinite normal;
+    -moz-animation: pulse 1s linear infinite normal;
+    -ms-animation: pulse 1s linear infinite normal;
+    animation: pulse 1s linear infinite normal;
+    -webkit-animation-delay: 0;
+    -moz-animation-delay: 0;
+    -o-animation-delay: 0;
+    animation-delay: 0;
+}
+
+#ajaxbar1 #block1 {
+    -webkit-animation-delay: 0.3s;
+    -moz-animation-delay: 0.3s;
+    -o-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+
+#ajaxbar1 #block2 {
+    -webkit-animation-delay: 0.2s;
+    -moz-animation-delay: 0.2s;
+    -o-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+#ajaxbar1 #block3 {
+    -webkit-animation-delay: 0.1s;
+    -moz-animation-delay: 0.1s;
+    -o-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+}
+
+#ajaxbar1 #block4 {
+    -webkit-animation-delay: 0.2s;
+    -moz-animation-delay: 0.2s;
+    -o-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+#ajaxbar1 #block5 {
+    -webkit-animation-delay: 0.3s;
+    -moz-animation-delay: 0.3s;
+    -o-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0.7);
+        opacity: 0.1;
+    }
+}
+
+@-moz-keyframes pulse {
+    from {
+        -moz-transform: scale(1.2);
+        opacity: 1;
+    }
+    to {
+        -moz-transform: scale(0.7);
+        opacity: 0.1;
+    }
+}
+
+@-webkit-keyframes pulse {
+    from {
+        -webkit-transform: scale(1.2);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: scale(0.7);
+        opacity: 0.1;
+    }
+}
+.hide_window{
+            width: 87%;
+            height: auto;
+            position: absolute;
+            left: 6.5%;
+            top: 20%;
+            z-index: 999;
+            background-image: url(../img/alert.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .congratulation{
+            width: 52%;
+            margin-left: 24%;
+            margin-top: 9%;
+        }
+        .score-text{
+            height: 31%;
+            overflow: hidden;
+            margin: auto;
+            color: #ffffff;
+            text-align: center;
+        }
+        .score-text span{
+            display: block;
+            float: left;
+        }
+        .coin{
+            width: 28%;
+            margin-left: 36%;
+        }
+    
+        .closebtn{
+            width: 20%;
+            margin-left: 40%;
+            margin-top: 5%;
+        }
+        #coin-text{
+            font-size: 1.0rem;
+            height: 1.0rem;
+        }
+        .coin-text-m{
+            font-size: 0.8rem;
+            margin-top: 0.1rem;
+            margin-left: 2rem;
+        }
+        .coin-text-s{
+            font-size: 0.4rem;
+            margin-top: 0.15rem;
+        }
+        .coin:hover{
+            transform: rotateY(180deg);
+        }
+      
+       
+        .warp_dialog1 .hide_window {
+            animation: warp_dialog1 0.2s forwards;
+        }
+        .warp_dialog3 .hide_window {
+            animation: warp_dialog3 0.2s forwards;
+        }
+    
+        .animated {
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+    
+        .animated.infinite {
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+        }
+        @-webkit-keyframes zoomIn {
+            from {
+                opacity: 0;
+                -webkit-transform: scale3d(0.3, 0.3, 0.3);
+                transform: scale3d(0.3, 0.3, 0.3);
+            }
+    
+            50% {
+                opacity: 1;
+        }
+        }
+    
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                -webkit-transform: scale3d(0.3, 0.3, 0.3);
+                transform: scale3d(0.3, 0.3, 0.3);
+            }
+    
+            50% {
+                opacity: 1;
+        }
+        }
+    
+        .zoomIn {
+            -webkit-animation-name: zoomIn;
+            animation-name: zoomIn;
+        }
+        @-webkit-keyframes slideInUp {
+            from {
+                -webkit-transform: translate3d(0, 100%, 0);
+                transform: translate3d(0, 100%, 0);
+                visibility: visible;
+            }
+    
+            to {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    
+        @keyframes slideInUp {
+            from {
+                -webkit-transform: translate3d(0, 100%, 0);
+                transform: translate3d(0, 100%, 0);
+                visibility: visible;
+            }
+    
+            to {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    
+        .slideInUp {
+            -webkit-animation-name: slideInUp;
+            animation-name: slideInUp;
+        }
+        @-webkit-keyframes flipInY {
+              from {
+                -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 0deg);
+                transform: perspective(400px) rotate3d(0, 1, 0, 0deg);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+                opacity: 1;
+              }
+              50% {
+                -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 180deg);
+                transform: perspective(400px) rotate3d(0, 1, 0, 180deg);
+                opacity: 1;
+              }
+            
+              to {
+                -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 360deg);
+                transform: perspective(400px) rotate3d(0, 1, 0, 360deg);
+                opacity: 1;
+              }
+            }
+            
+            @keyframes flipInY {
+              from {
+                -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 0deg);
+                transform: perspective(400px) rotate3d(0, 1, 0, 0deg);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+                opacity: 1;
+              }
+              50% {
+                -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 180deg);
+                transform: perspective(400px) rotate3d(0, 1, 0, 180deg);
+                opacity: 1;
+              }
+            
+              to {
+                -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 360deg);
+                transform: perspective(400px) rotate3d(0, 1, 0, 360deg);
+                opacity: 1;
+              }
+            }
+            
+            .flipInY {
+              -webkit-backface-visibility: visible !important;
+              backface-visibility: visible !important;
+              -webkit-animation-name: flipInY;
+              animation-name: flipInY;
+            }
+            @keyframes fadeInUp {
+              from {
+                opacity: 0;
+                -webkit-transform: translate3d(0, 100%, 0);
+                transform: translate3d(0, 100%, 0);
+              }
+            
+              to {
+                opacity: 1;
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+              }
+            }
+            
+            .fadeInUp {
+              -webkit-animation-name: fadeInUp;
+              animation-name: fadeInUp;
+            }
+.warp_dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 100;
+}
+
+.warp_dialog1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.warp_dialog2 {
+    animation: warp_dialog2 0.2s forwards 0.1s;
+}
+
+.warp_dialog4 {
+    animation: warp_dialog4 0.2s forwards 0.1s;
+}
+
+.warp_dialog1 .dialogMain {
+    animation: warp_dialog1 0.2s forwards;
+}
+
+.warp_dialog3 .dialogMain {
+    animation: warp_dialog3 0.2s forwards;
+}
+
+@keyframes warp_dialog1 {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes warp_dialog2 {
+    0% {
+        background: rgba(0, 0, 0, 0);
+    }
+    100% {
+        background: rgba(0, 0, 0, 0.8);
+    }
+}
+
+@keyframes warp_dialog3 {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+@keyframes warp_dialog4 {
+    0% {
+        background: rgba(0, 0, 0, 0.8);
+    }
+    100% {
+        background: rgba(0, 0, 0, 0);
+    }
+}
+
+.dialogMain {
+    opacity: 0;
+    width: 6.56rem;
+    height: 3.63rem;
+    display: inline-block;
+    margin-top: -1.46rem;
+    background: url(../img/popbg.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.dialogMax {
+    height: 70%;
+}
+
+.dialogContent {
+    border: 0.02rem solid #362319;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+.dialogCenter {
+    height: 2.36rem;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.dialogCenter h4 {
+    text-align: center;
+    font-size: 0.5rem;
+    color: #2f1915;
+    font-weight: 500;
+}
+
+.dialogCenter h6 {
+    font-size: 0.3rem;
+}
+
+.dialogFooter button {
+    width: 2.22rem;
+    height: 0.68rem;
+    display: inline-block;
+    padding: 0;
+    margin: 0 0.4rem;
+}
+
+.dialogFooter button img {
+    width: 100%;
+    height: 100%;
+}
+
+.dialogFooter {
+    width: 100%;
+    height: 1.2rem;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #3c291e;
+}
+
+.dialogFooter .close1 {
+    width: 1.32rem;
+    height: 1.32rem;
+}
+
+.dialogFooter .close2 {
+    width: 1.32rem;
+    height: 1.46rem;
+    position: absolute;
+    left: 0;
+    top: 1.32rem;
+}
+
+.corner {
+    width: 0.3rem;
+    height: 0.3rem;
+    background: url(../img/popj.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+}
+
+.cornerTL {
+    left: -0.07rem;
+    top: -0.07rem;
+}
+
+.cornerTR {
+    right: -0.07rem;
+    top: -0.07rem;
+}
+
+.cornerBL {
+    left: -0.07rem;
+    bottom: -0.07rem;
+}
+
+.cornerBR {
+    right: -0.07rem;
+    bottom: -0.07rem;
+}
+
+button {
+  display: block;
+  background-color: rgba(0, 0, 0, 0)!important;
+  outline: none;
+  border: 0!important;
+}
+/* @media only screen  and (max-width: 320px){
+  .optionBox{
+    top:auto;
+    bottom:4rem;
+  }
+} */

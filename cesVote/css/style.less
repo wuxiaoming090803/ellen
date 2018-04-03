@@ -1,0 +1,1033 @@
+html, body, div, ul, li, p, a, button, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: 微软雅黑;
+}
+
+//
+//@media screen and(width: 320px) {
+//  html {
+//    font-size: 320/25px;
+//  }
+//}
+//
+//@media screen and(width: 360px) {
+//  html {
+//    font-size: 360/25px;
+//  }
+//}
+//
+//@media screen and(width: 375px) {
+//  html {
+//    font-size: 375/25px;
+//  }
+//}
+//
+//@media screen and(width: 414px) {
+//  html {
+//    font-size: 414/25px;
+//  }
+//}
+//
+//@media screen and(width: 412px) {
+//  html {
+//    font-size: 412/25px;
+//  }
+//}
+//
+//@media screen and(min-width: 750px) {
+//  html {
+//    font-size: 750/25px;
+//  }
+//}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  outline: 0;
+  background: rgba(0, 0, 0, 0);
+  border: 0;
+}
+
+.warp {
+  width: 750/100rem;
+  margin: 0 auto;
+  height: 100%;
+  background: url(../images/bj.png) no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+//头部
+.header {
+  width: 100%;
+}
+
+.header .b1 {
+  width: 500/100rem;
+  height: 192/100rem;
+  position: absolute;
+  left: 50%;
+  top: 20/100rem;
+  transform: translate(-50%);
+}
+
+.header .b2 {
+  width: 58/100rem;
+  height: 117/100rem;
+  position: absolute;
+  right: 20/100rem;
+  top: 20/100rem;
+}
+
+//云右
+.cloudRight {
+  width: 711/100rem;
+  height: 723/100rem;
+  position: absolute;
+  right: 0;
+  bottom: 300/100rem;
+  animation: cloudRight 12s alternate linear infinite;
+  transition: all 5s linear 0s;
+}
+
+//云右
+.cloudRight img {
+  width: 711/100rem;
+  height: 723/100rem;
+}
+
+//山1
+.mountain1 {
+  width: 750/100rem;
+  height: 272/100rem;
+  position: absolute;
+  bottom: 600/100rem;
+  left: 0;
+
+  z-index: 2;
+}
+
+.mountain1 .t1 {
+  width: 750/100rem;
+  height: 258/100rem;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  animation: mountain1 15s alternate linear infinite;
+  transition: all 5s linear 0s;
+}
+
+.mountain3 {
+  position: absolute;
+  bottom: 900/100rem;
+  right: 0;
+
+}
+
+.mountain3 .t2 {
+  width: 405/100rem;
+  height: 172/100rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  animation: mountain1-1 15s alternate linear infinite;
+  transition: all 5s linear 0s;
+}
+
+//山1
+.mountain1 img {
+  width: 750/100rem;
+  height: 272/100rem;
+}
+
+//云左
+.cloudLeft {
+  width: 1000/100rem;
+  height: 804/100rem;
+  //overflow: hidden;
+  position: absolute;
+  bottom: 60/100rem;
+  left: 0;
+}
+
+.cloudLeft img {
+  width: 1000/100rem;
+  height: 804/100rem;
+  position: absolute;
+  left: 0;
+  animation: cloudLeft 11s alternate linear infinite;
+  transition: all 5s linear 0s;
+}
+
+//山2
+.mountain2 {
+  width: 691/100rem;
+  height: 280/100rem;
+  position: absolute;
+  bottom: 480/100rem;
+  right: 0;
+  z-index: 3;
+}
+
+//山2
+.mountain2 > img {
+  width: 691/100rem;
+  height: 280/100rem;
+  animation: mountain2 12s alternate linear infinite;
+  transition: all 5s linear 0s;
+}
+
+.t3 {
+  width: 341/100rem;
+  height: 291/100rem;
+  position: absolute;
+  bottom: 480/100rem;
+  right: 60/100rem;
+  z-index: 5;
+}
+
+.t3 > img {
+  width: 341/100rem;
+  height: 291/100rem;
+  animation: delivery 0.5s alternate infinite 0.6s;
+}
+
+.t4 img {
+  width: 637/100rem;
+  height: 280/100rem;
+}
+
+.t4 {
+  width: 637/100rem;
+  height: 280/100rem;
+  position: absolute;
+  bottom: 3.6rem;
+  right: 0;
+  z-index: 4;
+}
+
+//传送阵
+.delivery img {
+  width: 637/100rem;
+  height: 441/100rem;
+}
+
+//驿站
+.Inn {
+  width: 750/100rem;
+  height: 499/100rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+//驿站
+.Inn img {
+  width: 750/100rem;
+  height: 499/100rem;
+}
+
+//马
+.horse {
+  width: 316/100rem;
+  height: 253/100rem;
+  position: absolute;
+  left: 60/100rem;
+  bottom: 85/100rem;
+}
+
+.horseRotate {
+  transform: rotateY(180deg);
+}
+
+//马
+.horse img {
+  width: 316/100rem;
+  height: 253/100rem;
+}
+
+//底部
+.footer {
+  height: 170/100rem;
+  position: absolute;
+  right: 20/100rem;
+  bottom: 50/100rem;
+}
+
+//底部
+.footer button {
+  display: inline-block;
+  margin-right: 20/100rem;
+  position: relative;
+}
+
+.footer button img {
+  display: block;
+}
+
+//底部
+.footer .y1 {
+  width: 111/100rem;
+  height: 111/100rem;
+  animation: y1 0.8s forwards;
+}
+
+.footer .y3 {
+  width: 111/100rem;
+  height: 111/100rem;
+  animation: y3 0.8s forwards;
+}
+
+.footer .y2 {
+  width: 111/100rem;
+  height: 50/100rem;
+  opacity: 0;
+  animation: y2 1s forwards 0.5s;
+}
+
+.footer .y4 {
+  width: 111/100rem;
+  height: 50/100rem;
+  opacity: 0;
+  animation: y4 1s forwards 0.5s;
+}
+
+//按钮组
+.buttons {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.buttons ul {
+  width: 100%;
+  height: 75%;
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.li1, .li2, .li3, .li4 {
+  width: 60/100rem;
+  height: 184/100rem;
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
+}
+
+.li1 a, .li2 a, .li3 a, .li4 a {
+  width: 60/100rem;
+  height: 184/100rem;
+  display: block;;
+  position: relative;
+}
+
+.li1 a i, .li2 a i, .li3 a i, .li4 a i {
+  width: 22/100rem;
+  height: 22/100rem;
+  display: block;
+  background: url(../images/a8.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 0;
+  right: -10/100rem;
+}
+
+.li1 a img, .li2 a img, .li3 a img, .li4 a img {
+  width: 100%;
+  height: 100%;
+}
+
+.li1 {
+  left: 170/100rem;
+  //top: 17rem;
+  top: -184/100rem;
+  animation: li1 1s forwards 1s;
+}
+
+.li2 {
+  left: 45%;
+  transform: translate(-50%);
+  top: -184/100rem;
+  animation: li2 1s forwards 1s;
+}
+
+.li3 {
+  left: 190/100rem;
+  //top: 2.2rem;
+  top: -184/100rem;
+  animation: li3 1s forwards 1s;
+}
+
+.li4 {
+  right: 258/100rem;
+  //top: 0;
+  top: -184/100rem;
+  animation: li4 1s forwards 1s;
+}
+
+@keyframes cloudLeft {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-50%);
+  }
+}
+
+@keyframes cloudRight {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(30%);
+  }
+}
+
+@keyframes mountain1 {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-5%);
+  }
+}
+
+@keyframes mountain1-1 {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(5%);
+  }
+}
+
+@keyframes mountain2 {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(5%);
+  }
+}
+
+@keyframes delivery {
+  0% {
+    opacity: 0.8;
+
+  }
+  100% {
+    opacity: 0.5;
+
+  }
+}
+
+@keyframes li1 {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(180/100rem);
+  }
+}
+
+@keyframes li3 {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(120/100rem);
+
+  }
+}
+
+@keyframes li4 {
+  0% {
+    opacity: 0;
+    transform: translateY(-180/100rem);
+
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(-30/100rem);
+
+  }
+}
+
+@keyframes li2 {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(210/100rem);
+  }
+}
+
+@keyframes y1 {
+  0% {
+    transform: rotate(-360deg) scale(0.1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes y3 {
+  0% {
+    transform: rotate(-360deg) scale(0.1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes y2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes y4 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.warp_dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  //background: rgba(0, 0, 0, 0.8);
+  display: none;
+  z-index: 100;
+}
+
+.warp_dialog1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.warp_dialog2 {
+  animation: warp_dialog2 0.2s forwards 0.1s;
+}
+
+.warp_dialog4 {
+  animation: warp_dialog4 0.2s forwards 0.1s;
+
+}
+
+.warp_dialog1 .dialogMain {
+  animation: warp_dialog1 0.2s forwards;
+}
+
+.warp_dialog3 .dialogMain {
+  animation: warp_dialog3 0.2s forwards;
+}
+
+@keyframes warp_dialog1 {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes warp_dialog2 {
+  0% {
+    background: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+@keyframes warp_dialog3 {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes warp_dialog4 {
+  0% {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+
+.dialogMain {
+  opacity: 0;
+  width: 90%;
+  min-height: 600/100rem;
+  max-height: 90%;
+  display: inline-block;
+  margin-top: -146/100rem;
+}
+
+.dialogContent {
+  border: 2/100rem solid #362319;
+  box-sizing: border-box;
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  padding: 40/100rem 20/100rem 120/100rem;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.dialogContent:after {
+  content: "";
+  width: 167/100rem;
+  height: 88/100rem;
+  display: block;
+  background: url(../images/popbg.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  bottom: 20/100rem;
+  right: 30/100rem;
+}
+
+.dialogCenter {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.corner {
+  width: 30/100rem;
+  height: 30/100rem;
+  background: url(../images/popj.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+}
+
+.cornerTL {
+  left: -7/100rem;
+  top: -7/100rem;
+}
+
+.cornerTR {
+  right: -7/100rem;
+  top: -7/100rem;
+}
+
+.cornerBL {
+  left: -7/100rem;
+  bottom: -7/100rem;
+}
+
+.cornerBR {
+  right: -7/100rem;
+  bottom: -7/100rem;
+}
+
+.dialogTitle {
+  width: 86%;
+  height: 61/100rem;
+  line-height: 61/100rem;
+  background: url(../images/pop_header.png) no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  font-size: 36/100rem;
+  color: #fff;
+  position: absolute;
+  top: -30/100rem;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.dialogFooter {
+  width: 132/100rem;
+  height: 132/100rem;
+  position: absolute;
+  left: 50%;
+  bottom: -66/100rem;
+  transform: translate(-50%);
+}
+
+.dialogFooter .close1 {
+  width: 132/100rem;
+  height: 132/100rem;
+}
+
+.dialogFooter .close2 {
+  width: 132/100rem;
+  height: 146/100rem;
+  position: absolute;
+  left: 0;
+  top: 132/100rem;
+}
+
+.dialogHeader h4 {
+  height: 100/100rem;
+  font-size: 35/100rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialogHeader h5 {
+  text-align: center;
+  font-size: 35/100rem;
+}
+
+.dialogHeader h4 span {
+  display: inline-block;
+  position: relative;
+  font-weight: 400;
+  margin: 0 10/100rem;
+}
+
+.dialogHeader .h4Main:after {
+  content: "";
+  width: 55/100rem;
+  height: 42/100rem;
+  display: block;
+  position: absolute;
+  bottom: -5/100rem;
+  right: -60/100rem;
+  background: url(../images/cloud.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.dialogBot ul {
+  overflow: hidden;
+  margin: 30/100rem 0;
+}
+
+.dialogBot li {
+  width: 24.5%;
+  float: left;
+  //margin:32/100rem 0;
+  padding: 0 10/100rem;
+  box-sizing: border-box;
+}
+
+.dialogBot li button {
+  color: #2a1b07;
+  font-size: 32/100rem;
+  font-weight: 400;
+}
+
+.dialogBot .selected button {
+  color: #ad0002;
+  font-weight: 700;
+}
+
+.dialogHeader .selected {
+  color: #ad0002;
+  font-weight: 700;
+  margin: 0;
+}
+
+.dialogBot li label {
+  width: 22/100rem;
+  height: 22/100rem;
+  display: inline-block;
+  margin: 0;
+  background: url(../images/normal.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.dialogBot .selected label {
+  background: url(../images/selected.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.dialogBot1 li {
+  line-height: 0.8;
+}
+
+.dialogBot2 li {
+  line-height: 3.5;
+}
+
+.dialogBot2 ul {
+  display: flex;
+  justify-content: center;
+}
+
+.dialogBot2 li button {
+  font-size: 35/100rem;
+}
+
+.dialogBotM li {
+  width: 100%;
+  margin-top: 55/100rem;
+}
+
+.dialogBotM button {
+  display: block;
+  width: 100%;
+  padding-bottom: 10/100rem;
+}
+
+.dialogBotM span:first-child {
+  text-align: left;
+  padding-left: 10/100rem;
+  box-sizing: border-box;
+}
+
+//.dialogBotM span:first-child label {
+//  margin-right: 10/100rem;
+//}
+
+.dialogBotM span {
+  display: inline-block;
+  width: 50%;
+  float: left;
+}
+
+.dialogBotM .dialogBotMImg {
+  width: 40/100rem;
+  height: 40/100rem;
+  display: inline-block;
+  background: url(../images/dialogBotM.png) no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  margin-bottom: -10/100rem;
+  margin-right: 10/100rem;
+}
+
+.dialogBotY .topP {
+  font-size: 24/100rem;
+  color: #3e3a39;
+  margin: 10/100rem 0;
+}
+
+.dialogBotY .topP img {
+  width: 100%;
+}
+
+.dialogBotY .topP label {
+  font-weight: 700;
+}
+
+.dialogBotY h5 {
+  color: #ad0002;
+  font-size: 18/100rem;
+  margin-bottom: 10/100rem;
+}
+
+.dialogBotY .botP {
+  font-size: 24/100rem;
+  margin-bottom: 40/100rem;
+  line-height: 1.5;
+}
+
+.dialogCenterY {
+
+}
+
+.wrap_body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #fbeaae;
+}
+
+.wrapper {
+  width: 500/100rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wrapper .load-bar {
+  width: 100%;
+  height: 25/100rem;
+  border-radius: 30/100rem;
+  background: #dcdbd7;
+  position: relative;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper #counter {
+  position: absolute;
+  background: #eeeff3;
+  background: linear-gradient(#eeeff3, #cbcbd3);
+  background: -moz-linear-gradient(#eeeff3, #cbcbd3);
+  background: -webkit-linear-gradient(#eeeff3, #cbcbd3);
+  background: -o-linear-gradient(#eeeff3, #cbcbd3);
+  padding: 5/100rem 10/100rem;
+  border-radius: 0.4em;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1), 0 2px 4px 1px rgba(0, 0, 0, 0.2), 0 1px 3px 1px rgba(0, 0, 0, 0.1);
+  left: -25/100rem;
+  top: -50/100rem;
+  font-size: 12/100rem;
+  font-weight: bold;
+  width: 44/100rem;
+  animation: counter 5s forwards;
+  -moz-animation: counter 5s forwards;
+  -webkit-animation: counter 5s forwards;
+  -o-animation: counter 5s forwards;
+}
+
+.wrapper #counter:after {
+  content: "";
+  position: absolute;
+  width: 8/100rem;
+  height: 8/100rem;
+  background: #cbcbd3;
+  transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  left: 50%;
+  margin-left: -4/100rem;
+  bottom: -4/100rem;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2), 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 3px 0;
+}
+
+@keyframes loader {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@-moz-keyframes loader {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes loader {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@-o-keyframes loader {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes counter {
+  from {
+    left: -25/100rem;
+  }
+  to {
+    left: 473/100rem;
+  }
+}
+
+@-moz-keyframes counter {
+  from {
+    left: -25/100rem;
+  }
+  to {
+    left: 473/100rem;
+  }
+}
+
+@-webkit-keyframes counter {
+  from {
+    left: -25/100rem;
+  }
+  to {
+    left: 473/100rem;
+  }
+}
+
+@-o-keyframes counter {
+  from {
+    left: -25/100rem;
+  }
+  to {
+    left: 473/100rem;
+  }
+}
+
+@keyframes loader {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.load-bar-inner {
+  height: 99%;
+  width: 0%;
+  border-radius: inherit;
+  position: relative;
+  background: linear-gradient(#B22222, #800000);
+  background: -moz-linear-gradient(#B22222, #800000);
+  background: -webkit-linear-gradient(#B22222, #800000);
+  background: -o-linear-gradient(#B22222, #800000);
+  animation: loader 5s forwards;
+}
+
+.dialogMax {
+  height: 70%;
+}
+
+.dialogD h5 {
+  text-align: left;
+  margin:30/100rem 0!important;
+}
+.dialogD h6 {
+ font-size: 30/100rem;
+  margin-bottom: 50/100rem;
+  font-weight: 400;
+}
+.dialogD h6 label{
+  font-weight: 700;
+}
+.dialogD img{
+  width: 100%;
+}

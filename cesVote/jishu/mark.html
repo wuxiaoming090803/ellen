@@ -1,0 +1,490 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+	name="viewport" />
+<title>技术擂台</title>
+<link rel="stylesheet" href="css/mui.min.css" />
+<link rel="stylesheet" href="css/animate.css" />
+<link rel="stylesheet" href="css/mystyle.css" />
+
+<script type="text/javascript" src="js/modernizr.js"></script>
+<script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+<style type="text/css">
+	.mui-toast-container {bottom: 50% !important;}
+</style>
+</head>
+<body>
+	<div class="loading_box">
+		<div id="ajaxbar1">
+			<div id="block1" class="barlittle"></div>
+			<div id="block2" class="barlittle"></div>
+			<div id="block3" class="barlittle"></div>
+			<div id="block4" class="barlittle"></div>
+			<div id="block5" class="barlittle"></div>
+		</div>
+	</div>
+	<!--左上角-->
+	<div id="left_top" class="left_top">
+		<img src="img/left-top.png">
+	</div>
+	<!--右上角榜单-->
+	<div class="score_btn">
+		<img src="img/right-top1.png" class="score_btn1">
+		<img id="right_top" src="img/right-top2.png"
+			class="right_top">
+	</div>
+
+	<!--下拉模块-->
+	<div id="s_down" class="s_down">
+		<input type="hidden" id="commit_id" /> 
+		<input type="hidden" id="commit_name" />
+		<input type="hidden" id="current_lecturer_name" />
+		<input type="hidden" id="commit_vote"/>
+		<div class="user_img3">
+			<img src="img/user.png" class="img_special"/> <span>
+			<img src="" class="img_special"/></span>
+		</div>
+
+		<div class="add_score">
+			<span class="point_1">共<span class="point_2" id="point_sum">18</span>分
+			</span>
+			<!--<img src="img/mark.png">-->
+			<div class="mui-input-row mui-input-range field-contain">
+				<span> <label>讲解：</label> <input type="text" readonly="readonly" 
+					id='field-range-input' value='4.5' class='score_value'>
+				</span>
+				<div class="circle">
+					<input type="range" id='field-range' value="4.5" step="0.1" min="0"
+						max="5" />
+				</div>
+			</div>
+			<div class="mui-input-row mui-input-range field-contain">
+				<span> <label>提问：</label> <input type="text" readonly="readonly" 
+					id='field-question-input' value='4.5' class='score_value'>
+				</span>
+				<div class="circle">
+					<input type="range" id='field-question' value="4.5" step="0.1"
+						min="0" max="5" />
+				</div>
+			</div>
+			<div class="mui-input-row mui-input-range field-contain">
+				<span> <label>答疑：</label> <input type="text" readonly="readonly" 
+					id='field-answer-input' value='4.5' class='score_value'>
+				</span>
+				<div class="circle">
+					<input type="range" id='field-answer' value="4.5" step="0.1"
+						min="0" max="5" />
+				</div>
+			</div>
+			<div class="mui-input-row mui-input-range field-contain">
+				<span> <label>互动：</label> <input type="text" readonly="readonly" 
+					id='field-inter-input' value='4.5' class='score_value'>
+				</span>
+				<div class="circle">
+					<input type="range" id='field-inter' value="4.5" step="0.1" min="0"
+						max="5" />
+				</div>
+			</div>
+		</div>
+		<div class="check_btn" style="margin-top: 2%;">
+			<img id="no" src="img/submit.png"
+				style="float: left; margin-left: 31%;">
+		</div>
+	</div>
+	  <!--中间标题-->
+    <img src="img/title.png" class="mid_title">
+    <!--底部轮播上榜人-->
+    <div class="foot_slideBtn">
+        <ul class="vmcarousel-centered-infitine vmc-centered">
+		    <li class="card-list"><img class="name_box" src="img/name-1.png"></li>
+		    <li class="card-list"><img class="name_box" src="img/name-2.png"></li>
+		    <li class="card-list"><img class="name_box" src="img/name-3.png"></li>
+		    <li class="card-list"><img class="name_box" src="img/name-4.png"></li>
+		    <li class="card-list"><img class="name_box" src="img/name-5.png"></li>
+		    <li class="card-list"><img class="name_box" src="img/name-6.png"></li>
+		    <li class="card-list"><img class="name_box" src="img/name-7.png"></li>
+		    <li class="card-list"><img class="name_box" src="img/name-8.png"></li>
+		    <li class="card-list"><img class="name_box" src="img/name9.png"></li>
+	    </ul>
+    </div>
+	<!--弹出窗口-->
+    <div class="warp_dialog warp_dialogQ">
+        <!--弹出窗口主体-->
+        <div class="dialogMain">
+            <div class="dialogContent">
+                <!--弹出窗口主要内容-->
+                <div class="dialogCenter" id="dialogCenter">
+                  <h4>活动暂未开始</h4>
+                  <h6></h6>
+                </div>
+                <!--弹出窗口四个角-->
+                <div class="corner cornerTL"></div>
+                <div class="corner cornerTR"></div>
+                <div class="corner cornerBL"></div>
+                <div class="corner cornerBR"></div>
+            </div>
+            <!--弹出窗口底部-->
+            <div class="dialogFooter" id="dialogFooter">
+                <button id="cancel"><img src="img/pop_qx.png" alt="取消"></button>
+                <button id="submit"><img src="img/pop_qr.png" alt="确认"></button>    
+            </div>
+        </div>
+    </div>
+     <div class="warp_dialog warp_dialogL">
+    <!--弹出窗口主体-->
+    <div id="hide_window" class="hide_window">
+        <img class="congratulation animated" src="img/congratulation.png">
+        <div class="score-text animated">
+            <span class="coin-text-m">+</span>
+            <span id="coin-text">1.00</span>
+            <span class="coin-text-s">stc</span>
+        </div>
+         <audio style="display:none" id="musicBox" preload="metadata" autoplay="false"></audio>
+        <img class="coin animated" src="img/coin.png">
+        <img class="closebtn animated" src="img/closebtn.png"/>
+    </div>
+</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/mui.min.js"></script>
+	
+	<script type="text/javascript" src="js/jquery.vm-carousel.js"></script>
+	<script type="text/javascript">
+
+
+		var isLeader = false;
+		var t_img; // 定时器
+		var isLoad = true; // 控制变量
+		var submit_flag = true; //提交确认按钮开关
+
+		// 判断图片加载状况，加载完成后回调
+		isImgLoad(function() {
+			// 加载完成
+		});
+
+		// 判断图片加载的函数
+		function isImgLoad(callback) {
+			// 查找所有图，迭代处理
+			$('img').each(function() {
+				if($(this).hasClass("img_special")){
+					isLoad= true;
+					return true;
+				
+				/* 
+					// 找到为0就将isLoad设为false，并退出each
+						if (this.height === 0 && ) {
+							isLoad = false;
+							return false;
+						} */
+				} else {
+					if (this.height === 0) {
+						isLoad = false;
+						return false;
+					}
+					
+				}
+			});
+			// 为true，没有发现为0的。加载完毕
+			if (isLoad) {
+				clearTimeout(t_img); // 清除定时器
+				//			        console.log("加载完成");
+				//			        alert("加载完成");
+				$(document)
+						.ready(
+								function() {
+									$('.loading_box').hide();
+									$('.foot_slideBtn ul').onscroll=function(){
+									   //alert(2);
+									}
+									//下拉框尺寸
+									var screenlimit = $(document.body).outerWidth();
+									//alert(screenlimit);
+									if(screenlimit>=321){
+										//alert("大屏");
+										var downWidth = $(document.body).outerWidth(true)*0.96 +'px';
+										var downHeight = ($(document.body).outerWidth(true))*792/727 +'px';
+										var downHeight1 = ($(document.body).outerWidth(true))*-792/727 +'px';
+										var up_top = ($(document.body).outerWidth(true))*(-0.945) +'px';
+										var down_top = ($(document.body).outerWidth(true))*(0.055) +'px';
+									}else{
+										//alert("小屏");
+										var downWidth = $(document.body).outerWidth(true)*0.96 +'px';
+										var downHeight = ($(document.body).outerWidth(true))*695/727 +'px';
+										var downHeight1 = ($(document.body).outerWidth(true))*-695/727 +'px';
+										var up_top = ($(document.body).outerWidth(true))*(-0.85) +'px';
+										var down_top = ($(document.body).outerWidth(true))*(0.15) +'px';
+									}
+									
+									$('#s_down').css({"width":downWidth,"height":downHeight,"top":downHeight1})
+									$('#s_down').animate({"top":up_top})
+									//$('#s_down').animate({top:"down_top"});
+									//效果
+									$('.left_top').addClass(
+											'animated slideInDown');
+									//九大高手
+									$('.mid_title').addClass(
+											'animated fadeInUpBig');
+									$('.foot_slideBtn').addClass(
+											'animated slideInLeft');
+									
+									
+
+									$('.foot_slideBtn ul li').click(function(){
+										var that = this;
+										if($(this).hasClass('cur-li')){
+											$(this).removeClass('cur-li');
+											$('#s_down').animate({top:up_top},350);
+										
+										}else{
+											
+											$(this).addClass('cur-li').siblings().removeClass('cur-li');
+											$('#s_down').animate({top:up_top},350);
+											$('#s_down').animate({top:"0"},700);
+											setTimeout("$('.user_img3').addClass('animated zoomIn');",1000);
+											setTimeout("$('.user_img3').removeClass('animated zoomIn');",1000);
+										}
+									});
+									
+
+									//所言极是/不敢苟同
+									$('#no').click(function() {
+										if($("#no").hasClass("disable-btn")){
+							       		 	return false;
+							       	 	}
+										// var name = $("#commit_name").val();
+										// var nameList = getCurrentLecturerName()
+										// if (nameList.indexOf(name) == -1) {
+										// 	mui.toast("当前时段不能为该讲师投票");
+										// 	return;
+										// }
+										// var userVotes = getUserVotes();
+										// for (k in userVotes) {
+										// 	if (k === name) {
+										// 		return;
+										// 	}
+										// }
+										var msg = "确定提交吗？";
+							            openDailog();
+							            $(".confirm").attr("id", "scoreConfirm");
+							            $("#dialogCenter").html('' +
+							                ' <h4>确定提交吗？</h4>' +
+							                '<h6></h6>');
+
+							            $("#scoreConfirm").click(function () {
+							                dialogFooter();
+							                $(".productPage").addClass("completePage");
+							            })
+									})
+									//
+									$("#right_top").click(function() {
+											var url = 'score.html'
+											
+											window.location.href = url;
+									});
+									
+									var rangeList = document
+											.querySelectorAll('input[type="range"]');
+									var valueList = document
+											.querySelectorAll('input[type="text"]');
+									for (var i = 0, len = rangeList.length; i < len; i++) {
+										rangeList[i]
+												.addEventListener(
+														'input',
+														function() {});
+									}
+								});
+				// 回调函数
+				callback();
+				// 为false，因为找到了没有加载完成的图，将调用定时器递归
+			} else {
+				isLoad = true;
+				t_img = setTimeout(function() {
+					isImgLoad(callback); // 递归扫描
+				}, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+			}
+		}
+		function openDailogL() {
+            $(".warp_dialogL").removeClass("warp_dialog3");
+            $(".warp_dialogL").removeClass("warp_dialog4");
+            $(".warp_dialogL").addClass("warp_dialog1");
+            $(".dialogMain").removeClass("dialogMax");
+            setTimeout(function () {
+                $(".warp_dialogL").addClass("warp_dialog2");
+            }, 300);
+            show_window();
+        };
+ function lingguangalert(){
+   //弹出层尺寸
+       var alertHeight = ($(document.body).outerWidth(true))*656*0.87/666 +'px';
+       $('#hide_window').height(alertHeight);
+
+       //文字行高
+       var boxH = $('.score-text').outerHeight();
+       var lineH = boxH +'px';
+       $('.score-text span').css('line-height',lineH);
+       //关闭弹出层
+       $('.closebtn').click(function(){
+           dialogFooterL();
+       });
+   }
+     function dialogFooterL() {
+        $(".warp_dialogL").addClass("warp_dialog3");
+        setTimeout(function () {
+            $(".warp_dialogL").addClass("warp_dialog4");
+            $(".warp_dialogL").removeClass("warp_dialog2");
+            $(".warp_dialogL").removeClass("warp_dialog1");
+        }, 300);
+    };
+    function show_window(){
+            //文字行高
+       var boxH = $('.score-text').outerHeight();
+       var lineH = boxH +'px';
+       $('.score-text span').css('line-height',lineH);
+       //弹出层动画
+      $('.coin').addClass('flipInY');
+      $('.congratulation').addClass('slideInUp');
+      $('.score-text').addClass('fadeInUp');
+      document.getElementById('musicBox').src = ""; 
+      document.getElementById('musicBox').src = "img/5.mp3";  
+      document.getElementById('musicBox').play();
+      setTimeout(function(){
+	       $('.coin').removeClass('flipInY');
+	       $('.congratulation').removeClass('slideInUp');
+	       $('.score-text').removeClass('fadeInUp');
+      },1000);
+      setInterval(function(){
+       $('.coin').addClass('flipInY');
+       setTimeout(function(){
+        $('.coin').removeClass('flipInY');
+       },2900);
+      },3000)
+    }
+    $(".closebtn").click(function(){
+        dialogFooterL();
+    })
+		function openDailog() {
+	        $(".warp_dialogQ").removeClass("warp_dialog3");
+	        $(".warp_dialogQ").removeClass("warp_dialog4");
+	        $(".warp_dialogQ").addClass("warp_dialog1");
+
+	        $(".dialogMain").removeClass("dialogMax");
+	        setTimeout(function () {
+	            $(".warp_dialogQ").addClass("warp_dialog2");
+	        }, 300);
+	    };
+	    function dialogFooter() {
+	         $(".warp_dialogQ").addClass("warp_dialog3");
+	         setTimeout(function () {
+	             $(".warp_dialogQ").addClass("warp_dialog4");
+	             $(".warp_dialogQ").removeClass("warp_dialog2");
+	             $(".warp_dialogQ").removeClass("warp_dialog1");
+	         }, 300);
+	    };
+	    $("#cancel").click(function () {
+	        dialogFooter();
+	    });
+	    $("#submit").click(function () {
+	    	if(!submit_flag) {
+				return false;
+			}
+			submit_flag = false;
+        	commitVote();
+	    });
+	    
+		//投票
+		function commitVote() {
+			var data = {};
+			var detail = {};
+			var total = 0;
+			$('.score_value').each(function() {
+				var k = $(this).attr("id").replace("-input","");
+				var v = $(this).val()
+				detail[k] = v;
+				total += Number.parseFloat(v);
+			})
+			detail['total'] = Math.round(total * 100) / 100;
+			var id = $("#commit_id").val();
+			var name = $("#commit_name").val();
+			data['id'] = id;
+			data['name'] = name;
+			data['detailScore'] = JSON.stringify(detail);
+			data['totalScore'] = Math.round(total * 100) / 100;
+			mui.toast("提交成功");
+						//openDailogL();
+						$("#no").attr("src","img/submit-disabled.png");
+			// $.ajax({
+			// 	type : "post",
+			// 	url : "${ctx}/tech/castRaterVote",
+			// 	dataType : "json",
+			// 	data : data,
+			// 	success : function(data) {
+			// 		debugger;
+			// 		if (JSON.stringify(data) != "{}") {
+			// 			dialogFooter(); 
+			// 			var arry = $(".add_score .mui-input-range input[type=range]");
+			// 			for(var m = 0; m<arry.length;m++){
+			// 				$(arry[m]).attr("disabled","disabled");
+			// 			}
+			// 			$("#commit_vote").val(JSON.stringify(data));
+			// 			submit_flag = true;
+			// 			mui.toast("提交成功");
+			// 			//openDailogL();
+			// 			$("#no").attr("src","${ctx}/static/img/tech/submit-disabled.png");
+			// 			return 
+			// 		}
+			// 		mui.toast("提交失败")
+			// 	},
+			// 	error : function() {
+			// 		mui.toast("提交失败")
+			// 	}
+			// });
+			
+			
+		}
+		
+		//获取当前用户所有的投票
+		// function getUserVotes() {
+		// 	return JSON.parse($('#commit_vote').val());
+		// }
+		
+		// //获取可以打分的当前讲师
+		// function getCurrentLecturerName() {
+		// 	return JSON.parse($('#current_lecturer_name').val())
+		// }
+		
+		//全部还原4.5分
+		function revert() {
+			if(isLeader) {
+				$("#point_sum").text(18)
+				$('#field-range').val(4.5).attr("disabled", true)
+				$('#field-range-input').val(4.5)
+				$('#field-question').val(4.5).attr("disabled", true)
+				$('#field-question-input').val(4.5)
+				$('#field-answer').val(4.5).attr("disabled", true)
+				$('#field-answer-input').val(4.5)
+				$('#field-inter').val(4.5).attr("disabled", true)
+				$('#field-inter-input').val(4.5)
+				$("#no").attr("src","img/submit-disabled.png")
+					.addClass("disable-btn");
+				return;
+			}
+			
+			$("#point_sum").text(18)
+			$('#field-range').val(4.5).attr("disabled", false)
+			$('#field-range-input').val(4.5)
+			$('#field-question').val(4.5).attr("disabled", false)
+			$('#field-question-input').val(4.5)
+			$('#field-answer').val(4.5).attr("disabled", false)
+			$('#field-answer-input').val(4.5)
+			$('#field-inter').val(4.5).attr("disabled", false)
+			$('#field-inter-input').val(4.5)
+			$("#no").attr("src","img/submit.png");
+		}
+	</script>
+</body>
+</html>

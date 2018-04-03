@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+		<title>食安研究院</title>
+		<link rel="stylesheet" href="css/animate.css" />
+		<link rel="stylesheet" href="css/mystyle.css" />
+		<script src="js/modernizr.js"></script>
+	</head>
+	<body>
+		<div class="loading_box">
+			<div id="ajaxbar1">
+		    	<div id="block1" class="barlittle"></div>
+			    <div id="block2" class="barlittle"></div>
+			    <div id="block3" class="barlittle"></div>
+			    <div id="block4" class="barlittle"></div>
+			    <div id="block5" class="barlittle"></div>
+			</div>
+		</div>
+		<!--左上角-->
+		<div id="left_top" class="left_top">
+			<img src="img/left-top.png">
+		</div>
+		<!--右上角榜单-->
+		<div class="score_btn">
+			<img src="img/right-top1.png" class="score_btn1">
+			<img id="right_top" src="img/right-top2.png" class="right_top">
+		</div>
+		
+		<!--下拉模块-->
+		<div id="s_down" class="s_down">
+			<div class="user_img">
+				<img src="img/user.png">
+				<span><img src="img/big-name-1.png"></span>
+			</div>
+			<div class="check_btn">
+				<img id="no" src="img/no.png" style="float: left;">
+				<img id="yes" src="img/yes.png" style="float: right;margin-right: 6%;">
+			</div>
+		</div>
+		
+        
+        <!--中间标题-->
+        <img src="img/title.png" class="mid_title">
+        <!--底部轮播上榜人-->
+        <div class="foot_slideBtn">
+	        <ul class="vmcarousel-centered-infitine vmc-centered">
+			    <li class="card-list"><img class="name_box" src="img/name-1.png"></li>
+			    <li class="card-list"><img class="name_box" src="img/name-2.png"></li>
+			    <li class="card-list"><img class="name_box" src="img/name-3.png"></li>
+			    <li class="card-list"><img class="name_box" src="img/name-4.png"></li>
+			    <li class="card-list"><img class="name_box" src="img/name-5.png"></li>
+			    <li class="card-list"><img class="name_box" src="img/name-6.png"></li>
+			    <li class="card-list"><img class="name_box" src="img/name-7.png"></li>
+			    <li class="card-list"><img class="name_box" src="img/name-8.png"></li>
+			    <li class="card-list"><img class="name_box" src="img/name9.png"></li>
+		    </ul>
+	    </div>
+		
+		<!--<script type="text/javascript" src="js/jquery-1.7.2.min.js" ></script>-->
+		<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+        <!--<script src="js/device.js"></script>-->
+        <script src="js/jquery.vm-carousel.js"></script>
+			
+		<script type="text/javascript">
+			var t_img; // 定时器
+			var isLoad = true; // 控制变量
+			
+			// 判断图片加载状况，加载完成后回调
+			isImgLoad(function(){
+			    // 加载完成
+			});
+			
+			// 判断图片加载的函数
+			function isImgLoad(callback){
+			    // 查找所有图，迭代处理
+			    $('img').each(function(){
+			        // 找到为0就将isLoad设为false，并退出each
+			        if(this.height === 0){
+			            isLoad = false;
+			            return false;
+			        }
+			    });
+			    // 为true，没有发现为0的。加载完毕
+			    if(isLoad){
+			        clearTimeout(t_img); // 清除定时器
+//			        console.log("加载完成");
+//			        alert("加载完成");
+			        $(document).ready(function (){
+			        	$('.loading_box').hide();
+						//下拉框尺寸
+						var downWidth = $(document.body).outerWidth(true)*0.96 +'px';
+						var downHeight = ($(document.body).outerWidth(true))*695/727 +'px';
+						var downHeight1 = ($(document.body).outerWidth(true))*-695/727 +'px';
+						var up_top = ($(document.body).outerWidth(true))*(-0.85) +'px';
+						var down_top = ($(document.body).outerWidth(true))*(0.15) +'px';
+						
+						$('#s_down').css({"width":downWidth,"height":downHeight,"top":downHeight1})
+						$('#s_down').animate({"top":up_top})
+						//$('#s_down').animate({top:"down_top"});
+						//效果
+						$('.left_top').addClass('animated slideInDown');
+						//九大高手
+						$('.mid_title').addClass('animated fadeInUpBig');
+						$('.foot_slideBtn').addClass('animated slideInLeft');
+						//
+						
+						var clickNumber =0;
+						$('.foot_slideBtn ul li').click(function(){
+							
+							if(clickNumber %2==0){
+								$(this).css("background-image", "url(img/name-box-cur.png)").siblings().css("background-image", "url(img/name-box.png)");
+								$('#s_down').animate({top:"0"});
+								$('.user_img').addClass('animated zoomIn');
+								setTimeout("$('.user_img').removeClass('animated zoomIn');",1000);
+							}else{
+								$('#s_down').animate({top:up_top});
+								$(this).css("background-image", "url(img/name-box.png)").siblings().css("background-image", "url(img/name-box.png)");
+							}
+							clickNumber ++;
+						});
+						
+						//所言极是/不敢苟同
+						$('#no').click(function(){
+							var msg = "阁下真的认为不敢苟同吗？"; 
+							if (confirm(msg)==true){ 
+								$('#yes').fadeOut(0);
+								$(this).animate({marginLeft:"31%"});
+							}else{ 
+								return false; 
+							} 
+						})
+						$('#yes').click(function(){
+							var msg = "阁下真的认为所言极是？"; 
+							if (confirm(msg)==true){ 
+								$('#no').fadeOut(0);
+								$(this).animate({marginRight:"31%"});
+							}else{ 
+								return false; 
+							} 
+						})
+						//
+						$("#right_top").click(function(){
+						    window.location.href="score.html";  
+						});
+						
+						//判断iphoneX 暂时不需要
+//		        		var a = MobileDevice.getModels().join(' or ');
+//		        		//
+//			        	if(a=='iPhoneX'){
+//			        		//alert("是iPhone X");
+//			        		$('.foot_slideBtn').css('bottom','80px');
+//			        	}else if(a=='iPhone4'){
+//			        		//4s底部位置适当下移，给上部囤储空间
+//			        		$('.foot_slideBtn').css('bottom','5px');
+//			        	}else{
+//			        		//alert(2);
+//			        	}
+
+					//lunbo
+					$('.vmcarousel-centered-infitine').vmcarousel({
+						 centered: false,
+						 start_item: 0,
+						 autoplay: false,
+						 infinite: false
+					  });
+					}); 
+			        // 回调函数
+			        callback();
+			    // 为false，因为找到了没有加载完成的图，将调用定时器递归
+			    }else{
+			        isLoad = true;
+			        t_img = setTimeout(function(){
+			            isImgLoad(callback); // 递归扫描
+			        },500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+			    }
+			}
+			 
+		</script>
+	</body>
+</html>

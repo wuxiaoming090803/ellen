@@ -1,0 +1,852 @@
+html,
+body,
+div,
+ul,
+li,
+p,
+a,
+button,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: 微软雅黑;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+button {
+  outline: 0;
+  background: rgba(0, 0, 0, 0);
+  border: 0;
+}
+.warp {
+  width: 7.5rem;
+  margin: 0 auto;
+  height: 100%;
+  background: url(../images/bj.png) no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  overflow: hidden;
+}
+.header {
+  width: 100%;
+}
+.header .b1 {
+  width: 5rem;
+  height: 1.92rem;
+  position: absolute;
+  left: 50%;
+  top: 0.2rem;
+  transform: translate(-50%);
+}
+.header .b2 {
+  width: 0.58rem;
+  height: 1.17rem;
+  position: absolute;
+  right: 0.2rem;
+  top: 0.2rem;
+}
+.cloudRight {
+  width: 7.11rem;
+  height: 7.23rem;
+  position: absolute;
+  right: 0;
+  bottom: 3rem;
+  animation: cloudRight 12s alternate linear infinite;
+  transition: all 5s linear 0s;
+}
+.cloudRight img {
+  width: 7.11rem;
+  height: 7.23rem;
+}
+.mountain1 {
+  width: 7.5rem;
+  height: 2.72rem;
+  position: absolute;
+  bottom: 6rem;
+  left: 0;
+  z-index: 2;
+}
+.mountain1 .t1 {
+  width: 7.5rem;
+  height: 2.58rem;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  animation: mountain1 15s alternate linear infinite;
+  transition: all 5s linear 0s;
+}
+.mountain3 {
+  position: absolute;
+  bottom: 9rem;
+  right: 0;
+}
+.mountain3 .t2 {
+  width: 4.05rem;
+  height: 1.72rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  animation: mountain1-1 15s alternate linear infinite;
+  transition: all 5s linear 0s;
+}
+.mountain1 img {
+  width: 7.5rem;
+  height: 2.72rem;
+}
+.cloudLeft {
+  width: 10rem;
+  height: 8.04rem;
+  position: absolute;
+  bottom: 0.6rem;
+  left: 0;
+}
+.cloudLeft img {
+  width: 10rem;
+  height: 8.04rem;
+  position: absolute;
+  left: 0;
+  animation: cloudLeft 11s alternate linear infinite;
+  transition: all 5s linear 0s;
+}
+.mountain2 {
+  width: 6.91rem;
+  height: 2.8rem;
+  position: absolute;
+  bottom: 4.8rem;
+  right: 0;
+  z-index: 3;
+}
+.mountain2 > img {
+  width: 6.91rem;
+  height: 2.8rem;
+  animation: mountain2 12s alternate linear infinite;
+  transition: all 5s linear 0s;
+}
+.t3 {
+  width: 3.41rem;
+  height: 2.91rem;
+  position: absolute;
+  bottom: 4.8rem;
+  right: 0.6rem;
+  z-index: 5;
+}
+.t3 > img {
+  width: 3.41rem;
+  height: 2.91rem;
+  animation: delivery 0.5s alternate infinite 0.6s;
+}
+.t4 img {
+  width: 6.37rem;
+  height: 2.8rem;
+}
+.t4 {
+  width: 6.37rem;
+  height: 2.8rem;
+  position: absolute;
+  bottom: 3.6rem;
+  right: 0;
+  z-index: 4;
+}
+.delivery img {
+  width: 6.37rem;
+  height: 4.41rem;
+}
+.Inn {
+  width: 7.5rem;
+  height: 4.99rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.Inn img {
+  width: 7.5rem;
+  height: 4.99rem;
+}
+.horse {
+  width: 3.16rem;
+  height: 2.53rem;
+  position: absolute;
+  left: 0.6rem;
+  bottom: 0.85rem;
+}
+.horseRotate {
+  transform: rotateY(180deg);
+}
+.horse img {
+  width: 3.16rem;
+  height: 2.53rem;
+}
+.footer {
+  height: 1.7rem;
+  position: absolute;
+  right: 0.2rem;
+  bottom: 0.5rem;
+}
+.footer button {
+  display: inline-block;
+  margin-right: 0.2rem;
+  position: relative;
+}
+.footer button img {
+  display: block;
+}
+.footer .y1 {
+  width: 1.11rem;
+  height: 1.11rem;
+  animation: y1 0.8s forwards;
+}
+.footer .y3 {
+  width: 1.11rem;
+  height: 1.11rem;
+  animation: y3 0.8s forwards;
+}
+.footer .y2 {
+  width: 1.11rem;
+  height: 0.5rem;
+  opacity: 0;
+  animation: y2 1s forwards 0.5s;
+}
+.footer .y4 {
+  width: 1.11rem;
+  height: 0.5rem;
+  opacity: 0;
+  animation: y4 1s forwards 0.5s;
+}
+.buttons {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.buttons ul {
+  width: 100%;
+  height: 75%;
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+}
+.li1,
+.li2,
+.li3,
+.li4 {
+  width: 0.6rem;
+  height: 1.84rem;
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
+}
+.li1 a,
+.li2 a,
+.li3 a,
+.li4 a {
+  width: 0.6rem;
+  height: 1.84rem;
+  display: block;
+  position: relative;
+}
+.li1 a i,
+.li2 a i,
+.li3 a i,
+.li4 a i {
+  width: 0.22rem;
+  height: 0.22rem;
+  display: block;
+  background: url(../images/a8.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 0;
+  right: -0.1rem;
+}
+.li1 a img,
+.li2 a img,
+.li3 a img,
+.li4 a img {
+  width: 100%;
+  height: 100%;
+}
+.li1 {
+  left: 1.7rem;
+  top: -1.84rem;
+  animation: li1 1s forwards 1s;
+}
+.li2 {
+  left: 45%;
+  transform: translate(-50%);
+  top: -1.84rem;
+  animation: li2 1s forwards 1s;
+}
+.li3 {
+  left: 1.9rem;
+  top: -1.84rem;
+  animation: li3 1s forwards 1s;
+}
+.li4 {
+  right: 2.58rem;
+  top: -1.84rem;
+  animation: li4 1s forwards 1s;
+}
+@keyframes cloudLeft {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-50%);
+  }
+}
+@keyframes cloudRight {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(30%);
+  }
+}
+@keyframes mountain1 {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-5%);
+  }
+}
+@keyframes mountain1-1 {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(5%);
+  }
+}
+@keyframes mountain2 {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(5%);
+  }
+}
+@keyframes delivery {
+  0% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes li1 {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(1.8rem);
+  }
+}
+@keyframes li3 {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(1.2rem);
+  }
+}
+@keyframes li4 {
+  0% {
+    opacity: 0;
+    transform: translateY(-1.8rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-0.3rem);
+  }
+}
+@keyframes li2 {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(2.1rem);
+  }
+}
+@keyframes y1 {
+  0% {
+    transform: rotate(-360deg) scale(0.1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+@keyframes y3 {
+  0% {
+    transform: rotate(-360deg) scale(0.1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+@keyframes y2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes y4 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.warp_dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 100;
+}
+.warp_dialog1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.warp_dialog2 {
+  animation: warp_dialog2 0.2s forwards 0.1s;
+}
+.warp_dialog4 {
+  animation: warp_dialog4 0.2s forwards 0.1s;
+}
+.warp_dialog1 .dialogMain {
+  animation: warp_dialog1 0.2s forwards;
+}
+.warp_dialog3 .dialogMain {
+  animation: warp_dialog3 0.2s forwards;
+}
+@keyframes warp_dialog1 {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes warp_dialog2 {
+  0% {
+    background: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+@keyframes warp_dialog3 {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+@keyframes warp_dialog4 {
+  0% {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+.dialogMain {
+  opacity: 0;
+  width: 90%;
+  min-height: 6rem;
+  max-height: 90%;
+  display: inline-block;
+  margin-top: -1.46rem;
+}
+.dialogContent {
+  border: 0.02rem solid #362319;
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  padding: 0.4rem 0.2rem 1.2rem;
+  box-sizing: border-box;
+  position: absolute;
+}
+.dialogContent:after {
+  content: "";
+  width: 1.67rem;
+  height: 0.88rem;
+  display: block;
+  background: url(../images/popbg.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  bottom: 0.2rem;
+  right: 0.3rem;
+}
+.dialogCenter {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+.corner {
+  width: 0.3rem;
+  height: 0.3rem;
+  background: url(../images/popj.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+}
+.cornerTL {
+  left: -0.07rem;
+  top: -0.07rem;
+}
+.cornerTR {
+  right: -0.07rem;
+  top: -0.07rem;
+}
+.cornerBL {
+  left: -0.07rem;
+  bottom: -0.07rem;
+}
+.cornerBR {
+  right: -0.07rem;
+  bottom: -0.07rem;
+}
+.dialogTitle {
+  width: 86%;
+  height: 0.61rem;
+  line-height: 0.61rem;
+  background: url(../images/pop_header.png) no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  font-size: 0.36rem;
+  color: #fff;
+  position: absolute;
+  top: -0.3rem;
+  left: 50%;
+  transform: translate(-50%);
+}
+.dialogFooter {
+  width: 1.32rem;
+  height: 1.32rem;
+  position: absolute;
+  left: 50%;
+  bottom: -0.66rem;
+  transform: translate(-50%);
+}
+.dialogFooter .close1 {
+  width: 1.32rem;
+  height: 1.32rem;
+}
+.dialogFooter .close2 {
+  width: 1.32rem;
+  height: 1.46rem;
+  position: absolute;
+  left: 0;
+  top: 1.32rem;
+}
+.dialogHeader h4 {
+  height: 1rem;
+  font-size: 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dialogHeader h5 {
+  text-align: center;
+  font-size: 0.35rem;
+}
+.dialogHeader h4 span {
+  display: inline-block;
+  position: relative;
+  font-weight: 400;
+  margin: 0 0.1rem;
+}
+.dialogHeader .h4Main:after {
+  content: "";
+  width: 0.55rem;
+  height: 0.42rem;
+  display: block;
+  position: absolute;
+  bottom: -0.05rem;
+  right: -0.6rem;
+  background: url(../images/cloud.png) no-repeat;
+  background-size: 100% 100%;
+}
+.dialogBot ul {
+  overflow: hidden;
+  margin: 0.3rem 0;
+}
+.dialogBot li {
+  width: 24.5%;
+  float: left;
+  padding: 0 0.1rem;
+  box-sizing: border-box;
+}
+.dialogBot li button {
+  color: #2a1b07;
+  font-size: 0.32rem;
+  font-weight: 400;
+}
+.dialogBot .selected button {
+  color: #ad0002;
+  font-weight: 700;
+}
+.dialogHeader .selected {
+  color: #ad0002;
+  font-weight: 700;
+  margin: 0;
+}
+.dialogBot li label {
+  width: 0.22rem;
+  height: 0.22rem;
+  display: inline-block;
+  margin: 0;
+  background: url(../images/normal.png) no-repeat;
+  background-size: 100% 100%;
+}
+.dialogBot .selected label {
+  background: url(../images/selected.png) no-repeat;
+  background-size: 100% 100%;
+}
+.dialogBot1 li {
+  line-height: 0.8;
+}
+.dialogBot2 li {
+  line-height: 3.5;
+}
+.dialogBot2 ul {
+  display: flex;
+  justify-content: center;
+}
+.dialogBot2 li button {
+  font-size: 0.35rem;
+}
+.dialogBotM li {
+  width: 100%;
+  margin-top: 0.55rem;
+}
+.dialogBotM button {
+  display: block;
+  width: 100%;
+  padding-bottom: 0.1rem;
+}
+.dialogBotM span:first-child {
+  text-align: left;
+  padding-left: 0.1rem;
+  box-sizing: border-box;
+}
+.dialogBotM span {
+  display: inline-block;
+  width: 50%;
+  float: left;
+}
+.dialogBotM .dialogBotMImg {
+  width: 0.4rem;
+  height: 0.4rem;
+  display: inline-block;
+  background: url(../images/dialogBotM.png) no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  margin-bottom: -0.1rem;
+  margin-right: 0.1rem;
+}
+.dialogBotY .topP {
+  font-size: 0.24rem;
+  color: #3e3a39;
+  margin: 0.1rem 0;
+}
+.dialogBotY .topP img {
+  width: 100%;
+}
+.dialogBotY .topP label {
+  font-weight: 700;
+}
+.dialogBotY h5 {
+  color: #ad0002;
+  font-size: 0.18rem;
+  margin-bottom: 0.1rem;
+}
+.dialogBotY .botP {
+  font-size: 0.24rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+.wrap_body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #fbeaae;
+}
+.wrapper {
+  width: 5rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrapper .load-bar {
+  width: 100%;
+  height: 0.25rem;
+  border-radius: 0.3rem;
+  background: #dcdbd7;
+  position: relative;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+.wrapper #counter {
+  position: absolute;
+  background: #eeeff3;
+  background: linear-gradient(#eeeff3, #cbcbd3);
+  background: -moz-linear-gradient(#eeeff3, #cbcbd3);
+  background: -webkit-linear-gradient(#eeeff3, #cbcbd3);
+  background: -o-linear-gradient(#eeeff3, #cbcbd3);
+  padding: 0.05rem 0.1rem;
+  border-radius: 0.4em;
+  box-shadow: inset 0 1px 0 #ffffff, 0 2px 4px 1px rgba(0, 0, 0, 0.2), 0 1px 3px 1px rgba(0, 0, 0, 0.1);
+  left: -0.25rem;
+  top: -0.5rem;
+  font-size: 0.12rem;
+  font-weight: bold;
+  width: 0.44rem;
+  animation: counter 5s forwards;
+  -moz-animation: counter 5s forwards;
+  -webkit-animation: counter 5s forwards;
+  -o-animation: counter 5s forwards;
+}
+.wrapper #counter:after {
+  content: "";
+  position: absolute;
+  width: 0.08rem;
+  height: 0.08rem;
+  background: #cbcbd3;
+  transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  left: 50%;
+  margin-left: -0.04rem;
+  bottom: -0.04rem;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2), 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 3px 0;
+}
+@keyframes loader {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@-moz-keyframes loader {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@-webkit-keyframes loader {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@-o-keyframes loader {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes counter {
+  from {
+    left: -0.25rem;
+  }
+  to {
+    left: 4.73rem;
+  }
+}
+@-moz-keyframes counter {
+  from {
+    left: -0.25rem;
+  }
+  to {
+    left: 4.73rem;
+  }
+}
+@-webkit-keyframes counter {
+  from {
+    left: -0.25rem;
+  }
+  to {
+    left: 4.73rem;
+  }
+}
+@-o-keyframes counter {
+  from {
+    left: -0.25rem;
+  }
+  to {
+    left: 4.73rem;
+  }
+}
+@keyframes loader {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+.load-bar-inner {
+  height: 99%;
+  width: 0%;
+  border-radius: inherit;
+  position: relative;
+  background: linear-gradient(#B22222, #800000);
+  background: -moz-linear-gradient(#B22222, #800000);
+  background: -webkit-linear-gradient(#B22222, #800000);
+  background: -o-linear-gradient(#B22222, #800000);
+  animation: loader 5s forwards;
+}
+.dialogMax {
+  height: 70%;
+}
+.dialogD h5 {
+  text-align: left;
+  margin: 0.3rem 0 !important;
+}
+.dialogD h6 {
+  font-size: 0.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+.dialogD h6 label {
+  font-weight: 700;
+}
+.dialogD img {
+  width: 100%;
+}

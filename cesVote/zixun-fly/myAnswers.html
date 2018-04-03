@@ -1,0 +1,303 @@
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>我的得分</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link href="css/flyQuestion.css" rel="stylesheet"/>
+    <style>
+        .scoreList {
+            padding-left: 0.47rem;
+            padding-right: 0.21rem;
+            min-width: 300px;
+        }
+
+        .scoreList .totalScore {
+            text-align: right;
+            color: #9f6c30;
+            padding-right: 0.65rem;
+            height: 1.06rem;
+            line-height: 1.56rem;
+        }
+
+        .scoreList .totalScore > span {
+            font-size: 0.3rem;
+        }
+
+        .scoreList .totalScore span span {
+            font-size: 0.38rem;
+        }
+
+        .scoreList .listDetails {
+            min-height: 400px;
+          /*   overflow-y: auto; */   
+               }
+@media only screen and (max-width:320px){
+ .scoreList .listDetails {
+            overflow-y: auto;
+       
+               }
+}
+        .scoreList .listDetails ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        .scoreList .listDetails ul li {
+            /* text-align: right; */
+            float: left;
+            width: 6.8rem;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            padding-right: 0.7rem;
+            padding-left: 0.83rem;
+            margin-top: -0.13rem;
+            list-style: none;
+            white-space: nowrap;
+        }
+
+        .scoreList .listDetails ul li:first-child {
+            height: 0.7rem;
+            line-height: 1rem;
+            line-height: 0.6rem;
+            margin-top: 0px;
+        }
+
+        .scoreList .listDetails ul li:nth-child(2) {
+            margin-top: 0rem;
+        }
+
+        .scoreList .listDetails ul li:first-child span {
+            width: 0.46rem;
+            height: 0.7rem;
+            color: #d17f23;
+            font-size: 0.3rem;
+            line-height: 0.7rem;
+            text-align: center;
+        }
+
+        .scoreList .listDetails ul li span:first-child {
+            width: 1.02rem;
+        }
+
+        /* .scoreList .listDetails ul li:first-child span:first-child{
+            float: none;
+            line-height: 0.6rem;
+        } */
+        .scoreList .listDetails ul li span {
+            display: inline-block;
+            /* height: 1.13rem; */
+            line-height: 1.7rem;
+            width: 0.46rem;
+            text-align: center;
+        }
+
+        .scoreList .listDetails ul li span img {
+            width: 0.46rem;
+            height: 0.7rem;
+        }
+
+        .scoreList .listDetails ul li span.wrongFlower img {
+            width: 0.28rem;
+            height: 0.5rem;
+            margin-bottom: 0.16rem;
+        }
+
+        .scoreList .listDetails ul li span:first-child {
+            float: left;
+            line-height: 1.25rem;
+        }
+
+        .scoreList .listDetails ul li span:first-child img {
+            width: 1.02rem;
+            height: 0.35rem;
+        }
+
+        .scoreList .listDetails ul > li {
+            background: url(img/score_bg.png) no-repeat 0 0;
+            background-size: 100% 100%;
+        }
+
+        .scoreList .listDetails ul > li:first-child {
+            background: none;
+        }
+    </style>
+</head>
+<body>
+<div class="loading_box">
+    <div id="ajaxbar1">
+        <div id="block1" class="barlittle"></div>
+        <div id="block2" class="barlittle"></div>
+        <div id="block3" class="barlittle"></div>
+        <div id="block4" class="barlittle"></div>
+        <div id="block5" class="barlittle"></div>
+    </div>
+</div>
+<div class="wrap"></div>
+<div class="mainContent1" id="mainContent">
+    <div class="back-latern clickFocus" id="back-latern">
+        <img src="img/lanternLf.png" class="back-laternf"/>
+        <img src="img/lanternLf.png" class="back-laternf animateCls"/>
+        <a href="javascript:history.back(-1)" class="arrow" id="backArrow"></a>
+    </div>
+    <div class="productHeader">
+        <img src="img/items-title.png" alt="">
+    </div>
+    <div class="scoreList" id="scoreList">
+        <div class="totalScore">
+            <span>共答对&nbsp;&nbsp;<span>(&nbsp;<span id="myRightNum"></span>&nbsp;)</span>&nbsp;&nbsp;道题</span>
+        </div>
+        <div class="listDetails" id="listDetails">
+            <ul>
+                <li>
+                    <span></span>
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                    <span>6</span>
+                    <span>7</span>
+                    <span>8</span>
+                </li>
+                <li class="scroe_1">
+                            <span><img src="img/score_1.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="wrongFlower"><img src="img/wrongFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                        </li>
+                        <li class="scroe_2">
+                            <span><img src="img/score_2.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="wrongFlower"><img src="img/wrongFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                        </li>
+                        <li class="scroe_3">
+                            <span><img src="img/score_3.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="wrongFlower"><img src="img/wrongFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                        </li>
+                        <li class="scroe_4">
+                             <span><img src="img/score_4.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="wrongFlower"><img src="img/wrongFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                        </li>
+                        <li class="scroe_5">
+                             <span><img src="img/score_5.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="wrongFlower"><img src="img/wrongFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                        </li>
+                        <li class="scroe_6">
+                            <span><img src="img/score_6.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="wrongFlower"><img src="img/wrongFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                        </li>
+                        <li class="scroe_7">
+                             <span><img src="img/score_7.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="wrongFlower"><img src="img/wrongFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                            <span class="bingo"><img src="img/rightFlower.png" alt=""></span>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<script src="js/mui.min.js"></script>
+<script src="js/jquery.js"></script>
+<script type="text/javascript">
+    var rightNum = '10';
+    var t_img; // 定时器
+    var isLoad = true; // 控制变量
+
+    // 判断图片加载状况，加载完成后回调
+    isImgLoad(function () {
+        // 加载完成
+    });
+
+    // 判断图片加载的函数
+    function isImgLoad(callback) {
+        // 查找所有图，迭代处理
+        $('img').each(function () {
+            // 找到为0就将isLoad设为false，并退出each
+            if (this.height === 0) {
+                isLoad = false;
+                return false;
+            }
+        });
+
+        // 为true，没有发现为0的。加载完毕
+        if (isLoad) {
+            clearTimeout(t_img); // 清除定时器
+//                  console.log("加载完成");
+//                  alert("加载完成");
+            $(document).ready(function () {
+
+                $('.loading_box').hide();
+                document.getElementById("myRightNum").innerHTML = rightNum;
+                document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+                var minWidth = document.documentElement.clientWidth;
+                if (minWidth < 350) {
+                    document.getElementById("listDetails").style.height = '400px';
+                }
+
+            })
+            // 回调函数
+            callback();
+            // 为false，因为找到了没有加载完成的图，将调用定时器递归
+        } else {
+            isLoad = true;
+            t_img = setTimeout(function () {
+                isImgLoad(callback); // 递归扫描
+            }, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+        }
+    }
+</script>
+</body>
+
+</html>

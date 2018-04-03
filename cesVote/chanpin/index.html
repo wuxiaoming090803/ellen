@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper-4.1.6.min.css">
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+</head>
+<style>
+	.scoreProgress .mui-input-row.mui-input-range{
+			overflow: visible;
+		    width: 6.6rem;
+		    padding: 0;
+		    margin: 0 auto;
+		    z-index: 100;
+		}
+		.scoreProgress .mui-input-row.mui-input-range:nth-child(1){
+			margin-top:0.37rem;
+		}
+		.scoreProgress .mui-input-row.mui-input-range span{
+			margin-left: 0.3rem;
+		}
+		.scoreProgress .mui-input-row.mui-input-range .circle{
+			margin-top:-0.2rem;
+			height: 0.49rem;
+		}
+		.scoreProgress .mui-input-row label{
+			font-family: 'Helvetica Neue',Helvetica,sans-serif;
+			line-height: 0;
+		    float: none; 
+		    padding: 0;
+    			font-size: 0.32rem;
+		}
+		.scoreProgress .mui-input-row label~input{
+			    width: 1rem;
+			    float: none;
+			    margin-bottom: 0;
+			    padding: 0;
+			    border: 0;
+			    font-size: 0.32rem;
+			    margin-left: 0;
+			    height: 0.6rem;
+			    line-height: 0.6rem;
+		}
+		.scoreProgress .mui-input-range input[type=range]{
+		        margin: 0;
+		    		padding: 0;
+			    height: 0.02rem;
+			    background-color: #f3c55d;
+		}
+		
+		.scoreProgress input[type=range]::-webkit-slider-thumb {
+	       -webkit-appearance: none;
+	       height: 20px;
+	       width: 20px;
+	       margin-top: -0.06rem; /*使滑块超出轨道部分的偏移量相等*/
+	       background: #d9270b; 
+	   }
+	   .mui-tooltip{
+	   	display: none!important;
+	   }
+</style>
+<body>
+<!--产品大赛-->
+<div class="productPage productPage1">
+    <!--头部标题-->
+    <div class="productHeader">
+        <img src="./images/homeTitle.png" alt="">
+    </div>
+    <!--lantern-->
+    <div class="lantern">
+        <div class="lanternLf">
+            <img src="images/lanternLf.png" alt="">
+            <img src="images/lanternLf.png" alt="">
+            <span class="arrow"></span>
+        </div>
+        <div class="lanternRh">
+            <img src="images/lanternRh.png" alt="">
+            <img src="images/lanternRh.png" alt="">
+        </div>
+    </div>
+    <!--第二组评分-->
+    <div class="scoreMain">
+        <div class="scoreTitle">
+            <h5>第一组评分</h5>
+            <h4><span class="scoreB" id="point_sum0">8.3</span> <span class="scoreS">分</span></h4>
+        </div>
+    </div>
+    <!--结果-->
+    <div class="resultPage">
+        <h5>选出三组您认可的</h5>
+        <h4>改进思路</h4>
+    </div>
+    <!--进度-->
+    <div class="scoreProgress swiper-no-swiping">
+        <!--<img src="images/progress.png" alt="">-->
+        <div class="swiper-container" id="swiper-container2" style="width:100%;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide active-nav first">
+	                <div class="mui-input-row mui-input-range field-contain ">
+			            <span >
+			                <label >第一项评分:</label>
+			                <input type="text" id='field-range-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-range' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第二项评分:</label>
+			                <input type="text" id='field-question-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-question' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第三项评分:</label>
+			                <input type="text" id='field-answer-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-answer' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第四项评分:</label>
+			                <input type="text" id='field-inter-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-inter' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第五项评分:</label>
+			                <input type="text" id='field-num-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-num' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+                </div>
+                <div class="swiper-slide second">
+                        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第一项评分:</label>
+			                <input type="text" id='field-range2-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-range2' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第二项评分:</label>
+			                <input type="text" id='field-question2-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-question2' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第三项评分:</label>
+			                <input type="text" id='field-answer2-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-answer2' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第四项评分:</label>
+			                <input type="text" id='field-inter2-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-inter2' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第五项评分:</label>
+			                <input type="text" id='field-num2-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-num2' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+                </div>
+                <div class="swiper-slide third">
+                        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第一项评分:</label>
+			                <input type="text" id='field-range3-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-range3' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第二项评分:</label>
+			                <input type="text" id='field-question3-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-question3' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第三项评分:</label>
+			                <input type="text" id='field-answer3-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-answer3' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第四项评分:</label>
+			                <input type="text" id='field-inter3-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-inter3' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第五项评分:</label>
+			                <input type="text" id='field-num3-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-num3' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+                </div>
+                <div class="swiper-slide four">
+                        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第一项评分:</label>
+			                <input type="text" id='field-range4-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-range4' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第二项评分:</label>
+			                <input type="text" id='field-question4-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-question4' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第三项评分:</label>
+			                <input type="text" id='field-answer4-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-answer4' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第四项评分:</label>
+			                <input type="text" id='field-inter4-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-inter4' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第五项评分:</label>
+			                <input type="text" id='field-num4-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-num4' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+                </div>
+                <div class="swiper-slide five">
+                       <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第一项评分:</label>
+			                <input type="text" id='field-range5-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-range5' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第二项评分:</label>
+			                <input type="text" id='field-question5-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-question5' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第三项评分:</label>
+			                <input type="text" id='field-answer5-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-answer5' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第四项评分:</label>
+			                <input type="text" id='field-inter5-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-inter5' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第五项评分:</label>
+			                <input type="text" id='field-num5-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-num5' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+                </div>
+                <div class="swiper-slide six">
+                       <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第一项评分:</label>
+			                <input type="text" id='field-range6-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-range6' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第二项评分:</label>
+			                <input type="text" id='field-question6-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-question6' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第三项评分:</label>
+			                <input type="text" id='field-answer6-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-answer6' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第四项评分:</label>
+			                <input type="text" id='field-inter6-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-inter6' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+			        <div class="mui-input-row mui-input-range field-contain">
+			            <span >
+			                <label >第五项评分:</label>
+			                <input type="text" id='field-num6-input' value='1.5'>
+			            </span>
+			            <div class="circle">
+			                <input type="range" id='field-num6' value="1.5" step="0.1" min="0" max="2" />
+			            </div>
+			        </div> 
+                </div>
+            </div>
+        </div>
+
+        <button class="submit"></button>
+    </div>
+    <!--说明-->
+    <div class="productExplain">
+        <img src="./images/homeTxt.png" alt="">
+    </div>
+    <!--人物-->
+    <div class="productCharacter">
+        <div class="productUl">
+            <div class="swiper-container swiperLi" id="">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide character1 productLi">
+                        <img src="images/character1.png" alt="" class="character">
+                    </div>
+                    <div class="swiper-slide character2 productLi">
+                        
+                        <img src="images/character2.png" alt="" class="character">
+                         
+                    </div>
+                    <div class="swiper-slide character3 productLi">
+                       
+                        <img src="images/character3.png" alt="" class="character">
+                        
+                    </div>
+                    <div class="swiper-slide character4 productLi">
+                      
+                        <img src="images/character4.png" alt="" class="character">
+                         
+                    </div>
+                    <div class="swiper-slide character5 productLi">     
+                        <img src="images/character5.png" alt="" class="character">               
+                    </div>
+                    <div class="swiper-slide character6 productLi">                  
+                        <img src="images/character6.png" alt="" class="character">
+                    </div>
+                </div>
+                <!-- 前后箭头 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+    <!--提交-->
+    <button class="submit submit1"></button>
+    <!--按钮-入口-->
+    <div class="productBut">
+        <div class="swiper-container" id="productBut">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide " id="score">
+                    <div class="productMain">
+                        <span class="productContent">
+                            <div>
+                                <span class="productImg"><img src="images/butTxt.png" alt=""></span>
+                                <span class="productTime">2018年3月31日 下午</span>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="swiper-slide " id="checkBox">
+                    <div class="productMain productGary">
+                        <span class="productContent">
+                            <div>
+                                <span class="productImg"><img src="images/butTxt2.png" alt=""></span>
+                                <span class="productTime">2018年4月1日 下午</span>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- 前后箭头 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <!--弹出窗口html-->
+    <!--弹出窗口-->
+    <div class="warp_dialog">
+        <!--弹出窗口主体-->
+        <div class="dialogMain">
+            <div class="dialogContent">
+                <!--弹出窗口主要内容-->
+                <div class="dialogCenter" id="dialogCenter">
+                  <h4>是否提交</h4>
+                  <h6></h6>
+                </div>
+                <!--弹出窗口四个角-->
+                <div class="corner cornerTL"></div>
+                <div class="corner cornerTR"></div>
+                <div class="corner cornerBL"></div>
+                <div class="corner cornerBR"></div>
+            </div>
+            <!--弹出窗口底部-->
+            <div class="dialogFooter" id="dialogFooter">
+                <button id="cancel"><img src="images/pop_qx.png" alt="取消"></button>
+                <button><img src="images/pop_qr.png" alt="确认"></button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/swiper-4.1.6.min.js"></script>
+<script src="js/homePage.js"></script>
+<script src="js/mui.min.js"></script>
+</html>
