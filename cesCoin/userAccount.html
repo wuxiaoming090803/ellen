@@ -199,7 +199,7 @@
 			    text-align: left;
 			}
 			.coin-popup input{
-	             width: 1px;
+	             width: 100%;
 	             height: 1px;
 	             opacity: 0;
 	             border: 0;
@@ -287,6 +287,7 @@
 	             };
 			}
 			function openDialog(){
+				$('#password').focus();
 				var userName = $(".user-name").html();
 				$(".user-name-info").html(userName);
 				$(".pay-coin").html($("#coin").val());
@@ -300,9 +301,7 @@
 				$(".coin-popup").addClass("coin-popup-in");
 				$(".coin-popup").css("display","block");
 				$(".coin-popup-backdrop").addClass("coin-active");	
-				setTimeout(function(){
-					$('#password').focus();
-				},0)
+				
 			}
 			//密码框输入事件
 	         $('.coin-popup-inner input').on('input', function(e) {
