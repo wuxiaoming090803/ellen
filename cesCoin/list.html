@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<title>通讯录</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<header class="fixed">
+		<div class="header">
+			通讯录
+		</div>
+	</header>
+
+	<div id="letter" ></div>
+	<div class="sort_box">
+		<!--<div class="sort_list">
+			<div class="num_name" data-phone="12346780098">张三</div>
+		</div>
+		<div class="sort_list">
+			<div class="num_name">李四</div>
+		</div>
+		<div class="sort_list">
+			<div class="num_name">王五</div>
+		</div>
+		<div class="sort_list">
+			<div class="num_name">刘六</div>
+		</div>
+		<div class="sort_list">
+			<div class="num_name">马七</div>
+		</div>
+		<div class="sort_list">
+			<div class="num_name">黄八</div>
+		</div>
+		<div class="sort_list">
+			<div class="num_name">莫九</div>
+		</div>
+		<div class="sort_list">
+			
+			<div class="num_name">陈十</div>
+		</div>
+		<div class="sort_list">
+			<div class="num_name">a九</div>
+		</div>
+		<div class="sort_list">
+			<div class="num_name">1十</div>
+		</div>-->
+	</div>
+	<div class="initials">
+		<ul>
+			<li><img src="images/068.png"></li>
+		</ul>
+	</div>
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.charfirst.pinyin.js"></script>
+	<script type="text/javascript" src="js/sort.js"></script>
+	<script>
+		var data = [
+			{"name":"a三","phone":"13467890076"},
+			{"name":"张三","phone":"13467890076"},
+			{"name":"李四","phone":"13467890076"},
+			{"name":"Jhon","phone":"13467890076"},
+			{"name":"黄八","phone":"13467890076"},
+			{"name":"马琪","phone":"13467890076"},
+			{"name":"陈十","phone":"13467890076"},
+			{"name":"莫九","phone":"13467890076"},
+			{"name":"六一一","phone":"13467890076"},
+			{"name":"北京","phone":"13467890076"},
+			
+		];
+		listHtml(data);
+		function listHtml(data){
+			var htmlArry = [];
+			for(var i = 0; i<data.length;i++){
+				htmlArry.push('<div class="sort_list"><div class="num_name" data-phone="'+data[i].phone+'">'+data[i].name+'</div></div>');
+			}
+			htmlArry.join("");
+			$(".sort_box").html(htmlArry);
+		}
+	</script>
+</body>
+</html>

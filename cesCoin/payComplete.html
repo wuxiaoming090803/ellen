@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/reset.css" rel="stylesheet"/>
+		<script type="text/javascript">
+        		document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+   		</script>
+   		<style>
+   			html{
+	    			width: 100%;
+			    height: 100%;
+	    		}
+	    		body{
+	    			width: 100%;
+			    height: 100%;
+			    margin: 0px;
+			    padding: 0px;
+			   	background: #efeff5;
+			   	overflow: hidden;
+	    		}
+	    		.mui-content{
+	    			background-color: #f2f2f9;
+	    			overflow: hidden;
+	    			height: 100%;
+	    		}
+	    		.success-title{
+	    			text-align: center;
+    				padding: 0.6rem 0 0.4rem;
+	    		}
+	    		.success-title img{
+	    			width: 1.5rem;
+	    		}
+	    		.success-title p{
+	    			padding: 10px;
+			    font-size: .38rem;
+			    color: #007aff;
+	    		}
+	    		.success-box{
+	    			 text-align: center;
+   				 margin-top: 0.25rem;
+	    		}
+	    		.success-box p:nth-child(1){
+	    			    padding: 0.25rem;
+				    font-size: 0.38rem;
+				    color: #000;
+	    		}
+	    		.success-box p:nth-child(2){
+	    			    padding: 0.1rem;
+				    color: #000;
+				    font-size: 0.55rem;
+	    		}
+	    		.success-box .second{
+	    			font-size: 0.8rem;
+			    font-weight: bold;
+			    margin-right: 5px;
+	    		}
+	    		.mui-content button{
+			    width: 55%;
+			    padding: 9px 0;
+			    margin: 0.2rem auto 0.1rem;
+			    border-radius: 5px;
+			    position: absolute;
+			    left: 50%;
+			    transform: translateX(-50%);
+			    bottom: 1.8rem;
+			    background: transparent;
+			    color: #007aff;
+   			}
+	    	</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+		    <div class="success-title">
+		    		<img src="images/success1.png"/>
+		    		<p>支付成功</p>
+		    </div>
+		    <div class="success-box">
+		    		<p>向<span>张三</span>成功支付</p>
+		    		<p><span class="success-coin">2.00</span>stc</p>
+		    </div>
+		    <button type="button" id="complete" class="mui-btn mui-btn-blue mui-btn-block">完成</button>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			document.getElementById("complete").addEventListener("tap",function(){
+				window.location.href="index.html"
+			})
+		</script>
+	</body>
+
+</html>

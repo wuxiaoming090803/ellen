@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>我</title>
+    <link href="css/reset.css" rel="stylesheet"/>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+   	<script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+    <style>
+    		html{
+    			width: 100%;
+		    height: 100%;
+    		}
+    		body{
+    			width: 100%;
+		    height: 100%;
+		    margin: 0px;
+		    padding: 0px;
+		   	background: #efeff5;
+		   	overflow: hidden;
+    		}
+    		.mui-content{
+    			height: 100%;
+    			overflow: hidden;
+ 			background-color: #fff;
+    		}
+    		.wallet-title{
+    			padding: .55rem 0;
+    			background: #676f77;
+    		}
+    		.wallet-head-content{
+    			width: 2.2rem;
+    			margin: 0 auto;
+    		}
+    		.wallet-head-content img{
+    			width: 100%;
+    		}
+    		.wallet-head-content p{
+    			color: #fff;
+    			text-align: center;
+    			font-size: 0.4rem;
+    		}
+    		.wallet-head-content p:nth-child(3){
+    			margin-bottom: 0;
+    		}
+    		.unit{
+    			margin-left: 4px;
+    		}
+    		.wallet-section{
+    			height: .7rem;
+		    line-height: .7rem;
+		    text-align: left;
+		    font-size: .35rem;
+		    color: #6b6971;
+		    margin-top: .5em;
+		    margin-bottom: .4em;
+		    padding-left: 15px;
+		    padding-right: 15px;
+    		}
+    		.wallet-cells{
+    			background: #ffffff;
+    			position: relative;
+    			overflow: hidden;
+    			border-top: 1px solid #d9d9d9;
+   			border-bottom: 1px solid #d9d9d9;
+    		}
+    		.wallet-cells:after, .wallet-cells:before {
+		    content: " ";
+		    position: absolute;
+		    left: 0;
+		    top: 0;
+		    color: #d9d9d9;
+		}
+		.wallet-cells:before{
+			right: 0;
+		    height: 1px;
+		}
+		.wallet-cell{
+			padding: .3rem .1rem .3rem;
+			position: relative;
+		    float: left;
+		    width: 25%;
+		    box-sizing: border-box;
+		}
+		.wallet-cell:after, .wallet-cell:before {
+		    content: " ";
+		    position: absolute;
+		    right: 0;
+		    bottom: 0;
+		    color: #d9d9d9;
+		 }
+		 .wallet-cell:before{
+	 	    top: 0;
+			width: 1px;
+			border-right: 1px solid #d9d9d9;
+		 }
+		 .wallet-cell-icon {
+		    height: .45rem;
+		    margin-bottom: .28rem;
+		    width: .47rem;
+		   	margin: 0 auto;
+		}
+		.wallet-cell-icon img{
+			display: block;
+		    width: 100%;
+		    height: 100%;
+		}
+		.wallet-cell p{
+			text-align: center;
+			margin-top: 5px;
+			font-size: .3rem;
+    			color: #000000;
+    			margin-bottom: 0;
+		}
+		.wallet-barcode{
+		    /*width: 4rem;
+		    height: 4rem;
+		    margin: .5rem auto 0 auto;*/
+		      position: absolute;
+		    top: 8.3rem;
+		    left: 50%;
+		    bottom: 0.5rem;
+		    transform: translateX(-50%);
+		   /* width: 4.5rem;*/
+		}
+		.wallet-barcode img{
+			height: 100%;
+		}
+    </style>
+</head>
+<body>
+	<div class="mui-content">
+	    <div class="wallet-title">
+	    		<div class="wallet-head-content">
+	    			<img src="images/coin.png"/>
+	    			<p>灵光币</p>
+	    			<p>8888.99<span class="unit">stc</span></p>
+	    		</div>
+	    </div>
+	    <div class="wallet-section">财富交易</div>
+	    <div class="wallet-cells">
+	    		<a href="transerCoin.html" class="wallet-cell">
+	    			<div class="wallet-cell-icon">
+	    				<img src="images/wallet_icon_xyk.png"/>
+	    			</div>
+	    			<p>转账</p>
+	    		</a>
+	    		<a href="convertCoin.html" class="wallet-cell">
+	    			<div class="wallet-cell-icon">
+	    				<img src="images/wallet_icon_pcz.png"/>
+	    			</div>
+	    			<p>兑换</p>
+	    		</a>
+	    		<a href="bill.html" class="wallet-cell">
+	    			<div class="wallet-cell-icon">
+	    				<img src="images/wallet_icon_lct.png"/>
+	    			</div>
+	    			<p>账单</p>
+	    		</a>
+	    		<a href="#" class="wallet-cell">
+	    			<div class="wallet-cell-icon">
+	    				<img src="images/wallet_icon_gy.png"/>
+	    			</div>
+	    			<p>手气</p>
+	    		</a>
+	    </div>
+	    <div class="wallet-section">我的钱包</div>
+	    <div class="wallet-barcode">
+	    		<img src="images/hd.jpg"/>
+	    </div>
+	</div>
+ <script src="js/mui.min.js">
+ 	
+ </script>
+</body>
+</html>

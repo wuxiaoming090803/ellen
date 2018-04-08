@@ -1,0 +1,359 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>转账记录</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/reset.css" rel="stylesheet"/>
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<link href="font_extra/iconfont.css" rel="stylesheet"/>
+		<script type="text/javascript">
+        		document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+   		</script>
+   		<style>
+   			html{
+	    			width: 100%;
+			    height: 100%;
+	    		}
+	    		body{
+	    			width: 100%;
+			    height: 100%;
+			    margin: 0px;
+			    padding: 0px;
+			   	background: #efeff5;
+			   	overflow: hidden;
+	    		}
+	    		.mui-content{
+	    			background-color: #f2f2f9;
+	    			overflow: hidden;
+	    			height: 100%;
+	    		}
+	    		li{
+	    			list-style: none;
+	    		}
+	    		.mui-content>.mui-table-view:first-child{
+	    			margin-top: 0;
+	    		}
+	    		.mui-content ul .mui-table-view-cell{
+	    			padding: 17px 15px;
+	    			font-size: 0.35rem;
+	    		}
+	    		.current-balance{
+	    			float: right;
+	    		}
+	    		.mui-content>.mui-table-view.second{
+	    			margin-top: 5px;
+	    			height: 1rem;
+	    		}
+	    		.mui-content>.mui-table-view.second li{
+	    			padding: 15px 15px;
+	    		}
+	    		.select-time{
+	    			float: right;
+   				 margin-right: 8px;
+	    		}
+	    		.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+			.mui-pciker-list li{
+				font-size: 22px;
+			}
+			.second .mui-navigate-right:after, .mui-push-right:after{
+				    right: 0;
+    					content: '';
+			}
+			#arrow{
+				float: right;
+				font-size: 22px;
+				line-height: 15px;
+			}
+			.mui-content button{
+   				width: 95%;
+   				padding: 7px 0;
+   				margin: 0.25rem auto;
+   				border-radius: 5px;
+   				height: 0.9rem;
+   			}
+   			.first{
+   				height: 1rem;
+   			}
+   			
+   			.mui-scroll-wrapper{
+   				top: 3.3rem;
+   			}
+   			.mui-scroll ul .mui-table-view-cell{
+   				padding: 12px 15px;
+   			}
+   			.icon-shouru{
+   				font-size: 0.65rem;
+			    vertical-align: super;
+			    color: #1296db;
+			    margin-right: 8px;
+   			}
+   			.icon-zhichuqingkuang{
+   				font-size: 0.65rem;
+			    vertical-align: super;
+			    color: #d81e06;
+			    margin-right: 8px;
+   			}
+   			.bill-info{
+   				display: inline-block;
+   			}
+   			.bill-title{
+   				color: #000000;
+   			}
+   			.detail-info{
+   				font-size: 0.28rem;
+   				margin-top: 6px;
+   			}
+   			.bill-info.right{
+   				float: right;
+   				margin-right: 70px;		
+   				text-align: right;		
+   			}
+   			.danwei{
+   				margin-left: 4px;
+    				font-size: 0.34rem;
+   			}
+   			.deal-date{
+   				padding-bottom: 10px;
+   				padding-top: 6px;
+			    background-color: #f2f2f9;
+			    font-size: 0.32rem;
+			    padding-left: 8px;
+   			}
+   			.mui-navigate-right:after, .mui-push-right:after{
+   				right: 57px;
+   			}
+	    	</style>
+	</head>
+	
+	<body>
+		<div class="mui-content">
+		     <ul class="mui-table-view first">
+				 <li class="mui-table-view-cell">
+				 	<span>当前余额</span>
+				 	<span class="current-balance">
+				 		<span class="current-money">333.01</span>
+				 		<span>stc</span>
+				 	</span>
+				 </li>
+			</ul>
+			<ul class="mui-table-view second">
+				 <li class="mui-table-view-cell">
+					<a class="mui-navigate-down">
+						<span>快速查询</span>
+						<span class="mui-icon mui-icon-arrowdown" id="arrow"></span>
+						<span data-value="latest-month" class="select-time" id="select-btn">2018-04</span>
+						
+					</a>
+				</li>
+			</ul>
+			<button type="button" id="search" class="mui-btn mui-btn-blue mui-btn-block">查询</button>
+			<div id="pullrefresh" class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<!--数据列表-->
+					<ul class="mui-table-view mui-table-view-chevron" id="pullrefresh-box">
+						<!--<p class="deal-date">04/05</p>
+						<li class="mui-table-view-cell mui-media">
+							<a class="mui-navigate-right">
+								<span class="iconfont icon-shouru"></span>
+								<span class="bill-info">
+									<p class="bill-title">收入</p>
+									<p class="detail-info">交易日期</p>
+								</span>
+								<span class="bill-info right">
+									<p class="bill-title">
+										<span class="symbol">+</span>3.09<span class="danwei">stc</span>
+									</p>
+									<p class="detail-info bill-detail-time">2018-04-05</p>
+								</span>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a class="mui-navigate-right">
+								<span class="iconfont icon-zhichuqingkuang"></span>
+								<span class="bill-info">
+									<p class="bill-title">支出</p>
+									<p class="detail-info">交易日期</p>
+								</span>
+								<span class="bill-info right">
+									<p class="bill-title">
+										<span class="symbol">-</span>3.09<span class="danwei">stc</span>
+									</p>
+									<p class="detail-info bill-detail-time">2018-04-05</p>
+								</span>
+							</a>
+						</li>-->
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/mui.picker.js">	</script>
+		<script type="text/javascript" src="js/mui.poppicker.js">	</script>	
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				pullRefresh: {
+					container: '#pullrefresh',
+					down: {
+						style:'circle',
+						callback: pulldownRefresh
+					},
+					up: {
+						auto:true,
+						contentrefresh: '正在加载...',
+						callback: pullupRefresh
+					}
+				}
+			});
+			var userPicker = new mui.PopPicker();
+			userPicker.setData([{
+				value: '201801',
+				text: '2018-01'
+			}, {
+				value: '201802',
+				text: '2018-02'
+			}, {
+				value: '201803',
+				text: '2018-03'
+			}, {
+				value: '201804',
+				text: '2018-04'
+			}, {
+				value: '201805',
+				text: '2018-05'
+			}, {
+				value: '201806',
+				text: '2018-06'
+			}]);
+			document.getElementById("arrow").addEventListener("tap",function(){
+				if($(this).hasClass("mui-icon-arrowdown")){
+					$("#pullrefresh").hide();
+					$(this).removeClass("mui-icon-arrowdown").addClass("mui-icon-arrowright")
+				}else{
+					$("#pullrefresh").show();
+					$(this).removeClass("mui-icon-arrowright").addClass("mui-icon-arrowdown")
+				}
+			})
+			document.getElementById("search").addEventListener("tap",function(){
+				pullupRefresh();
+			})
+			var showUserPickerButton = document.getElementById('select-btn');
+			var userResult = document.getElementById('userResult');
+			showUserPickerButton.addEventListener('tap', function(event) {
+				userPicker.show(function(items) {
+					showUserPickerButton.innerText = items[0].text;
+				});
+			}, false);
+			
+			var dealData =[{
+				"2018-04-05":[{
+					status:"0",
+					number:"8.09",
+					date:"2018-04-05"
+				},{
+					status:"1",
+					number:"3.19",
+					date:"2018-04-05"
+				}]
+			},{
+				"2018-04-04":[{
+					status:"0",
+					number:"1.00",
+					date:"2018-04-04"
+				},{
+					status:"1",
+					number:"3.29",
+					date:"2018-04-04"
+				},{
+					status:"0",
+					number:"5.29",
+					date:"2018-04-04"
+				}]
+			},{
+				"2018-04-02":[{
+					status:"0",
+					number:"1.70",
+					date:"2018-04-02"
+				},{
+					status:"0",
+					number:"3.29",
+					date:"2018-04-02"
+				},{
+					status:"0",
+					number:"5.29",
+					date:"2018-04-02"
+				}]
+			}];
+			var count = 0
+			function pullupRefresh() {
+				setTimeout(function() {
+					$.each(dealData, function(index,item) {
+						//count++;
+						for(var j in item){
+							var html1 = [];
+							var dataContent = item[j];
+							var title = (j.slice(5)).replace('-','/');
+							html1.push('<p class="deal-date">'+title+'</p>');
+							$('#pullrefresh-box').append(html1.join(''));
+							for(var i = 0;i<dataContent.length;i++){
+								var html = [];
+								html.push('<li class="mui-table-view-cell mui-media"><a class="mui-navigate-right">');
+								if(dataContent[i].status == "0"){
+									html.push('<span class="iconfont icon-shouru"></span><span class="bill-info">');
+									html.push('<p class="bill-title">收入</p><p class="detail-info">交易日期</p></span>');
+									html.push('<span class="bill-info right">'+
+										'<p class="bill-title">'+
+										'<span class="symbol">+</span>'+dataContent[i].number+'<span class="danwei">stc</span>')
+								}else{
+									html.push('<span class="iconfont icon-zhichuqingkuang"></span><span class="bill-info">');
+									html.push('<p class="bill-title">支出</p><p class="detail-info">交易日期</p></span>');
+									html.push('<span class="bill-info right">'+
+										'<p class="bill-title">'+
+										'<span class="symbol">-</span>'+dataContent[i].number+'<span class="danwei">stc</span>');
+								}
+								html.push('</p><p class="detail-info bill-detail-time">'+dataContent[i].date+'</p></span>');
+								html.push('</a></li>');
+								$('#pullrefresh-box').append(html.join(''));
+							}
+						}
+					});
+					mui('#pullrefresh').pullRefresh().endPullupToRefresh(true);
+				}, 1500);
+			}
+
+			function addData() {
+				var table = document.body.querySelector('.mui-table-view');
+				var cells = document.body.querySelectorAll('.mui-table-view-cell');
+				for(var i = cells.length, len = i + 5; i < len; i++) {
+					var li = document.createElement('li');
+					li.className = 'mui-table-view-cell';
+					li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+					//下拉刷新，新纪录插到最前面；
+					table.insertBefore(li, table.firstChild);
+				}
+			}
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			function pulldownRefresh() {
+				setTimeout(function() {
+					//addData();
+					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(true);
+					//mui.toast("为你推荐了5篇文章");
+				}, 1500);
+			}
+			$("body").on("tap",".mui-navigate-right",function(e){
+				window.location.href = "coinInfo.html"
+			})
+		</script>
+	</body>
+
+</html>
