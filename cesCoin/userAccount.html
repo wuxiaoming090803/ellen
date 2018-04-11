@@ -421,13 +421,13 @@
 		    <div class="user-info-box">
 		    		<div class="user-img">
 		    			<img src="images/jftc_03.jpg"/>
-		    			<p class="user-name">张三1</p>
+		    			<p class="user-name">张三2</p>
 		    		</div>
 		    		<form id='user-form' class="mui-input-group">
 		    			<p>转账金额</p>
 		    			<div class="mui-input-row">
 						<!--<label>￥</label>-->
-						<input id='coin' class="mui-input-clear mui-input" onKeypress="return (/[\d.]/.test(String.fromCharCode(event.keyCode)))"  style="ime-mode:Disabled"/>
+						<input id='coin' type="number" name="cash" class="mui-input-clear mui-input" />
 						<!--<div id="coin" contenteditable="true"></div>-->
 					</div>
 					<div class="mui-input-row second">
@@ -537,6 +537,13 @@
 					return;
 				}
 			});
+			 $('.mui-input-row input').on('input', function(e) {
+			 	 var pw = $("input[name = 'cash']").val();
+			 	 var re = /^\d+(?=\.{0,1}\d+$|$)/ ;
+			 	 if(!re.test(pw)){
+			 	 	return false;
+			 	 }
+			 })
 			function closeDialog(){
 				$(".ftc_wzsf").hide();
 	             $(".mm_box li").removeClass("mmdd");
