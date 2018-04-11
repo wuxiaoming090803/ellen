@@ -427,8 +427,8 @@
 		    			<p>转账金额</p>
 		    			<div class="mui-input-row">
 						<!--<label>￥</label>-->
-						<!--<input id='coin' type="number" class="mui-input-clear mui-input">-->
-						<div id="coin" contenteditable="true"></div>
+						<input id='coin' class="mui-input-clear mui-input">
+						<!--<div id="coin" contenteditable="true"></div>-->
 					</div>
 					<div class="mui-input-row second">
 						<textarea class="transer-note" maxlength="20" placeholder="转账说明(最多20个字)"></textarea>
@@ -508,7 +508,7 @@
 			})
 			document.getElementById("pay").addEventListener("tap",function(){	
 					var balanceVal = $(".balance").html();
-					var val = $("#coin").html();
+					var val = $("#coin").val();
 					if(balanceVal - val < 0){
 						mui.toast("余额不足")
 					}else if(val == ""){
@@ -521,17 +521,17 @@
 			})
 			$("#account li a").click(function(e){
 				var value = $(e.target).html();
-//				var oldVal =  $("#coin").html();
-//				var newVal = oldVal+value;
-				$("#coin").append(value);
-				console.log($("#coin").html());
+				var oldVal =  $("#coin").val();
+				var newVal = oldVal+value;
+				$("#coin").val(newVal);
+				console.log($("#coin").val());
 				
 			});
 			$("#account li .del").click(function(){
-				var money = $("#coin").html();
+				var money = $("#coin").val();
 				var newVal = money.substring(0,money.length-1);
-				$("#coin").html(newVal);
-				if($("#coin").html() == ""){
+				$("#coin").val(newVal);
+				if($("#coin").val() == ""){
 					return;
 				}
 			});
