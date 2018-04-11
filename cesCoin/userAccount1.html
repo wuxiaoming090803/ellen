@@ -1,0 +1,345 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/reset.css" rel="stylesheet"/>
+		<script type="text/javascript">
+        		document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+   		</script>
+   		<style>
+   			html{
+	    			width: 100%;
+			    height: 100%;
+	    		}
+	    		body{
+	    			width: 100%;
+			    height: 100%;
+			    margin: 0px;
+			    padding: 0px;
+			   	background: #efeff5;
+			   	overflow: hidden;
+	    		}
+	    		.mui-content{
+	    			background-color: #f2f2f9;
+	    			overflow: hidden;
+	    			height: 100%;
+	    		}
+	    		.user-info-box{
+	    			margin: 0.2rem;
+   				background: #fff;
+   				overflow: hidden;
+	    		}
+	    		.user-img{
+	    			padding: 0.31rem 0;
+			    margin: 0 auto;
+			    text-align: center;
+			    background-color: #f9f9f99c;
+	    		}
+	    		.user-img img{
+	    			width: 1.2rem;
+	    		}
+	    		.user-img p{
+	    			font-size: 0.3rem;
+			    color: #000;
+			    margin-top: 5px;
+	    		}
+	    		#user-form.mui-input-group:before{
+   				height: 0;
+   			}
+	    		#user-form p{
+	    			font-size: 0.32rem;
+    				padding: 10px 0 0 10px;
+	    		}
+	    		#user-form.mui-input-group .mui-input-row{
+	    			 height: 55px;
+	    		}
+	    		#user-form label{
+	    		    font-size: 0.7rem;
+			    width: 12%;
+			    padding: 11px 5px 0;
+			}
+			#coin{
+				color: #000;
+			    font-size: 0.7rem;
+			    width: 87%;
+			    line-height: 56px;
+			    height: 56px;
+			}
+			.mui-content button{
+			     width: 95%;
+			     padding: 9px 0;
+				 margin: 0.2rem auto 0.1rem;
+				 border-radius: 5px;
+   			}
+   			.mui-input-group:after{
+   				height: 0;
+   			}
+   			.mui-input-group .mui-input-row:after{
+   				right: 15px;
+   			}
+   			.mui-input-group .second.mui-input-row:after{
+   				height: 0;
+   			}
+   			
+   			textarea::-webkit-input-placeholder{ /*WebKit browsers*/
+				color: cornflowerblue;
+				font-size: 0.27rem;
+			}
+			textarea::-moz-input-placeholder{ /*Mozilla Firefox*/
+				color: cornflowerblue;
+				font-size: 0.27rem;
+			}
+			.balance-cls{
+			    font-size: 0.27rem;
+			    padding: 2px 10px 10px;
+			    color: #000;
+			}
+			.mui-toast-container {bottom: 50% !important;}
+			.coin-popup{
+				position: fixed;
+			    z-index: -1;
+			    top: 31%;
+			    left: 50%;
+			    display: none;
+			    overflow: hidden;
+			    width: 290px;
+			    -webkit-transition-property: -webkit-transform,opacity;
+			    transition-property: transform,opacity;
+			    -webkit-transform: translate3d(-50%,-50%,0) scale(1.185);
+			    transform: translate3d(-50%,-50%,0) scale(1.185);
+			    text-align: center;
+			    opacity: 0;
+			    color: #000;
+			    background: #fff;
+			    border-radius: 13px;
+			}
+			.coin-popup.coin-popup-in {
+			    display: block;
+			    z-index: 10000;
+			    -webkit-transition-duration: 400ms;
+			    transition-duration: 400ms;
+			    -webkit-transform: translate3d(-50%,-50%,0) scale(1);
+			    transform: translate3d(-50%,-50%,0) scale(1);
+			    opacity: 1;
+			}
+			.coin-popun-content{
+			    color: #000;
+				border-bottom: 1px solid #ddd;
+			}
+			.coin-popun-content p{
+				font-size: 0.32rem;
+			    padding: 12px 0 8px;
+			    color: #000;
+			}
+			.coin-popun-content h2{
+			    font-size: .6rem;
+			    text-align: center;
+			    margin: 5px auto 12px;
+			}
+			.coin-popup-inner {
+			    position: relative;
+			    padding: 15px;
+			    border-radius: 13px 13px 0 0;
+			    background: rgba(255,255,255,.95);
+			}
+			.coin-popup-backdrop {
+			    position: fixed;
+			    z-index: -1;
+			    top: 0;
+			    right: 0;
+			    bottom: 0;
+			    left: 0;
+			    -webkit-transition-duration: 400ms;
+			    transition-duration: 400ms;
+			    opacity: 0;
+			    background: rgba(0,0,0,.4);
+			}
+			.coin-popup-backdrop.coin-active {
+				 opacity: 1;
+				 z-index: 998;
+			}
+			.mm_box{
+				width: 100%;
+			    margin: 10px 0;
+			    height: 40px;
+			    overflow: hidden;
+			    border: 1px solid #bebebe;
+			}
+			.mm_box li{
+				border-right: 1px solid #efefef;
+			    height: 40px;
+			    line-height: 40px;
+			    float: left;
+			    width: 16.6%;
+			    background: #FFF;
+			    list-style: none;
+			}
+			.mm_box li:nth-child(6){
+				border-right: none;
+			}
+			.coin-popup-title{
+				text-align: left;
+			    height: 41px;
+			    border-bottom: 1px solid #ddd;
+			}
+			.mui-icon{
+				font-size: 28px;
+    				width: 25%;
+			}
+			.title{
+				display: inline-block;
+    				font-size: 0.35rem;
+			}
+			.coin-trans-info{
+				font-size: 0.25rem;
+			    padding: 8px 0 8px 3px;
+			    text-align: left;
+			}
+			.coin-popup input{
+	             width: 105%;
+			    height: 1px;
+			    color: transparent; 
+			    padding: 21px 0 25px 0;
+			    opacity: 0;
+			    border: 1px solid;
+			    display: block;
+			    margin-top: -15%;
+			    position: absolute;
+			    bottom: 0.5rem;
+			    margin-bottom: 0;
+			    left: -90%;
+			    caret-color: transparent;
+
+         	}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+		    <div class="user-info-box">
+		    		<div class="user-img">
+		    			<img src="images/jftc_03.jpg"/>
+		    			<p class="user-name">张三4</p>
+		    		</div>
+		    		<form id='user-form' class="mui-input-group">
+		    			<p>转账金额</p>
+		    			<div class="mui-input-row">
+						<label>￥</label>
+						<input id='coin' type="number" class="mui-input-clear mui-input">
+					</div>
+					<div class="mui-input-row second">
+						<textarea class="transer-note" maxlength="20" placeholder="转账说明(最多20个字)"></textarea>
+					</div>
+		    		</form>
+		    		<button type="button" id="pay" class="mui-btn mui-btn-blue mui-btn-block">转账</button>
+		    		<p class="balance-cls">灵光币余额:<span class="balance">897.00</span>stc</p>
+		    </div>
+		</div>
+		<div class="coin-popup">
+			<div class="coin-popup-inner">
+				<div class="coin-popup-title">
+					<span class="mui-icon mui-icon-closeempty" id="closeBtn"></span>
+					<span class="title">请输入支付密码</span>
+				</div>
+				<div class="coin-popun-content">
+					<p>向<span class="user-name-info"></span>　转出</p>
+					<h2 class="coin-number">￥<span class="pay-coin"></span></h2>
+				</div>
+				<p class="coin-trans-info">
+					<!--转账说明转账说明转账说明转账说明转账说明-->
+				</p>
+				<ul class="mm_box">
+			      <li></li>
+			      <li></li>
+			      <li></li>
+			      <li></li>
+			      <li></li>
+			      <li></li>
+			   </ul>
+			   <input type="number" id="password" name="password" maxlength="6" >
+		    </div>
+		</div>
+		<div class="coin-popup-backdrop"></div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#coin").focus();
+			})
+			document.getElementById("pay").addEventListener("tap",function(){	
+					var balanceVal = $(".balance").html();
+					var val = $("#coin").val();
+					if(balanceVal - val < 0){
+						mui.toast("余额不足")
+					}else if(val == ""){
+						mui.toast("余额不能为空")
+					}else{
+						openDialog();
+					}
+					
+			})
+			document.getElementById("closeBtn").addEventListener("tap",function(){
+					closeDialog();
+			})
+			function closeDialog(){
+				$(".coin-popup").removeClass("coin-popup-in");
+				$(".coin-popup-backdrop").removeClass("coin-active");	
+				var number = 6;
+				$("input[name = 'password']").val("");
+	             var list = $('.coin-popup-inner ul li');
+	             for(var i = 0; i < number; i++) {
+	                  $(list[i]).text('');
+	             };
+	             $("#coin").focus();
+			}
+			function openDialog(){
+				$("#coin").blur();
+				$('#password').focus();
+				var userName = $(".user-name").html();
+				$(".user-name-info").html(userName);
+				$(".pay-coin").html($("#coin").val());
+				var transInfo = $(".transer-note").val();
+				if(transInfo == ""){
+					$(".coin-trans-info").hide();
+				}else{
+					$(".coin-trans-info").show();
+					$(".coin-trans-info").html(transInfo);
+				}
+				$(".coin-popup").addClass("coin-popup-in");
+				$(".coin-popup").css("display","block");
+				$(".coin-popup-backdrop").addClass("coin-active");	
+			}
+			//密码框输入事件
+	         $('.coin-popup-inner input').on('input', function(e) {
+	             var number = 6;
+	             var flag = true;
+	             var pw = $("input[name = 'password']").val();
+	             var list = $('.coin-popup-inner ul li');
+	             for(var i = 0; i < number; i++) {
+	                 if(pw[i]) {
+	                     $(list[i]).text('●');
+	                 } else {
+	                     $(list[i]).text('');
+	                     flag = false;
+	                 };	
+	                 console.log(pw[i]);
+	                 if(i == 5 && flag == true){
+	                 	//校验密码
+	                 	//跳转
+	                 	window.location.href = "payComplete.html";
+	                 }
+	             };
+	         });
+	         //点击密码框清除密码
+//	         $('.coin-popup-inner ul').click(function() {
+//	             $("input[name = 'password']").val('');
+//	             $('#password').focus();
+//	             $('.coin-popup-inner ul li').text('')
+//	         });
+		</script>
+	</body>
+
+</html>
