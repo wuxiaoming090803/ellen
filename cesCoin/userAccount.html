@@ -427,8 +427,8 @@
 		    			<p>转账金额</p>
 		    			<div class="mui-input-row">
 						<!--<label>￥</label>-->
-						<!--<input id='coin1' type="number" class="mui-input-clear mui-input">-->
-						<div id="coin"></div>
+						<!--<input id='coin' type="number" class="mui-input-clear mui-input">-->
+						<div id="coin" contenteditable="true"></div>
 					</div>
 					<div class="mui-input-row second">
 						<textarea class="transer-note" maxlength="20" placeholder="转账说明(最多20个字)"></textarea>
@@ -502,7 +502,8 @@
 		<script src="js/jquery.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-//				$("#coin1").focus();
+				$("#coin").focus();
+				document.activeElement.blur();
 				$(".popup-box").show();
 			})
 			document.getElementById("pay").addEventListener("tap",function(){	
@@ -520,8 +521,10 @@
 			})
 			$("#account li a").click(function(e){
 				var value = $(e.target).html();
-				$("#coin").append(value)
-				console.log(value);
+//				var oldVal =  $("#coin").html();
+//				var newVal = oldVal+value;
+				$("#coin").append(value);
+				console.log($("#coin").html());
 				
 			});
 			$("#account li .del").click(function(){
@@ -573,6 +576,9 @@
 //	                 }
 	             };
 	            
+	         });
+	         $("#coin").click(function (){
+	         	$(".numb_box").slideDown(500);
 	         });
 			//关闭浮动
 			$("#closeBtn").click(function(){
