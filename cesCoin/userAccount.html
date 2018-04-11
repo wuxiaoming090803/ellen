@@ -424,7 +424,7 @@
 		    			<p class="user-name">张三3</p>
 		    		</div>
 		    		<form id='user-form' class="mui-input-group">
-		    			<p>转账金额1</p>
+		    			<p>转账金额</p>
 		    			<div class="mui-input-row">
 						<!--<label>￥</label>-->
 						<input id='coin' type="number"  name="cash" class="mui-input-clear mui-input" />
@@ -493,6 +493,7 @@
 //				document.activeElement.blur();
 //			})
 			document.getElementById("pay").addEventListener("tap",function(){	
+				$("#coin").blur();
 					var balanceVal = $(".balance").html();
 					var val = $("#coin").val();
 					if(balanceVal - val < 0){
@@ -526,6 +527,7 @@
 //			 	$(this).attr("readonly",true);
 			 })
 			function closeDialog(){
+				$("#coin").focus();
 				$(".ftc_wzsf").hide();
 	             $(".mm_box li").removeClass("mmdd");
 	             i = 0;
