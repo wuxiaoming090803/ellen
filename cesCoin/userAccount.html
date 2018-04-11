@@ -427,7 +427,7 @@
 		    			<p>转账金额</p>
 		    			<div class="mui-input-row">
 						<!--<label>￥</label>-->
-						<input id='coin' class="mui-input-clear mui-input"/>
+						<input id='coin' class="mui-input-clear mui-input" onKeypress="return (/[\d.]/.test(String.fromCharCode(event.keyCode)))"  style="ime-mode:Disabled"/>
 						<!--<div id="coin" contenteditable="true"></div>-->
 					</div>
 					<div class="mui-input-row second">
@@ -438,7 +438,7 @@
 		    		<p class="balance-cls">灵光币余额:<span class="balance">897.00</span>stc</p>
 		    </div>
 		</div>
-		<div class="numb_box popup-box">
+		<!--<div class="numb_box popup-box">
 		    <div class="xiaq_tb"> <img src="images/jftc_14.jpg" height="10"> </div>
 		    <ul class="nub_ggg keyboard" id="account">
 		      <li><a href="javascript:void(0);">1</a></li>
@@ -454,7 +454,7 @@
 		      <li><a href="javascript:void(0);" class="zj_x">0</a></li>
 		      <li><span  class="del" > <img src="images/jftc_18.jpg"   ></span></li>
 		    </ul>
-		</div>
+		</div>-->
 		<div class="ftc_wzsf">
 		<div class="srzfmm_box">
 				<div class="coin-popup-title">
@@ -505,9 +505,9 @@
 				$("#coin").focus();
 				$(".popup-box").show();
 			})
-			$("#coin").click(function(){
-				document.activeElement.blur();
-			})
+//			$("#coin").click(function(){
+//				document.activeElement.blur();
+//			})
 			document.getElementById("pay").addEventListener("tap",function(){	
 					var balanceVal = $(".balance").html();
 					var val = $("#coin").val();
