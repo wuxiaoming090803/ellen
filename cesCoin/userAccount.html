@@ -424,10 +424,10 @@
 		    			<p class="user-name">张三2</p>
 		    		</div>
 		    		<form id='user-form' class="mui-input-group">
-		    			<p>转账金额</p>
+		    			<p>转账金额1</p>
 		    			<div class="mui-input-row">
 						<!--<label>￥</label>-->
-						<input id='coin' type="number" name="cash" class="mui-input-clear mui-input" />
+						<input id='coin' type="tel" name="cash" class="mui-input-clear mui-input" />
 						<!--<div id="coin" contenteditable="true"></div>-->
 					</div>
 					<div class="mui-input-row second">
@@ -538,6 +538,7 @@
 				}
 			});
 			 $('.mui-input-row input').on('input', function(e) {
+			 	console.log("11");
 			 	 var pw = $("input[name = 'cash']").val();
 			 	 var re = /^\d+(?=\.{0,1}\d+$|$)/ ;
 			 	 if(!re.test(pw)){
