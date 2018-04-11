@@ -74,9 +74,9 @@
 			    margin-left: 17px;
 			    position: absolute;
 			    top: 0;
-			    z-index: -2;
+			   /* z-index: -2;*/
 			}
-			#coin1.coin-hidden{
+			/*#coin1.coin-hidden{
 				opacity: 0;
 				z-index: -2;
 			}
@@ -87,7 +87,7 @@
 			    line-height: 56px;
 			    height: 56px;
 			    padding-left: 17px;
-			}
+			}*/
 			.mui-content button{
 			     width: 95%;
 			     padding: 9px 0;
@@ -427,7 +427,7 @@
 		    			<p>转账金额</p>
 		    			<div class="mui-input-row">
 						<!--<label>￥</label>-->
-						<input id='coin1' type="number" class="mui-input-clear mui-input">
+						<!--<input id='coin1' type="number" class="mui-input-clear mui-input">-->
 						<div id="coin"></div>
 					</div>
 					<div class="mui-input-row second">
@@ -502,7 +502,7 @@
 		<script src="js/jquery.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$("#coin1").focus();
+//				$("#coin1").focus();
 				$(".popup-box").show();
 			})
 			document.getElementById("pay").addEventListener("tap",function(){	
@@ -519,8 +519,6 @@
 					}	
 			})
 			$("#account li a").click(function(e){
-				$("#coin1").addClass("coin-hidden");
-				$("#coin").addClass("coin-show");
 				var value = $(e.target).html();
 				$("#coin").append(value)
 				console.log(value);
@@ -531,18 +529,11 @@
 				var newVal = money.substring(0,money.length-1);
 				$("#coin").html(newVal);
 				if($("#coin").html() == ""){
-					$("#coin1").removeClass("coin-hidden");
-					$("#coin").removeClass("coin-show");
-					$("#coin1").focus();
 					return;
 				}
 			});
 			function closeDialog(){
 				$(".ftc_wzsf").hide();
-				$("#coin").html("");
-				$("#coin1").removeClass("coin-hidden");
-				$("#coin").removeClass("coin-show");
-				$("#coin1").focus();
 	             $(".mm_box li").removeClass("mmdd");
 	             i = 0;
 	             //$("#coin").focus();
