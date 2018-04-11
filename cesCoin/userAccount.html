@@ -427,7 +427,7 @@
 		    			<p>转账金额</p>
 		    			<div class="mui-input-row">
 						<!--<label>￥</label>-->
-						<input id='coin' class="mui-input-clear mui-input">
+						<input id='coin' class="mui-input-clear mui-input"/>
 						<!--<div id="coin" contenteditable="true"></div>-->
 					</div>
 					<div class="mui-input-row second">
@@ -505,6 +505,9 @@
 				$("#coin").focus();
 				document.activeElement.blur();
 				$(".popup-box").show();
+			})
+			$("#coin").click(function(){
+				document.activeElement.blur();
 			})
 			document.getElementById("pay").addEventListener("tap",function(){	
 					var balanceVal = $(".balance").html();
