@@ -55,11 +55,15 @@
 	    		}
 	    		#user-form.mui-input-group .mui-input-row{
 	    			 height: 55px;
+	    			 position: relative;
 	    		}
 	    		#user-form label{
 	    		    font-size: 0.7rem;
 			    width: 12%;
 			    padding: 11px 5px 0;
+			}
+			#coin.coin-show{
+				z-index:1
 			}
 			#coin{
 				color: #000;
@@ -67,7 +71,23 @@
 			    width: 87%;
 			    line-height: 56px;
 			    height: 56px;
+			    margin-left: 17px;
+			    position: absolute;
+			    top: 0;
+			   /* z-index: -2;*/
 			}
+			/*#coin1.coin-hidden{
+				opacity: 0;
+				z-index: -2;
+			}
+			#coin1{
+				=color: #000;
+			    font-size: 0.7rem;
+			    width: 20%;
+			    line-height: 56px;
+			    height: 56px;
+			    padding-left: 17px;
+			}*/
 			.mui-content button{
 			     width: 95%;
 			     padding: 9px 0;
@@ -97,7 +117,7 @@
 			    padding: 2px 10px 10px;
 			    color: #000;
 			}
-			.mui-toast-container {bottom: 50% !important;}
+			.mui-toast-container {bottom: 50% !important; z-index: 19999;}
 			.coin-popup{
 				position: fixed;
 			    z-index: -1;
@@ -131,13 +151,27 @@
 			}
 			.coin-popun-content p{
 				font-size: 0.32rem;
-			    padding: 12px 0 8px;
+			    padding: 10px 0 8px;
 			    color: #000;
+				text-align: center;
 			}
 			.coin-popun-content h2{
-			    font-size: .6rem;
+			    font-size: .46rem;
 			    text-align: center;
-			    margin: 5px auto 12px;
+			    margin: 5px auto 5px;
+			}
+			.coin-popun-content h3{
+				font-size: 0.28rem;
+			    padding: 0.15rem;
+			    color: cornflowerblue;
+			    text-align: center;
+			}
+			.coin-popun-content h3 span{
+				margin-right: 4px;
+			}
+			.pay-coin{
+				margin-right: 5px;
+    				font-size: .6rem;
 			}
 			.coin-popup-inner {
 			    position: relative;
@@ -182,12 +216,13 @@
 			}
 			.coin-popup-title{
 				text-align: left;
-			    height: 41px;
+			    height: 42px;
 			    border-bottom: 1px solid #ddd;
 			}
 			.mui-icon{
-				font-size: 28px;
-    				width: 25%;
+				 font-size: 32px;
+			     width: 28%;
+			     line-height: 40px;
 			}
 			.title{
 				display: inline-block;
@@ -195,11 +230,11 @@
 			}
 			.coin-trans-info{
 				font-size: 0.25rem;
-			    padding: 8px 0 8px 3px;
+			    padding: 8px 0 8px 18px;
 			    text-align: left;
 			}
 			.coin-popup input{
-	             width: 105%;
+	            width: 130px;
 			    height: 1px;
 			    color: transparent; 
 			    padding: 21px 0 25px 0;
@@ -210,25 +245,190 @@
 			    position: absolute;
 			    bottom: 0.5rem;
 			    margin-bottom: 0;
-			    left: -90%;
+			    left: -84px;
 			    caret-color: transparent;
-
          	}
+         	.balance{
+         		margin-right: 4px;
+         	}
+         	/*loading*/
+
+			.loading_box {
+				position: fixed;
+				left: 0;
+				top: 0;
+				z-index: -1;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0,0,0,.4);
+				/*background-image: url(../img/bg.jpg);
+				background-size: 100% 100%;*/
+			}
+			
+			#ajaxbar1 {
+				overflow: hidden;
+				width: 90px;
+				position: absolute;
+				left: 50%;
+				margin-left: -45px;
+				top: 50%;
+			}
+			
+			#ajaxbar1 .barlittle {
+				background-color: #ffffff;
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@color1', endColorstr='@color2');
+				background-image: -webkit-linear-gradient(45deg, #ffffff 25%, #f1ffea);
+				background-image: -moz-linear-gradient(45deg, #ffffff 25%, #f1ffea);
+				/*border: 1px solid #111;*/
+				width: 10px;
+				height: 10px;
+				float: left;
+				margin-left: 5px;
+				opacity: 0.1;
+				-webkit-animation: pulse 1s linear infinite normal;
+				-moz-animation: pulse 1s linear infinite normal;
+				-ms-animation: pulse 1s linear infinite normal;
+				animation: pulse 1s linear infinite normal;
+				-webkit-animation-delay: 0;
+				-moz-animation-delay: 0;
+				-o-animation-delay: 0;
+				animation-delay: 0;
+			}
+			
+			#ajaxbar1 #block1 {
+				-webkit-animation-delay: 0.3s;
+				-moz-animation-delay: 0.3s;
+				-o-animation-delay: 0.3s;
+				animation-delay: 0.3s;
+			}
+			
+			#ajaxbar1 #block2 {
+				-webkit-animation-delay: 0.2s;
+				-moz-animation-delay: 0.2s;
+				-o-animation-delay: 0.2s;
+				animation-delay: 0.2s;
+			}
+			
+			#ajaxbar1 #block3 {
+				-webkit-animation-delay: 0.1s;
+				-moz-animation-delay: 0.1s;
+				-o-animation-delay: 0.1s;
+				animation-delay: 0.1s;
+			}
+			
+			#ajaxbar1 #block4 {
+				-webkit-animation-delay: 0.2s;
+				-moz-animation-delay: 0.2s;
+				-o-animation-delay: 0.2s;
+				animation-delay: 0.2s;
+			}
+			
+			#ajaxbar1 #block5 {
+				-webkit-animation-delay: 0.3s;
+				-moz-animation-delay: 0.3s;
+				-o-animation-delay: 0.3s;
+				animation-delay: 0.3s;
+			}
+			
+			@keyframes pulse {
+				from {
+					transform: scale(1.2);
+					opacity: 1;
+				}
+				to {
+					transform: scale(0.7);
+					opacity: 0.1;
+				}
+			}
+			
+			@-moz-keyframes pulse {
+				from {
+					-moz-transform: scale(1.2);
+					opacity: 1;
+				}
+				to {
+					-moz-transform: scale(0.7);
+					opacity: 0.1;
+				}
+			}
+			
+			@-webkit-keyframes pulse {
+				from {
+					-webkit-transform: scale(1.2);
+					opacity: 1;
+				}
+				to {
+					-webkit-transform: scale(0.7);
+					opacity: 0.1;
+				}
+			}
+			.popup-box{
+				display:none;
+			}
+			.ftc_wzsf { display:none; width: 100%; height: 100%; position: fixed; z-index: 999; top: 0; left: 0; }
+			.ftc_wzsf .hbbj { width: 100%; height: 100%; position: absolute; z-index: 8; background: #000; opacity: 0.4; top: 0; left: 0; }
+			.ftc_wzsf .srzfmm_box { position: absolute; z-index: 10; background: #f8f8f8; width: 88%; left: 50%; margin-left: -44%; top: 37px; border-radius: 8px;}
+			.qsrzfmm_bt { font-size: 16px; border-bottom: 1px solid #c9daca; overflow: hidden; }
+			.qsrzfmm_bt a { display: block; width: 10%; padding: 10px 0; text-align: center; }
+			.qsrzfmm_bt img.tx { width: 10%; padding: 10px 0; }
+			.qsrzfmm_bt span { padding: 15px 5px; }
+			.zfmmxx_shop { text-align: center; font-size: 12px; padding: 10px 0; overflow: hidden; }
+			.zfmmxx_shop .mz { font-size: 14px; float: left; width: 100%; }
+			.zfmmxx_shop .wxzf_price { font-size: 24px; float: left; width: 100%; }
+			.blank_yh { width: 89%; margin: 0 auto; line-height: 40px; display: block; color: #636363; font-size: 16px; padding: 5px 0; overflow: hidden; border-bottom: 1px solid #e6e6e6; border-top: 1px solid #e6e6e6; }
+			.blank_yh img { height: 40px; }
+			.ml5 { margin-left: 5px; }
+			.mm_box { width: 89%; margin: 10px auto; height: 40px; overflow: hidden; border: 1px solid #bebebe; }
+			.mm_box li { border-right: 1px solid #efefef; height: 40px; float: left; width: 16.6%; background: #FFF; text-align: center;}
+			.mm_box li.mmdd{ background:#FFF url(images/dd_03.jpg) center no-repeat ; background-size:24%;}
+			.mm_box li:last-child { border-right: none; }
+			.xiaq_tb { padding: 5px 0; text-align: center; border-top: 1px solid #dadada; }
+			.numb_box { position: absolute; z-index: 10; background: #f5f5f5; width: 100%; bottom: 0px; }
+			.nub_ggg { border: 1px solid #dadada; overflow: hidden; border-bottom: none; }
+			.nub_ggg li { width: 33.3333%; border-bottom: 1px solid #dadada; float: left; text-align: center; font-size: 22px; }
+			.nub_ggg li a { display: block; color: #000; height: 53px; line-height: 53px; overflow: hidden; }
+			.nub_ggg li a:active  { background: #e0e0e0;}
+			.nub_ggg li a.zj_x { border-left: 1px solid #dadada; border-right: 1px solid #dadada; }
+			.nub_ggg li span { display: block; color: #e0e0e0; background: #e0e0e0; height: 53px; line-height: 50px; overflow: hidden; }
+			.nub_ggg li span.del img { width: 30%; }
+			
+			.fh_but{ position:absolute; right:0px; top:12px; font-size:14px; color:#20d81f;}
+			.zfcg_box{ background:#f2f2f2;  height: 56px; line-height:56px;   font-size:20px; color:#1ea300; }
+			.zfcg_box img{ width:10%;}
+			
+			.cgzf_info{ background:#FFF; border-top:1px solid #dfdfdd; }
+			
+			.spxx_shop{ background:#FFF; margin-left:4.35%; border-top:1px solid #dfdfdd; padding:10px 0; }
+			.spxx_shop td{ color:#7b7b7b; font-size:14px; padding:10px 0;}
+			
+			.wzxfcgde_tb{ position:fixed; width:100%; z-index:999; bottom:20px; text-align:center;}
+			.wzxfcgde_tb img{ width:20.6%;}
+			.mlr_pm{margin-right:4.35%;}
 		</style>
 	</head>
 
 	<body>
+		<div class="loading_box">
+			<div id="ajaxbar1">
+				<div id="block1" class="barlittle"></div>
+				<div id="block2" class="barlittle"></div>
+				<div id="block3" class="barlittle"></div>
+				<div id="block4" class="barlittle"></div>
+				<div id="block5" class="barlittle"></div>
+			</div>
+		</div>
 		<div class="mui-content">
 		    <div class="user-info-box">
 		    		<div class="user-img">
 		    			<img src="images/jftc_03.jpg"/>
-		    			<p class="user-name">张三4</p>
+		    			<p class="user-name">张三3</p>
 		    		</div>
 		    		<form id='user-form' class="mui-input-group">
 		    			<p>转账金额</p>
 		    			<div class="mui-input-row">
-						<label>￥</label>
-						<input id='coin' type="number" class="mui-input-clear mui-input">
+						<!--<label>￥</label>-->
+						<input id='coin' type="number"  name="cash" class="mui-input-clear mui-input" />
+						<!--<div id="coin" contenteditable="true"></div>-->
 					</div>
 					<div class="mui-input-row second">
 						<textarea class="transer-note" maxlength="20" placeholder="转账说明(最多20个字)"></textarea>
@@ -238,29 +438,48 @@
 		    		<p class="balance-cls">灵光币余额:<span class="balance">897.00</span>stc</p>
 		    </div>
 		</div>
-		<div class="coin-popup">
-			<div class="coin-popup-inner">
+		
+		<div class="ftc_wzsf">
+		<div class="srzfmm_box">
 				<div class="coin-popup-title">
 					<span class="mui-icon mui-icon-closeempty" id="closeBtn"></span>
 					<span class="title">请输入支付密码</span>
-				</div>
+				</div>		    
 				<div class="coin-popun-content">
 					<p>向<span class="user-name-info"></span>　转出</p>
-					<h2 class="coin-number">￥<span class="pay-coin"></span></h2>
+					<h2 class="coin-number"><span class="pay-coin"></span>stc</h2>
+					<h3>另需手续费:<span class="more">1</span>stc</h3>
 				</div>
 				<p class="coin-trans-info">
-					<!--转账说明转账说明转账说明转账说明转账说明-->
+					
 				</p>
-				<ul class="mm_box">
-			      <li></li>
-			      <li></li>
-			      <li></li>
-			      <li></li>
-			      <li></li>
-			      <li></li>
-			   </ul>
-			   <input type="number" id="password" name="password" maxlength="6" >
-		    </div>
+		    <ul class="mm_box">
+		      <li></li>
+		      <li></li>
+		      <li></li>
+		      <li></li>
+		      <li></li>
+		      <li></li>
+		    </ul>
+		  </div>
+		  <div class="numb_box">
+		   <!-- <div class="xiaq_tb"> <img src="images/jftc_14.jpg" height="10"> </div>-->
+		    <ul class="nub_ggg" id="pwdKey">
+		      <li><a href="javascript:void(0);">1</a></li>
+		      <li><a href="javascript:void(0);" class="zj_x">2</a></li>
+		      <li><a href="javascript:void(0);">3</a></li>
+		      <li><a href="javascript:void(0);">4</a></li>
+		      <li><a href="javascript:void(0);" class="zj_x">5</a></li>
+		      <li><a href="javascript:void(0);">6</a></li>
+		      <li><a href="javascript:void(0);">7</a></li>
+		      <li><a href="javascript:void(0);" class="zj_x">8</a></li>
+		      <li><a href="javascript:void(0);">9</a></li>
+		      <li><span></span></li>
+		      <li><a href="javascript:void(0);" class="zj_x">0</a></li>
+		      <li><span  class="del" > <img src="images/jftc_18.jpg"   ></span></li>
+		    </ul>
+		  </div>
+		  <div class="hbbj"></div>
 		</div>
 		<div class="coin-popup-backdrop"></div>
 		<script src="js/mui.min.js"></script>
@@ -268,36 +487,59 @@
 		<script type="text/javascript">
 			$(document).ready(function(){
 				$("#coin").focus();
+				$(".popup-box").show();
 			})
+//			$("#coin").click(function(){
+//				document.activeElement.blur();
+//			})
+ 
 			document.getElementById("pay").addEventListener("tap",function(){	
+				$("#coin").blur();
 					var balanceVal = $(".balance").html();
 					var val = $("#coin").val();
+					var re = /^\d+(?=\.{0,1}\d+$|$)/ 
+			        if (!re.test(val)) { 
+			            alert("请输入正确的数字"); 
+			          
+			        } 
 					if(balanceVal - val < 0){
 						mui.toast("余额不足")
 					}else if(val == ""){
 						mui.toast("余额不能为空")
 					}else{
 						openDialog();
-					}
-					
+						//$(".ftc_wzsf").show();
+						
+					}	
 			})
-			document.getElementById("closeBtn").addEventListener("tap",function(){
-					closeDialog();
-			})
+			$("#account li a").click(function(e){
+				var value = $(e.target).html();
+				var oldVal =  $("#coin").val();
+				var newVal = oldVal+value;
+				$("#coin").val(newVal);
+				console.log($("#coin").val());
+				
+			});
+			$("#account li .del").click(function(){
+				var money = $("#coin").val();
+				var newVal = money.substring(0,money.length-1);
+				$("#coin").val(newVal);
+				if($("#coin").val() == ""){
+					return;
+				}
+			});
+			 $('.mui-input-row input').on('input', function(e) {
+//			 	$(this).val("");
+//			 	$(this).attr("readonly",true);
+			 })
 			function closeDialog(){
-				$(".coin-popup").removeClass("coin-popup-in");
-				$(".coin-popup-backdrop").removeClass("coin-active");	
-				var number = 6;
-				$("input[name = 'password']").val("");
-	             var list = $('.coin-popup-inner ul li');
-	             for(var i = 0; i < number; i++) {
-	                  $(list[i]).text('');
-	             };
-	             $("#coin").focus();
+				$("#coin").focus();
+				$(".ftc_wzsf").hide();
+	             $(".mm_box li").removeClass("mmdd");
+	             i = 0;
+	             //$("#coin").focus();
 			}
 			function openDialog(){
-				$("#coin").blur();
-				$('#password').focus();
 				var userName = $(".user-name").html();
 				$(".user-name-info").html(userName);
 				$(".pay-coin").html($("#coin").val());
@@ -308,9 +550,7 @@
 					$(".coin-trans-info").show();
 					$(".coin-trans-info").html(transInfo);
 				}
-				$(".coin-popup").addClass("coin-popup-in");
-				$(".coin-popup").css("display","block");
-				$(".coin-popup-backdrop").addClass("coin-active");	
+				$(".ftc_wzsf").show();
 			}
 			//密码框输入事件
 	         $('.coin-popup-inner input').on('input', function(e) {
@@ -326,19 +566,47 @@
 	                     flag = false;
 	                 };	
 	                 console.log(pw[i]);
-	                 if(i == 5 && flag == true){
-	                 	//校验密码
-	                 	//跳转
-	                 	window.location.href = "payComplete.html";
-	                 }
 	             };
+	            
 	         });
-	         //点击密码框清除密码
-//	         $('.coin-popup-inner ul').click(function() {
-//	             $("input[name = 'password']").val('');
-//	             $('#password').focus();
-//	             $('.coin-popup-inner ul li').text('')
-//	         });
+	         $("#coin").click(function (){
+	         	$(".numb_box").slideDown(500);
+	         });
+			//关闭浮动
+			$("#closeBtn").click(function(){
+				//$(".ftc_wzsf").hide();
+				closeDialog();
+			});
+				//数字显示隐藏
+			$(".xiaq_tb").click(function(){
+				$(".numb_box").slideUp(500);
+			});
+			$(".mm_box").click(function(){
+				$(".numb_box").slideDown(500);
+			});
+			var i = 0;
+			$("#pwdKey li a").click(function(e){
+				i++
+				if(i<=6){
+					var value = $(e.target).html();
+					$(".mm_box li").eq(i-1).html("●");
+					console.log(value);
+				}else{
+					$(".mm_box li").eq(i-1).html(""); 
+//						setTimeout(function(){
+//							//location.href="cg.html"; 
+//						},500);
+				 } 
+			});
+				
+			$("#pwdKey li .del").click(function(){
+				if(i>0){
+					i--
+					$(".mm_box li").eq(i).html("");
+					i==0;
+				}
+				//alert(i);
+			});
 		</script>
 	</body>
 

@@ -428,7 +428,7 @@
 		    			<div class="mui-input-row">
 						<!--<label>￥</label>-->
 						<input id='coin' type="number"  name="cash" class="mui-input-clear mui-input" />
-						<!--<div id="coin" contenteditable="true"></div>-->
+					<!--<div id="coin"></div>-->
 					</div>
 					<div class="mui-input-row second">
 						<textarea class="transer-note" maxlength="20" placeholder="转账说明(最多20个字)"></textarea>
@@ -461,6 +461,7 @@
 		      <li></li>
 		      <li></li>
 		    </ul>
+		    <p></p>
 		  </div>
 		  <div class="numb_box">
 		   <!-- <div class="xiaq_tb"> <img src="images/jftc_14.jpg" height="10"> </div>-->
@@ -489,18 +490,14 @@
 				$("#coin").focus();
 				$(".popup-box").show();
 			})
-//			$("#coin").click(function(){
-//				document.activeElement.blur();
-//			})
- 
 			document.getElementById("pay").addEventListener("tap",function(){	
 				$("#coin").blur();
 					var balanceVal = $(".balance").html();
 					var val = $("#coin").val();
 					var re = /^\d+(?=\.{0,1}\d+$|$)/ 
 			        if (!re.test(val)) { 
-			            alert("请输入正确的数字"); 
-			          
+			            mui.toast("请输入正确的数字"); 
+			            return; 
 			        } 
 					if(balanceVal - val < 0){
 						mui.toast("余额不足")
@@ -529,16 +526,15 @@
 				}
 			});
 			 $('.mui-input-row input').on('input', function(e) {
-//			 	$(this).val("");
-//			 	$(this).attr("readonly",true);
-			 })
+			 	 validate();
+			 });
 			function closeDialog(){
 				$("#coin").focus();
 				$(".ftc_wzsf").hide();
 	             $(".mm_box li").removeClass("mmdd");
 	             i = 0;
 	             //$("#coin").focus();
-			}
+			};
 			function openDialog(){
 				var userName = $(".user-name").html();
 				$(".user-name-info").html(userName);
@@ -551,7 +547,20 @@
 					$(".coin-trans-info").html(transInfo);
 				}
 				$(".ftc_wzsf").show();
-			}
+			};
+			function validate(){
+				var IllegalString = "[`~!#$^&*()=|{}':;',\\[\\].<>/?~！#￥……&*（）——|{}【】‘；：”“'。，、？]‘'";
+				var textboxvalue = $("input[name = 'cash']").val();
+				//var textboxvalue = val;
+				var index = textboxvalue.length - 1;
+				 
+				var s = textboxvalue.charAt(index);
+				 
+				if (IllegalString.indexOf(s) >= 0) {
+					s = textboxvalue.substring(0, index);
+					$("input[name = 'cash']").val(s);
+				}
+			};
 			//密码框输入事件
 	         $('.coin-popup-inner input').on('input', function(e) {
 	             var number = 6;
