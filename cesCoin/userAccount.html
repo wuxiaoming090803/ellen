@@ -51,7 +51,7 @@
    			}
 	    		#user-form p{
 	    			font-size: 0.32rem;
-    				padding: 10px 0 0 10px;
+    				padding: 10px 0 0 15px;
 	    		}
 	    		#user-form.mui-input-group .mui-input-row{
 	    			 height: 55px;
@@ -62,16 +62,16 @@
 			    width: 12%;
 			    padding: 11px 5px 0;
 			}
-			#coin.coin-show{
+			.coin.coin-show{
 				z-index:1
 			}
-			#coin{
+			.coin{
 				color: #000;
 			    font-size: 0.7rem;
 			    width: 87%;
 			    line-height: 56px;
 			    height: 56px;
-			    margin-left: 17px;
+			    margin-left: 15px;
 			    position: absolute;
 			    top: 0;
 			   /* z-index: -2;*/
@@ -99,6 +99,11 @@
    			}
    			.mui-input-group .mui-input-row:after{
    				right: 15px;
+   				
+   			}
+   			.special.mui-input-row:after{
+   				box-shadow: 0px 0px 8px #007aff;
+   				background-color: #007aff;
    			}
    			.mui-input-group .second.mui-input-row:after{
    				height: 0;
@@ -116,6 +121,10 @@
 			    font-size: 0.27rem;
 			    padding: 2px 10px 10px;
 			    color: #000;
+			}
+			.coin-balance{
+				font-size: 0.45rem;
+   				color: #c3c3c3;
 			}
 			.mui-toast-container {bottom: 50% !important; z-index: 19999;}
 			.coin-popup{
@@ -383,7 +392,7 @@
 			.mm_box li.mmdd{ background:#FFF url(images/dd_03.jpg) center no-repeat ; background-size:24%;}
 			.mm_box li:last-child { border-right: none; }
 			.xiaq_tb { padding: 5px 0; text-align: center; border-top: 1px solid #dadada; }
-			.numb_box { position: absolute; z-index: 10; background: #f5f5f5; width: 100%; bottom: 0px; }
+			.numb_box { position: absolute; z-index: 999; background: #f5f5f5; width: 100%; bottom: 0px; }
 			.nub_ggg { border: 1px solid #dadada; overflow: hidden; border-bottom: none; }
 			.nub_ggg li { width: 33.3333%; border-bottom: 1px solid #dadada; float: left; text-align: center; font-size: 22px; }
 			.nub_ggg li a { display: block; color: #000; height: 53px; line-height: 53px; overflow: hidden; }
@@ -421,17 +430,20 @@
 		    <div class="user-info-box">
 		    		<div class="user-img">
 		    			<img src="images/jftc_03.jpg"/>
-		    			<p class="user-name">张三4</p>
+		    			<p class="user-name">张三3</p>
 		    		</div>
 		    		<form id='user-form' class="mui-input-group">
 		    			<p>转账金额</p>
-		    			<div class="mui-input-row">
+		    			<div class="mui-input-row special first">
 						<!--<label>￥</label>-->
-						<input id='coin' type="number"  name="cash" class="mui-input-clear mui-input" />
-					<!--<div id="coin"></div>-->
+						<!--<input id='coin'  type="number" name="cash" class="mui-input-clear mui-input" />-->
+					<div class="coin">
+						<span id="coin"></span>
+						<span class="coin-balance">手续费<span id="balance">1%</span></span>
+					</div>
 					</div>
 					<div class="mui-input-row second">
-						<textarea class="transer-note" maxlength="20" placeholder="转账说明(最多20个字)"></textarea>
+						<textarea class="transer-note" id="coin-info" maxlength="20" placeholder="转账说明(最多20个字)"></textarea>
 					</div>
 		    		</form>
 		    		<button type="button" id="pay" class="mui-btn mui-btn-blue mui-btn-block">转账</button>
@@ -448,7 +460,7 @@
 				<div class="coin-popun-content">
 					<p>向<span class="user-name-info"></span>　转出</p>
 					<h2 class="coin-number"><span class="pay-coin"></span>stc</h2>
-					<h3>另需手续费:<span class="more">1</span>stc</h3>
+					<!--<h3>另需手续费:<span class="more">1</span>stc</h3>-->
 				</div>
 				<p class="coin-trans-info">
 					
@@ -463,7 +475,10 @@
 		    </ul>
 		    <p></p>
 		  </div>
-		  <div class="numb_box">
+		  
+		  <div class="hbbj"></div>
+		</div>
+		<div class="numb_box">
 		   <!-- <div class="xiaq_tb"> <img src="images/jftc_14.jpg" height="10"> </div>-->
 		    <ul class="nub_ggg" id="pwdKey">
 		      <li><a href="javascript:void(0);">1</a></li>
@@ -475,13 +490,11 @@
 		      <li><a href="javascript:void(0);">7</a></li>
 		      <li><a href="javascript:void(0);" class="zj_x">8</a></li>
 		      <li><a href="javascript:void(0);">9</a></li>
-		      <li><span></span></li>
+		      <li><a href="javascript:void(0);">.</a></li>
 		      <li><a href="javascript:void(0);" class="zj_x">0</a></li>
 		      <li><span  class="del" > <img src="images/jftc_18.jpg"   ></span></li>
 		    </ul>
 		  </div>
-		  <div class="hbbj"></div>
-		</div>
 		<div class="coin-popup-backdrop"></div>
 		<script src="js/mui.min.js"></script>
 		<script src="js/jquery.min.js"></script>
@@ -489,11 +502,12 @@
 			$(document).ready(function(){
 				$("#coin").focus();
 				$(".popup-box").show();
-			})
+			});
+			var flag = "text";
 			document.getElementById("pay").addEventListener("tap",function(){	
 				$("#coin").blur();
 					var balanceVal = $(".balance").html();
-					var val = $("#coin").val();
+					var val = $("#coin").html();
 					var re = /^\d+(?=\.{0,1}\d+$|$)/ 
 			        if (!re.test(val)) { 
 			            mui.toast("请输入正确的数字"); 
@@ -508,6 +522,14 @@
 						//$(".ftc_wzsf").show();
 						
 					}	
+			})
+			$('.second textarea').on('focus', function(e) {
+				$(".first").removeClass("special");
+				$(".numb_box").hide();
+			})
+			 $('.second textarea').on('blur', function(e) {
+			 	$(".first").addClass("special");
+				$(".numb_box").show();
 			})
 			$("#account li a").click(function(e){
 				var value = $(e.target).html();
@@ -526,19 +548,20 @@
 				}
 			});
 			 $('.mui-input-row input').on('input', function(e) {
-			 	 validate();
+			 	 validate(this.value);
 			 });
 			function closeDialog(){
 				$("#coin").focus();
 				$(".ftc_wzsf").hide();
 	             $(".mm_box li").removeClass("mmdd");
 	             i = 0;
+	             flag="text";
 	             //$("#coin").focus();
 			};
 			function openDialog(){
 				var userName = $(".user-name").html();
 				$(".user-name-info").html(userName);
-				$(".pay-coin").html($("#coin").val());
+				$(".pay-coin").html($("#coin").html());
 				var transInfo = $(".transer-note").val();
 				if(transInfo == ""){
 					$(".coin-trans-info").hide();
@@ -546,19 +569,26 @@
 					$(".coin-trans-info").show();
 					$(".coin-trans-info").html(transInfo);
 				}
+				flag = "pwd";
 				$(".ftc_wzsf").show();
 			};
-			function validate(){
+			var oldVal = [];
+			function validate(val){
 				var IllegalString = "[`~!#$^&*()=|{}':;',\\[\\]<>/?~！#￥……&*（）——|{}【】‘；：”“'。，、？]‘'";
 				var textboxvalue = $("input[name = 'cash']").val();
 				//var textboxvalue = val;
-				var index = textboxvalue.length - 1;
+				var index = oldVal - 1;
 				 
 				var s = textboxvalue.charAt(index);
 				 
-				if (IllegalString.indexOf(s) >= 0) {
+				if (IllegalString.indexOf(val) >= 0) {
 					s = textboxvalue.substring(0, index);
-					$("input[name = 'cash']").val(s);
+					if(textboxvalue==""){
+						document.getElementById("coin").value = "";
+					}else{
+						document.getElementById("coin").value = s;
+					}
+					
 				}
 			};
 			//密码框输入事件
@@ -595,26 +625,39 @@
 			});
 			var i = 0;
 			$("#pwdKey li a").click(function(e){
-				i++
-				if(i<=6){
-					var value = $(e.target).html();
-					$(".mm_box li").eq(i-1).html("●");
-					console.log(value);
+				var value = $(e.target).html();
+				if(flag == "pwd"){
+						i++
+					if(i<=6){
+						$(".mm_box li").eq(i-1).html("●");
+						console.log(value);
+					}else{
+						$(".mm_box li").eq(i-1).html(""); 
+					 } 
 				}else{
-					$(".mm_box li").eq(i-1).html(""); 
-//						setTimeout(function(){
-//							//location.href="cg.html"; 
-//						},500);
-				 } 
+					$(".coin .coin-balance").hide();
+					$("#coin").append(value);
+				}
 			});
 				
 			$("#pwdKey li .del").click(function(){
-				if(i>0){
-					i--
-					$(".mm_box li").eq(i).html("");
-					i==0;
+				var value = $("#coin").html();
+				if(flag == "pwd"){
+					if(i>0){
+						i--
+						$(".mm_box li").eq(i).html("");
+						i==0;
+					}
+				}else{
+					if(value.length != 0){
+						var valStr = value.substring(0,value.length-1);
+						$("#coin").html(valStr);
+						if(value.length == 1){
+							$(".coin .coin-balance").show();
+						}
+					}
+					
 				}
-				//alert(i);
 			});
 		</script>
 	</body>
