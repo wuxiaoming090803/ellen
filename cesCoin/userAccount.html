@@ -430,7 +430,7 @@
 		    <div class="user-info-box">
 		    		<div class="user-img">
 		    			<img src="images/jftc_03.jpg"/>
-		    			<p class="user-name">张三3</p>
+		    			<p class="user-name">张三4</p>
 		    		</div>
 		    		<form id='user-form' class="mui-input-group">
 		    			<p>转账金额</p>
@@ -529,7 +529,9 @@
 			})
 			 $('.second textarea').on('blur', function(e) {
 			 	$(".first").addClass("special");
-				$(".numb_box").show();
+			 	setTimeout(function(){
+			 		$(".numb_box").show();
+			 	},0)				
 			})
 			$("#account li a").click(function(e){
 				var value = $(e.target).html();
