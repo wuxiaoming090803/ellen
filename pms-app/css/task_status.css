@@ -1,0 +1,99 @@
+/* 任务状态 */
+
+/* 信息操作内容 */
+.p-task-status .content{
+	margin: 0 auto;
+	width:80%;
+}
+.p-task-status .content .sub-title{
+    font-weight: bold;
+    background-color: #515564;
+    height: 4.375rem;
+    line-height: 4.375rem;
+}
+.p-task-status .content .sub-title .left{
+	float: left;
+    padding-left: 5rem;
+    font-size: 1.875rem;
+	width: 28%;
+}
+.p-task-status .content .sub-title .right{
+	float: left;
+    padding-left: 5rem;
+    font-size: 1.875rem;
+    width: 65%;
+}
+.p-task-status .content .info-operation{
+	display: table;
+	width:100%;
+	table-layout: fixed;
+	padding: 1rem 0.625rem 1rem 1.375rem;
+	background: -moz-linear-gradient(top, #5E6074 0%, #515564 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5E6074), color-stop(100%,#515564));
+    background: -webkit-linear-gradient(top, #5E6074 0%,#515564 100%);
+    background: -o-linear-gradient(top, #5E6074 0%,#515564 100%);
+    background: -ms-linear-gradient(top, #5E6074 0%,#515564 100%);
+    background: linear-gradient(to bottom, #5E6074 0%,#515564 100%);
+}
+.p-task-status .content .info-operation .left{
+    display: table-cell;
+    width: 28%;
+    vertical-align: top;
+    background: url(../img/task_status/user-info.png) no-repeat center center;
+    background-size: cover;
+    border-radius: 10px;
+}
+.p-task-status .content .info-operation .left .info{
+	position: relative;
+    padding: 6rem 0 1.25rem 3.5rem;
+    border-radius: 10px;
+    font-size: 1.375rem;
+}
+.p-task-status .content .info-operation .left .info .value{
+    margin-bottom: 2rem;
+    line-height: 2.5rem;
+    width: 15rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.p-task-status .content .info-operation .right {
+    display: table-cell;
+    padding-left: 1.45rem;
+    vertical-align: top;
+    width: auto;
+}
+.p-task-status .content .info-operation .right .item{
+    float: left;
+    width: 50%;
+}
+.p-task-status .content .info-operation .right .item:nth-of-type(3){
+	clear:both;
+}
+.p-task-status .content .info-operation .right .item .inner{
+	position: relative;
+    margin: 0 0.75rem 0.75rem 0;
+    border-radius: 10px;
+}
+.p-task-status .content .info-operation .right .item .inner .heading{
+	position: absolute;
+    left: 3.5rem;
+    top: 3.5rem;
+    font-size: 2.5rem;
+}
+.p-task-status .content .info-operation .right .item .inner img{
+	display: inherit;
+	width:100%;
+	cursor: pointer;
+}
+.p-task-status .content .info-operation .right .item:nth-of-type(3) .inner{
+    margin-bottom:0;
+}
+.p-task-status .content .info-operation .right .item:nth-of-type(4) .inner{
+    margin-bottom:0
+}
+
+/* 退出按钮 */
+.p-task-status .exit{
+    margin: 2.5rem auto 0 auto;
+}

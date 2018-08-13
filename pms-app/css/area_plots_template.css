@@ -1,0 +1,233 @@
+.area-plots-common .content{
+	margin:0 auto;
+	width:80%;
+}
+.plot-wrap-common{
+	position: relative;
+	min-height:18.75rem;
+	/*overflow: auto;*/
+}
+/* 区域 */
+.area-plots{
+	display: table;
+	width: 100%;
+	background-color:#575D6C ;
+}
+.area-plots .area{
+	display: table-cell;
+	vertical-align: top;
+	width:10rem;
+}
+.area-plots .area .area-inner{
+    padding: 1.375rem 0 0.5rem 0;
+	overflow: auto;
+    height: 100%;
+    /*max-height: 681px;*/
+}
+.area-plots .area .single{
+    display: flex;
+    margin-bottom: 1rem;
+    padding: 0.5rem 2rem;
+    align-items: center;
+    width: 5.625rem;
+    min-height: 8.625rem;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background: #515564;
+	font-size: 1.375rem;
+    line-height: 1.65rem;
+}
+
+
+/* 地块 */
+.area-plots .plot-wrapper{
+	display: table-cell;
+	vertical-align: top;
+	width:auto;
+}
+.area-plots .plots{
+    padding:1.375rem 2rem 1rem 0.5rem;
+	/*max-height: 681px;*/
+    overflow: auto;
+}
+.area-plots .plots .item{
+    float: left;
+	width: 25%;
+}
+
+.area-plots-common .plots .item .inner{
+	position:relative;
+	height: 11.625rem;
+	margin: 0.75rem;
+	border-radius: 10px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.area-plots-common .plots .item .inner.pointer{
+	cursor: pointer;
+}
+.area-plots-common .plots .item.kongxian .inner{
+	background-image: url(../img/zzda/kongxian-bg.png);
+}
+.area-plots .plots .item.baoyu .inner{
+	background-image: url(../img/zzda/baoyu-bg.png);
+}
+.area-plots .plots .item.zhongzhi .inner{
+	background-image: url(../img/zzda/zhongzhi-bg.png);
+}
+
+/* 选择框 */
+.area-plots-common .plots .item .inner .box{
+	display:none;
+}
+.area-plots .plots .item .inner .box:checked + .replace-box:after{
+    content: "\2714";
+    color: #ccc;
+    font-size: 1.25rem;
+}
+.area-plots .plots .item .inner .replace-box{
+    display: inline-block;
+    position: absolute;
+    left: 0.875rem;
+    top: 0.5rem;
+    text-align: center;
+    width: 1.875rem;
+    height: 1.875rem;
+    line-height: 1.875rem;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/* 选中状态加cur */
+.area-plots .plots .item .inner.cur .replace-box{
+	background-color: #FFFFFF;
+}
+.area-plots .plots .item .inner.cur .box:checked + .replace-box:after{
+	 color:#25C09D;
+}
+.area-plots .plots .item .inner.active .replace-box{
+	background-color: #fff;
+    border: 1px solid #fff;
+}
+.area-plots .plots .item.kongxian .inner.active{
+	background-image: url(../img/zzda/kongxian-selected-bg.png);
+}
+.area-plots .plots .item .inner.active .box:checked + .replace-box:after{
+    color: #31CB93;
+}
+
+
+.area-plots-common .plots .item .inner .state{
+	display: inline-block;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 6rem;
+    height: 2.375rem;
+    line-height: 2rem;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 20px;
+    font-size: 1.25rem; 
+}
+
+.area-plots-common .plots .item.kongxian .inner .state{
+	background: -moz-linear-gradient(45deg, #FCA75B 0%, #FCCE5B 100%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#FCA75B), color-stop(100%,#FCCE5B));
+    background: -webkit-linear-gradient(45deg, #FCA75B 0%,#FCCE5B 100%);
+    background: -o-linear-gradient(45deg, #FCA75B 0%,#FCCE5B 100%);
+    background: -ms-linear-gradient(45deg, #FCA75B 0%,#FCCE5B 100%);
+    background: linear-gradient(to top right, #FCA75B 0%,#FCCE5B 100%);
+}
+.area-plots .plots .item.baoyu .inner .state{
+	background-color: #fff;
+	color:#9B8A6F;
+}
+.area-plots .plots .item.zhongzhi .inner .state{
+	background-color: #fff;
+	color:#333;
+}
+
+.area-plots-common .plots .item .inner .info{
+    padding-top: 4rem;
+    text-align: center;
+}
+.area-plots-common .plots .item .inner .info .name{
+    display: block;
+	font-size: 2.75rem;
+}
+.area-plots-common .plots .item .inner .info .size{
+    display: block;
+    margin-top: 2rem;
+    font-size: 1.375rem;
+}
+
+
+/* 已选地块区域 */
+.area-plots-common .selected-plots{
+    position: relative;
+    padding-right: 5.375rem;
+    min-height: 6.75rem;
+    background-color: #515564;
+}
+.area-plots-common .selected-plots .inner{
+	margin-right: 8rem;
+	white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.area-plots-common .selected-plots .plots{
+	margin-right: 7rem;	
+}
+.area-plots-common .selected-plots .item{
+	/*float: left;*/
+	display: inline-block;
+}
+.area-plots-common .selected-plots .item .inner{
+	width: 7.75rem;
+    height: 4.875rem;
+}
+.area-plots-common .selected-plots .plots .item.kongxian .inner{
+	background-image: url(../img/zzda/kongxian-selected-bg.png);
+}
+
+.area-plots-common .selected-plots .item .inner .state{
+    width: 2.5rem;
+    height: 1.125rem;
+    line-height: 1.125rem;
+    font-size: 0.75rem;
+}
+.area-plots-common .selected-plots .item .inner .info{
+    padding-top: 1.25rem;
+}
+.area-plots-common .selected-plots .item .inner .info .name{
+    font-size: 1.5rem;
+}
+.area-plots-common .selected-plots .item .inner .info .size{
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+}
+
+/* 操作地块标题 */
+.area-plots-common .selected-plots .sub{
+    position: absolute;
+    right: 5.375rem;
+    top: 0;
+    font-size: 1.5rem;
+    line-height: 6.625rem;
+}
+
+
+/* 按钮区域 */
+/* 种植档案中的按钮 */
+.btn-operate-common{
+	padding: 1.5rem 0 1.5rem 0;
+    text-align: center;
+}
+.btn-operate-common a{
+	display: inline-block;
+}
+.btn-operate-common a.back{
+	margin-right: 3.5rem;
+}
+

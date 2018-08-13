@@ -1,0 +1,78 @@
+<div class="ns_zznz" id="nscz_main">
+    <div class="nscz_xz">
+      	<h2 class="title-common">请选择<span>操作工时</span></h2>
+		<p class="progress-bar-common">
+			<i class="line"></i>
+			<span class="step pass five1 ">添加农资</span>
+			<span class="step  five2">操作工时</span>
+			<span class="step  five3">人工数量</span>
+			<span class="step  five4">打印清单</span>
+		</p>
+    </div>
+   <div class="content">
+		<div class="sub-title">
+			<p class="left">您的信息</p>
+			<p class="right">请选择<span id="nscz_title">人工数量</span></p>
+		</div>
+		<div class="info-operation">
+			<div class="xzgs_left">
+				<div class="info">
+					<div class="czmc">
+						<img src="img/common/gs.png">
+						<span >操作工时</span>
+					</div>
+					<div>
+						<span id="nscz_gs">1</span>小时
+					</div>
+				</div>	
+				<div class="info">
+					<div class="czmc">
+						<img src="img/common/rgsl.png">
+						<span >操作人工数量</span>
+					</div>
+					<div>
+						<span id="nscz_rgsl">1</span>人
+					</div>
+				</div>
+			</div>
+			<div class="xzgs_right" id="subContainer">
+			</div>
+		</div>
+	</div>
+	
+      <div class="operation">
+      		<a class="mui-btn prev">上一步</a>
+			<a class="mui-btn next">下一步</a>
+      </div>
+      
+</div>
+<!--描述：选择工时-->
+<script type="text/html" id="bz_sub1">
+	<div class="xzsl">
+		<div class="mui-numbox"  data-numbox-step="1" data-numbox-min="1">
+		   <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+		   <input id="gs_number" class="mui-numbox-input" type="number">
+		   <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+		</div>
+		<span>小时</span>
+	</div>
+</script>
+<!--描述：选择人工数量-->
+<script type="text/html" id="bz_sub2">
+	<div class="line">
+		<button>5人</button>
+		<button>10人</button>
+		<button>15人</button>
+		<button>100人</button>
+		<button>200人</button>
+		<button>500人</button>
+	</div>
+	<div class="xzsl">
+		<div class="mui-numbox"  data-numbox-step='1' data-numbox-min='1' >
+		  <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+		  <input id="rgsl_number" class="mui-numbox-input" type="number" />
+		  <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+		</div>
+		<span>人</span>
+	</div>
+</script>

@@ -1,0 +1,276 @@
+html{
+	background-color:#5C6472;
+	color:#fff;
+}
+body{
+	color:#fff;
+	background-color:#5C6472;
+}
+
+/*消除float的浮动*/
+.p-clear:before,.p-clear:after{content:" ";display: table;}
+.p-clear:after{clear:both;}
+.p-hide{ display: none; }
+.p-hide-important{ display: none!important; }
+
+.p-show-important{ display: block!important; }
+
+.width-full{ width:100%; }
+.bg-green-common{
+	background: -moz-linear-gradient(45deg, #25C7AE 0%, #23C78A 100%)!important;
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#25C7AE), color-stop(100%,#23C78A))!important;
+    background: -webkit-linear-gradient(45deg, #25C7AE 0%,#23C78A 100%)!important;
+    background: -o-linear-gradient(45deg, #25C7AE 0%,#23C78A 100%)!important;
+    background: -ms-linear-gradient(45deg, #25C7AE 0%,#23C78A 100%)!important;
+    background: linear-gradient(to top right, #25C7AE 0%,#23C78A 100%)!important;
+}
+/* 头部 */
+header .header{
+	margin: 0 auto;
+    width: 80%;
+    height: 3.75rem;
+    line-height: 3.75rem;
+}
+header .title{
+	font-size: 1.375rem;
+}
+header .header .login-info{
+    float: right;
+    font-size: 1.125rem;
+}
+header .header .login-info #userName{
+	margin-right: 2.5rem;
+}
+header .header #logout{
+    margin-left: 3.5rem;
+}
+header .header #logout .logo{
+	width: 1.75rem;
+    vertical-align: middle;
+}
+header .header #logout .text{
+	
+}
+
+
+/*#workcontent{
+	margin-bottom: 3rem;
+}*/
+/* 大标题样式 */
+.title-common{
+	    text-align: center;
+    height: 5rem;
+    line-height: 5.6rem;
+    font-size: 1.6rem;
+}
+
+
+/* 进度条 */
+.progress-bar-common{
+    position: relative;
+    height: 5rem;
+}
+
+.progress-bar-common .line{
+    display: inline-block;
+	height: 0;
+    width: 100%;
+    border-top: 1px solid #AEB2B9;
+}
+
+.progress-bar-common .step{
+    position: absolute;
+    margin-top: 1.75rem;
+    margin-left: -1rem;
+    font-size: 1rem;
+}
+.progress-bar-common .step:after{
+    content: " ";
+    width: 1.25rem;
+    height: 1.25rem;
+    position: absolute;
+    top: -2.75rem;
+    left: 50%;
+    margin-left: -0.625rem;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.progress-bar-common .step.pass:after{ /* 已经操作完的步骤 */
+	background-color: #23C88A;
+}
+.progress-bar-common .step.now:after{ /* 正在执行的步骤 */
+	background-color: #23C88A;
+}
+.progress-bar-common .step.now:before{ /* 正在执行的步骤 */
+    content: " ";
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top: -3.375rem;
+    left: 50%;
+    margin-left: -1.25rem;
+    border-radius: 50%;
+    background-color: #517877;
+}
+.progress-bar-common .step.two1{ /* two表示有两个步骤, 1表示第一个步骤*/
+	left: 40%;
+}
+.progress-bar-common .step.two2{
+	left: 60%;
+}
+
+.progress-bar-common .step.five1{ /* five表示有五个步骤, 1表示第一个步骤*/
+	left: 16.66%;
+}
+.progress-bar-common .step.five2{
+	left: 33.33%;
+}
+.progress-bar-common .step.five3{
+	left: 49.99%;
+}
+.progress-bar-common .step.five4{
+	left: 66.659%;
+}
+.progress-bar-common .step.five5{
+	left: 83.319%;
+}
+.progress-bar-common .step.Five{ /* five表示有五个步骤, 1表示第一个步骤*/
+	left: 16.66%;
+}
+.progress-bar-common .step.Four{ /* Four 4一个步骤*/
+	left: 20%;
+}
+
+
+.progress-bar-common .step.six1{ /* five表示有五个步骤, 1表示第一个步骤*/
+	left: 16.75%;
+}
+.progress-bar-common .step.six2{
+	left: 30%;
+}
+.progress-bar-common .step.six3{
+	left: 43.35%;
+}
+.progress-bar-common .step.six4{
+	left: 56.647%;
+}
+.progress-bar-common .step.six5{
+	left: 69.943%;
+}
+.progress-bar-common .step.six6{
+	left: 83.24%;
+}
+
+
+
+/* button按钮 */
+.btn-common{
+	display: block;
+    text-align: center;
+    /*height: 5.625rem;
+    width: 17.5rem;
+    line-height: 5.25rem;*/
+    font-size: 1.5rem;
+    border-radius: 50px;
+    height: 5rem;
+    width: 15.5rem;
+    line-height: 5rem;
+}
+	/* 返回 退出 */
+.btn-common.back,.btn-common.exit{
+	background: -moz-linear-gradient(45deg, #FD7575 0%, #E95A5A 100%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#FD7575), color-stop(100%,#E95A5A));
+    background: -webkit-linear-gradient(45deg, #FD7575 0%,#E95A5A 100%);
+    background: -o-linear-gradient(45deg, #FD7575 0%,#E95A5A 100%);
+    background: -ms-linear-gradient(45deg, #FD7575 0%,#E95A5A 100%);
+    background: linear-gradient(to top right, #FD7575 0%,#E95A5A 100%);
+}
+
+
+/* 横向的分割线 */
+.division-common{
+	float: left;
+    width: 100%;
+}
+.division-common p:nth-of-type(1){
+	border-top: 1px solid #515564;
+}
+.division-common p:nth-of-type(2){
+	border-top: 1px solid #545968;
+}
+.division-common p:nth-of-type(3){
+	border-top: 1px solid #5C6472;
+}
+.division-common p:nth-of-type(4){
+	border-top: 1px solid #5A616F;
+}
+/* sub title样式 */
+.sub-title-common{
+	padding: 0 3rem;
+    height: 4.625rem;
+    line-height: 4.5rem;
+    background-color: #4C505F;
+}
+.sub-title-common .left{
+	float: left;
+    font-size: 1.875rem;
+}
+.sub-title-common .right{
+	float: right;
+    font-size: 1.25rem;
+}
+/* 标准类型方式 */
+.standard-type-common{
+	padding:0 1rem 0 0.75rem;
+}
+.standard-type-common .each{
+	float: left;
+    width: 50%;
+    padding: 0.75rem;
+}
+.standard-type-common .each .inner{
+    position: relative;
+    cursor: pointer;
+}
+.standard-type-common .each .inner .heading{
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    font-size: 2.25rem;
+}
+.standard-type-common .each .inner .box{
+	display:none;
+}
+.standard-type-common .each .inner .box:checked + .replace-box:after{
+    content: "\2714";
+    position: absolute;
+    left: 0.5rem;
+    top: 0.125rem;
+   	color: #ccc;
+    font-size: 1.5rem;
+}
+.standard-type-common .each .inner .replace-box{
+    display: inline-block;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    text-align: center;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 1.875rem;
+    background-color: transparent;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+.standard-type-common .each .inner.active .replace-box{
+	border: 2px solid #fff;
+	background-color: #fff;
+}
+.standard-type-common .each .inner.active .box:checked + .replace-box:after{
+	color: #23C78C;
+}
+
+/* 时间控件 */
+.date-component{
+	color:#333;
+}

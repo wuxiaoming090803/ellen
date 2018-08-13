@@ -1,0 +1,326 @@
+<script type="text/html" id="recordsInfo">
+		<%
+			if(list.length<=0)
+			{
+		%>	
+		<div class="empty">暂无数据</div>
+		<%
+			}else{
+		%>
+			<li class="line"></li>
+			{{each list item index}}
+				<%
+					var singleClass = item.is_care==1?"baoyu":"zhongzhi ";
+					singleClass += (index==0&& item.isCare!=1)?"active":"";
+					var typeText = item.isCare==1?"土地保育":"种植档案";
+					var startTime = item.startTime;
+					var endTime = item.endTime;
+					startTime = startTime!=undefined? startTime.split(' ')[0].replace(/-/g,'/'):"";
+					endTime = endTime!=undefined? endTime.split(' ')[0].replace(/-/g,'/'):"";
+				
+					
+				%>
+			<li class="e single {{singleClass}}" data-id={{item.id}}>
+				<p id="type" class="type">{{typeText}}</p>
+				<p id="time" class="time">{{startTime}}至{{endTime}}</p>
+			</li>
+			{{/each}}
+		
+		<%
+			}
+		%>
+	
+</script>
+
+<script type="text/html" id="jbxxTemp">
+	<%
+		if(data.length<=0){
+		%>
+	<div class="empty-common">暂无数据</div>
+		<%
+		}else{
+			var d = data[0];
+			var farmingStandardText = "";
+			switch(d.farmingStandard){
+				case 1 : farmingStandardText = "绿色";break;
+				case 2 : farmingStandardText = "有机";break;
+				case 3 : farmingStandardText = "自来水";break;
+			}
+		%>
+		<li class="item">
+			<p class="caption zwmc"><span>作物名称</span></p>
+			<p class="value">{{d.productName}}</p>
+		</li>
+		<li class="item">
+			<p class="caption zzfs"><span>种植标准</span></p>
+			<p class="value">{{farmingStandardText}}</p>
+		</li>
+		<li class="division-common">
+			<p></p><p></p><p></p><p></p>
+		</li>
+		<li class="item">
+			<p class="caption zzmj"><span>种植面积</span></p>
+			<p class="value">{{d.farmingArea}}亩</p>
+		</li>
+		<li class="item">
+			<p class="caption fzr"><span>负责人</span></p>
+			<p class="value">{{d.userName}}</p>
+		</li>
+		<li class="division-common">
+			<p></p><p></p><p></p><p></p>
+		</li>
+		<li class="item">
+			<p class="caption zzsj"><span>种植时间</span></p>
+			<p class="value">{{d.farmingPlanAt!=undefined? d.farmingPlanAt.split(' ')[0]:""}}</p>
+		</li>
+		<li class="item">
+			<p class="caption">&nbsp;</p>
+			<p class="value">&nbsp;</p>
+		</li>
+		
+		<%
+		}
+		
+	%>
+	
+</script>
+
+<script type="text/html" id="nsczTemp">
+	<%
+		if(dataIsEmpty){
+	%>
+		<div class="empty-common">暂无数据</div>
+	<%
+		}
+		for(var key in data){
+	%>
+		<li class="solo">
+			<p class="date">{{key}}</p>
+			<ul class="message">
+				{{each data[key] workInfo index}}
+				<li class="inner">
+					<span>{{workInfo.workTypeName}}</span>
+					<span>用时{{workInfo.workTime}}小时</span>
+					<span>人工数量: {{workInfo.farmerNum}}</span>
+					<span>添加人: {{workInfo.farmer}}</span>
+				</li>
+				{{/each}}
+			</ul>
+		</li>
+	<%
+		}
+	%>
+</script>
+
+<script type="text/html" id="trpTemp">
+		<%
+			if(data.length<=0)
+			{
+			%>	
+		<div class="empty-common">暂无数据</div>
+			<%
+			}else{
+				for(var i=0;i<data.length;i++)
+				{
+					var item = data[i];
+					var value = "";
+					var captionClass = "";
+					switch(item.mcCode){
+						case 'production_zhongmiao':captionClass = "zz";break;
+						case 'production_huafei':captionClass = "fl";break;
+						case 'production_nongyao':captionClass = "ny";break;
+					};
+					item.inputList.forEach(function(it){
+						value +="  "+it.inputsName;
+					});
+			%>	
+					<li class="item">
+						<p class="caption {{captionClass}}"><span>{{item.mcName}}</span></p>
+						<p class="value">{{value}}</p>
+					</li>
+					
+					<%		
+					if(i!=data.length)
+					{
+					%>
+						<li class="division-common">
+							<p></p><p></p><p></p><p></p>
+						</li>	
+			
+					<%
+					}
+				}
+	
+			}
+		%>
+	
+</script>
+
+<script type="text/html" id="csTemp">
+<%
+	if(data.length<=0)
+	{
+	%>	
+	<div class="empty-common">暂无数据</div>
+	<%
+	}else{
+	%>
+	<ul class="recovery-yield">
+		<li class="heading">
+			<p class="left"><span>日期</span></p>
+			<p class="right"><span>采收量</span></p>
+		</li>
+		<%
+			var num = 0;
+			for(var i=0;i<data.length;i++)
+			{
+				var item = data[i];
+				num += item.producedQty;
+				%>
+			<li>
+				<p class="left">{{item.producedAt}}</p>
+				<p class="right">{{item.producedQty}}{{item.weightUnit}}</p>
+			</li>	
+				<%
+			}
+		%>
+	
+	</ul>
+	<div class="chart">
+		<p class="statistics">总采收量<br/><span class="num">{{num}}</span></p>
+	</div>
+	<%
+	}
+%>
+	
+					
+</script>
+
+<div class="p-massif-details">
+	<h2 class="title-common">地块详情</h2>
+	<div class="content">
+		<div class="selected-plots sub-title-common">
+			<p class="left" id="areaName"></p>
+			<p class="right">
+				区域: <span id="parentName"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				地块面积: <span id="acreage"></span>亩
+			</p>
+		</div>
+		
+		<div class="records">
+			<ul id="recordsWrap">
+			
+			</ul>
+		</div>
+		
+		<div class="details p-hide" id="detailArea">
+			<div class="title">
+				<a class="e sub bg-green-common" href="javascript:void(0);" data-type="jbxx">基本信息</a>
+				<a class="e sub" href="javascript:void(0);" data-type="nscz">农事操作</a>
+				<a class="e sub" href="javascript:void(0);" data-type="trpxx">投入品信息</a>
+				<a class="e sub" href="javascript:void(0);" data-type="csxx">采收信息</a>
+			</div>
+			<div class="e wrapper">
+				<ul class="e list p-clear" id="jbxx">
+					<!--<li class="item">
+						<p class="caption zwmc"><span>作物名称</span></p>
+						<p class="value">小黄瓜</p>
+					</li>
+					<li class="item">
+						<p class="caption zzfs"><span>种植方式</span></p>
+						<p class="value">直播</p>
+					</li>
+					<li class="division-common">
+						<p></p><p></p><p></p><p></p>
+					</li>
+					<li class="item">
+						<p class="caption zzmj"><span>种植面积</span></p>
+						<p class="value">0.7亩</p>
+					</li>
+					<li class="item">
+						<p class="caption fzr"><span>负责人</span></p>
+						<p class="value">张三</p>
+					</li>
+					<li class="division-common">
+						<p></p><p></p><p></p><p></p>
+					</li>
+					<li class="item">
+						<p class="caption zzsj"><span>种植时间</span></p>
+						<p class="value">2017-09-12</p>
+					</li>
+					<li class="item">
+						<p class="caption">&nbsp;</p>
+						<p class="value">&nbsp;</p>
+					</li>-->
+				</ul>
+				
+				<ul class="e list p-clear p-hide-important" id="nscz">
+					<!--
+					<li class="solo">
+						<p class="date">10月23日</p>
+						<ul class="message">
+							<li class="inner">
+								<span class="operate">套袋</span>
+								<span>用时2.0小时</span>
+								<span>来自系统推送</span>
+								<span>添加人: 系统</span>
+							</li>
+							<li class="inner">
+								<span>套袋</span>
+								<span>用时2.0小时</span>
+								<span>来自系统推送</span>
+								<span>添加人: 系统</span>
+							</li>
+						</ul>
+					</li>-->
+				</ul>
+			
+				<ul class="e list p-clear p-hide-important" id="trpxx">
+					<!--<li class="item">
+						<p class="caption zz"><span>种子</span></p>
+						<p class="value">小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜tr</p>
+					</li>
+					<li class="division-common">
+						<p></p><p></p><p></p><p></p>
+					</li>
+					<li class="item">
+						<p class="caption ny"><span>农药</span></p>
+						<p class="value">小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜</p>
+					</li>
+					<li class="division-common">
+						<p></p><p></p><p></p><p></p>
+					</li>
+					<li class="item">
+						<p class="caption fl"><span>肥料</span></p>
+						<p class="value">小黄瓜小黄瓜小黄瓜小黄瓜小黄瓜</p>
+					</li>-->
+				</ul>
+			
+				<div class="e list p-clear p-hide-important" id="csxx">
+					<!--<ul class="recovery-yield" id="">
+						<li class="heading">
+							<p class="left"><span>日期</span></p>
+							<p class="right"><span>采收量</span></p>
+						</li>
+						<li>
+							<p class="left">2017-9-27</p>
+							<p class="right">50.0KG</p>
+						</li>
+						
+						<li>
+							<p class="left">2017-9-27</p>
+							<p class="right">50.0KG</p>
+						</li>
+					</ul>
+					<div class="chart">
+						<p class="statistics">总采收量<br/><span class="num">5000</span></p>
+							
+						</div>
+					</div>-->
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<a href="javascript:void(0);" class="btn-common e back">返回</a>
+</div>

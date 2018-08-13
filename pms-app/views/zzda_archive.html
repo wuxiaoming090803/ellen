@@ -1,0 +1,152 @@
+<script type="text/html" id="daItemTemplate">
+	<%
+			if(list.length<=0)
+			{
+		%>	
+		<div class="empty">暂无数据</div>
+		<%
+			}else{
+		%>
+		
+		{{each list value index}}
+			<%
+				var area = 0;
+				var areaName = "";
+				for(var i=0;i<value.farmingPlanAreas.length;i++){
+					var areaSingle = value.farmingPlanAreas[i];
+					area += areaSingle.farmingArea;
+					areaName += " "+ areaSingle.areaName;
+				}
+			%>
+			
+			<li class="each">
+				<div class="e inner"  data-index={{index}} data-isupdate = {{value.isUpdate}}>
+					<div class="wrap">
+						<div class="zw-name">
+	                		<img src="img/nscz/xhg.png">
+	                		<span>{{value.productName}}</span>
+	                	</div>
+	      				<p>面积: {{area}}</p>
+	      				<p>种植编号: {{value.farmingBatchNo}}</p>
+	      				<p>地块: {{areaName}}</p>
+					</div>
+					<img class="width-full e img" src="./img/zzda_archive/archive-bg.png">
+				</div>
+			</li>
+			
+		{{/each}}
+	
+	<%
+		}
+	%>
+</script>
+<div class="p-zzda-archive">
+	<h2 class="title-common">请选择种植档案</h2>
+	<p class="progress-bar-common">
+		<span class="line"></span>
+		<span class="step now six1 ">新建档案</span>
+		<span class="step six2">选择地块</span>
+		<span class="step six3">种植时间</span>
+		<span class="step six4">种植标准</span>
+		<span class="step six5">作物名称</span>
+		<span class="step six6">种植面积</span>
+	</p>
+	<div class="content">
+		<div class="sub sub-title-common">
+			<p class="left">请您选择种植档案</p>
+			<p class="right">数量: <span id="num">0</span></p>
+		</div>
+		<ul class="standard-type-common p-clear" id="daListWrapper">
+			<!--<li class="each">
+				<div class="e inner">
+					<div class="wrap">
+						<div class="zw-name">
+	                		<img src="img/nscz/xhg.png">
+	                		<span>荷兰小黄瓜</span>
+	                	</div>
+	      				<p>面积:D0.7</p>
+	      				<p>种植编号：zz00001</p>
+	      				<p>区域：D1_01</p>
+					</div>
+					<img class="width-full e img" src="./img/zzda_archive/archive-bg.png">
+				</div>
+			</li>
+			<li class="each">
+				<div class="e inner">
+					<div class="wrap">
+						<div class="zw-name">
+	                		<img src="img/nscz/xhg.png">
+	                		<span>荷兰小黄瓜</span>
+	                	</div>
+	      				<p>面积:D0.7</p>
+	      				<p>种植编号：zz00001</p>
+	      				<p>区域：D1_01</p>
+					</div>
+					<img class="width-full e img" src="./img/zzda_archive/archive-bg.png">
+				</div>
+			</li>
+			<li class="each">
+				<div class="e inner">
+					<div class="wrap">
+						<div class="zw-name">
+	                		<img src="img/nscz/xhg.png">
+	                		<span>荷兰小黄瓜</span>
+	                	</div>
+	      				<p>面积:D0.7</p>
+	      				<p>种植编号：zz00001</p>
+	      				<p>区域：D1_01</p>
+					</div>
+					<img class="width-full e img" src="./img/zzda_archive/archive-bg.png">
+				</div>
+			</li>
+			<li class="each">
+				<div class="e inner">
+					<div class="wrap">
+						<div class="zw-name">
+	                		<img src="img/nscz/xhg.png">
+	                		<span>荷兰小黄瓜</span>
+	                	</div>
+	      				<p>面积:D0.7</p>
+	      				<p>种植编号：zz00001</p>
+	      				<p>区域：D1_01</p>
+					</div>
+					<img class="width-full e img" src="./img/zzda_archive/archive-bg.png">
+				</div>
+			</li>
+			<li class="each">
+				<div class="e inner">
+					<div class="wrap">
+						<div class="zw-name">
+	                		<img src="img/nscz/xhg.png">
+	                		<span>荷兰小黄瓜</span>
+	                	</div>
+	      				<p>面积:D0.7</p>
+	      				<p>种植编号：zz00001</p>
+	      				<p>区域：D1_01</p>
+					</div>
+					<img class="width-full e img" src="./img/zzda_archive/archive-bg.png">
+				</div>
+			</li>
+			<li class="each">
+				<div class="e inner">
+					<div class="wrap">
+						<div class="zw-name">
+	                		<img src="img/nscz/xhg.png">
+	                		<span>荷兰小黄瓜</span>
+	                	</div>
+	      				<p>面积:D0.7</p>
+	      				<p>种植编号：zz00001</p>
+	      				<p>区域：D1_01</p>
+					</div>
+					<img class="width-full e img" src="./img/zzda_archive/archive-bg.png">
+				</div>
+			</li>-->
+		</ul>
+		
+	</div>
+	<div class="btn-operate">
+		<a href="javascript:void(0);" class="btn-common e back">返回</a>
+		<a href="javascript:void(0);" class="btn-common bg-green-common e new">新建</a>
+		<a href="javascript:void(0);" class="btn-common bg-green-common e edit">编辑</a>
+	</div>
+</div>

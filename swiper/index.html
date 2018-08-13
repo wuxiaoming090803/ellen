@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo</title>
+  <link rel="stylesheet" href="css/swiper.min.css">
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+  <style>
+  html, body {
+        position: relative;
+        height: 100%;
+      }
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+      }
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-slide {
+        text-align: center;
+      
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .journal-reward {
+      position: relative;
+      width: 1.5rem;   
+      display: block;
+      z-index: 2;
+    }
+    .m {
+        position: absolute;
+        right: 10px;
+        bottom: 40%;
+
+    }
+    canvas{
+        z-index: 999;
+        position: absolute;  
+        bottom: 50%;
+        right: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+           <div class="tool-panel m">
+              <ul>
+                  <li><img src="img/reward.png" class="journal-reward"/></li>
+              </ul>
+           </div>
+           <video  autoplay="autoplay" loop controls muted width="100%" height="100%">
+              <source src="test.mp4" type="video/mp4">
+           </video>
+
+      </div>
+      <div class="swiper-slide">
+        <div class="tool-panel m">
+              <ul>
+                  <li><img src="img/reward.png" class="journal-reward"/></li>
+              </ul>
+           </div>
+        <video autoplay="autoplay" loop controls muted width="100%" height="100%">
+            <source src="test2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="swiper-slide">
+        <div class="tool-panel m">
+              <ul>
+                  <li><img src="img/reward.png" loop controls muted class="journal-reward"/></li>
+              </ul>
+           </div>
+          <video width="100%" height="100%" loop controls muted>
+              <source src="test.mp4" type="video/mp4">
+          </video>
+        </div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+    </div>
+    <!-- Add Pagination -->
+  <!--   <div class="swiper-pagination"></div> -->
+  </div>
+  <script src="js/jquery-1.10.1.min.js"></script>
+  <script src="dist/swiper.min.js"></script>
+  <script src="js/flutter-hearts-zmt.js"></script>
+  <script>
+  // 图片地址在此处更换  可换成你的图片
+var assets = [
+  'img/1.png',
+  'img/2.png',
+  'img/3.png',
+  'img/4.png',
+  'img/5.png',
+];
+assets.forEach(function(src, index) {
+  assets[index] = new Promise(function(resolve) {
+    var img = new Image;
+    img.onload = resolve.bind(null, img);
+    img.src = src;
+  });
+});
+function animate(touches){
+  Promise.all(assets).then(function(images) {
+        var random = {
+        uniform: function(min, max) {
+          return min + (max - min) * Math.random();
+        },
+        uniformDiscrete: function(i, j) {
+          return i + Math.floor((j - i + 1) * random.uniform(0, 1));
+        },
+      };
+      var stage = new BubbleHearts();
+      var canvas = stage.canvas;
+      canvas.width = 170;
+      canvas.height = 300;
+      canvas.style['width'] = '250px';
+      canvas.style['height'] = '400px';
+      canvas.style['zIndex'] = "999";
+      canvas.style['position'] = 'absolute'
+      canvas.style["top"] = touches.screenX + "px";
+      canvas.style["left"] =touches.screenY + "px";
+      document.body.appendChild(canvas);
+      let image = images[random.uniformDiscrete(0, images.length - 1)];
+      stage.bubble(image, 3000, function(lifespan) {
+       if(lifespan >= 0) {
+         stage.context.drawImage(
+           image,
+           (canvas.width - image.width) / 2,
+           (canvas.height - image.height) * lifespan,
+           image.width,
+           image.height
+         );
+       } else {
+         return true;
+       }
+      });
+  })
+}
+Promise.all(assets).then(function(images) {
+
+  var random = {
+    uniform: function(min, max) {
+      return min + (max - min) * Math.random();
+    },
+    uniformDiscrete: function(i, j) {
+      return i + Math.floor((j - i + 1) * random.uniform(0, 1));
+    },
+  };
+ 
+  var stage = new BubbleHearts();
+  var canvas = stage.canvas;
+  canvas.width = 170;
+  canvas.height = 300;
+  canvas.style['width'] = '250px';
+  canvas.style['height'] = '400px';
+  canvas.style['zIndex'] = "999";
+  document.body.appendChild(canvas);
+  //journal-reward 为赏桃的按钮 
+  var list = document.getElementsByClassName('journal-reward');
+  for(var i = 0;i<list.length;i++){
+    list[i].addEventListener("click",function() {
+    //随机飘动
+    stage.bubble(images[random.uniformDiscrete(0, images.length - 1)],1000);
+    
+    //垂直向上飘动效果
+      // let image = images[random.uniformDiscrete(0, images.length - 1)];
+      // stage.bubble(image, 3000, function(lifespan) {
+      //  if(lifespan >= 0) {
+      //    stage.context.drawImage(
+      //      image,
+      //      (canvas.width - image.width) / 2,
+      //      (canvas.height - image.height) * lifespan,
+      //      image.width,
+      //      image.height
+      //    );
+      //  } else {
+      //    return true;
+      //  }
+      // });
+    }, false);
+  }
+  $("video").on("dblclick",function(){
+    alert("dbclick")
+  })
+  $(".swiper-wrapper").on("click",".add",function(event){
+       event.stopPropagation();
+       event.preventDefault(); 
+       stage.bubble(images[random.uniformDiscrete(0, images.length - 1)]);
+    })
+  });
+    var swiper = new Swiper('.swiper-container', {
+      direction: 'vertical',
+      observer:true,
+      on: {
+        touchMove: function(event,index){
+          debugger;
+          if(swiper.activeIndex >= 4){
+             appendDom();
+          }
+        },
+       doubleTap: function(event){
+        debugger;
+          animate(event.changedTouches[0]);
+       },
+      }
+    });
+    function appendDom(){
+      var html = [];
+      html.push('<div class="swiper-slide"><div class="tool-panel m"><ul><li><img src="img/reward.png" class="journal-reward add"/></li></ul></div>');
+      html.push('<video width="100%" height="100%"><source src="test2.mp4" loop controls muted type="video/mp4"></video></div>');
+      $('.swiper-wrapper').append(html.join(''));
+    }
+  </script>
+</body>
+</html>

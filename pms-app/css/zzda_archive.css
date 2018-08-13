@@ -1,0 +1,61 @@
+.p-zzda-archive .content{
+	position: relative;
+    min-height: 18.75rem;
+	width:80%;
+	margin:0 auto;
+	background-color: #575D6C;
+}
+.p-zzda-archive .sub .right span{
+	margin-right:5rem;
+}
+.p-zzda-archive .standard-type-common{
+	overflow: auto;
+	min-height: 14.125rem;
+}
+.p-zzda-archive .standard-type-common .empty{
+	text-align: center;
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+    line-height: 12.125rem;
+}
+
+.p-zzda-archive .standard-type-common .each{
+	width:25%;
+}
+.p-zzda-archive .standard-type-common .each:nth-of-type(4n+1){
+	clear: both;
+}
+.p-zzda-archive .standard-type-common .each .inner .wrap{
+	position: absolute;
+	padding: 1rem 1.5rem;
+	width:100%;
+}
+.p-zzda-archive .standard-type-common .each .inner .wrap p{
+    margin-top: 0.5rem;
+}
+.p-zzda-archive .standard-type-common .each .inner .wrap p:nth-of-type(1){
+    margin-top: 1rem;
+}
+.zw-name img{
+	height: 4.5rem;
+    vertical-align: middle;
+}
+.zw-name span{
+	margin-left: 1rem;
+	font-size: 1.5rem;
+}
+/* button */
+.p-zzda-archive .btn-operate{
+	padding:2.5rem 0 ;
+	margin:0 auto ;
+	width:80%;
+	text-align: center;
+}
+.p-zzda-archive .btn-operate a{
+	display: inline-block;
+}
+.p-zzda-archive .btn-operate a.new,.btn-operate a.edit{
+	margin-left: 2rem;
+}
+
+    

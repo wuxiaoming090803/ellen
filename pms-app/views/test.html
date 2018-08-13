@@ -1,0 +1,17 @@
+<div style="height: 100px; text-align: center;">你来到新的页面了</div>
+<div>
+	<input type="text" name="test" value="" id="testkeyboard" />
+	<br />
+	<input type="text" name="test" value="" id="test2keyboard" />
+	<div id="subContainer"></div>
+</div>
+
+<script type="text/html" id="sub1">
+	我是{{page }}
+	<a f-rel="subprocess" data-event="pre">上一步</a><a f-rel="subprocess" data-event="next">下一步</a>
+</script>
+
+<script type="text/html" id="sub2">
+	我是{{action }}
+	<a f-rel="subprocess" data-event="pre">上一步</a><a f-rel="subprocess" data-event="next">下一步</a>
+</script>

@@ -1,0 +1,758 @@
+html {
+    font-size: 16px;
+}
+html,body{
+   margin: 0 !important;
+   width:100%;
+    height:100%;
+}
+#index{
+  height:100%;
+}
+.nscz_main{
+   width:100%;
+   background-color:#5c6472;
+   /*padding-top:3.75rem;*/
+}
+.nscz_rgt_info{
+  float:right;
+  width:500px;
+  padding-right:200px;
+}
+.nscz_sm{
+  	margin-left:120px;
+  	float: left;
+}
+.nscz_czy{
+   margin-right:160px;
+}
+.nscz_czsm{
+	font-size:32px;
+	color:#fff;
+	letter-spacing: 2px;
+	text-align: center;
+	height:10rem;
+	line-height:10rem;
+	/*border-bottom: 2px solid #aeb2b9;*/
+}
+.nscz_tb{
+	height: 6.26rem;
+}
+.nscz_wz1{
+	float: left;
+    background-image: url(../img/nscz/bzd_cur.png);
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    margin-left: 38%;
+}
+.nscz_wz2{
+	background-image: url(../img/nscz/bzd.png);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-right: 38%;
+    float: right;
+}
+.nscz_czsmtp{
+  width:100%;
+}
+.nscz_main_box{
+  padding:10px 10%;
+  height:50%;
+}
+.nscz_main_h{
+  background-color:#515564;
+  height:8rem;
+  color:#FFF;
+}
+.nscz_main_hl{
+  float: left;
+  padding-right: 120px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  width: 80%;
+}
+.nscz_main_ckl{
+	width: 70%;
+	float: left;
+	padding: 0.5rem 0;
+}
+.nscz_qcz{
+	font-size: 2rem;
+    display: block;
+    width: 30%;
+    float: right;
+    padding-left: 3rem;
+    line-height: 8rem;
+}
+.ns_ckul{
+	float: left;
+	width: 73%;
+	margin: 0 1%;
+	height: 6.5rem;
+	overflow-y: hidden;
+	overflow-x: auto;
+	white-space: nowrap;
+	border-radius: 10px;
+}
+.nscz_main_qhlx{
+	float: right;
+    border-radius: 10px;
+    background: #fff;
+    width: 25%;
+    margin-left: 5%;
+    height: 5.2rem;
+    line-height: 5.2rem;
+    overflow: hidden;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+.nscz_main_qhlx a{
+	border: none;
+	display: block;
+	float: left;
+	text-align: center;
+	width: 50%;
+	color: #33cc99;
+}
+.nscz_main_qhlx .cur{
+	background-color: #29ba8a;
+	color: #FFFFFF;
+}
+.nscz_main_lt{
+	width:72%;
+	height: 100%;
+	float: left;
+	overflow-x: hidden;
+}
+.nscz_qymc{
+	width: 40%;
+    text-align: center;
+    float: left;
+    line-height: 4rem;
+    font-size: 0.8rem;
+}
+.nscz_qymc1{
+	width: 40%;
+    text-align: center;
+    float: left;
+    line-height: 8.125rem;
+    font-size: 1.2rem;
+}
+.nscz_qymc_sml{
+	    height: 1.75rem;
+}
+.nscz_qymc_sml img{
+	height: 2.5rem;
+}
+.nscz_qymc_sml span{
+	float: left;
+	line-height: 1.5rem;
+	margin-left: 0.5rem; 
+}
+#big_zzda .nscz_qymc2{
+	height: 3.75rem;
+}
+.nscz_qymc2 img{
+	height: 3.5rem;
+	float: left;
+}
+.nscz_qymc2 span{
+	float: left;
+	line-height: 3rem;
+	margin-left: 0.5rem; 
+}
+#big_zzda p{
+	font-size: 0.8rem;
+	padding-top: 6px;
+}
+/***sml_zzda***/
+#sml_zzda li,#sml_czdk li{
+    margin-bottom: 0; 
+    background-image: url(../img/nscz/ns_dz_sml.png);
+    white-space: normal;
+    display: inline-block;
+    width: 19%; 
+    height: 100%;
+    background-size: 100% 100%;
+    margin-right: 1%;
+}
+#sml_czdk li{
+    background-image: url(../img/nscz/ns_ck.png);
+}
+#sml_zzda .nscz_qymc2 img{
+	height: 100%;
+}
+#sml_zzda .nscz_qymc2{
+	height: 1.8rem;
+}
+#sml_zzda .nscz_qymc2 span{
+	line-height: 1.8rem;
+	margin-left: 0.5rem;
+	font-size: 0.6rem;
+}
+#sml_zzda li p{
+	height: 1.0035rem;
+	float: left;
+	font-size: 0.625rem;
+	padding-left: 0.5rem;
+	 width: 100%; 
+}
+
+#sml_zzda input,#sml_czdk input{
+	display: none;
+}
+/***sml_czdk***/
+#sml_czdk li .nscz_qymc1{
+	line-height: 5rem;
+	font-size: 0.8rem;
+}
+#sml_czdk li .nscz_qyif1{
+	margin: 1.2rem 0;
+	font-size: 0.5rem;
+}
+#sml_czdk .nscz_ckl_1{
+	width: 18px;
+    height: 16px;
+}
+#sml_czdk input[type=checkbox]:before, .mui-radio input[type=radio]:before{
+	font-size: 16px;
+}
+.nscz_qyif1 {
+     width: 60%; 
+     float: left; 
+    margin: 2.5rem 0;
+}
+.nscz_qyif{
+	width: 60%;
+    float: left;
+    font-size: 0.5rem;
+    margin: 0.875rem 0;
+}
+
+.zzda_main_c{
+  padding: 0.75rem;
+  height:32rem;
+  background-color:#595b6d;
+}
+#big_zzda li,#big_czdk li{
+	position: relative;
+	display:inline-block;
+	float: left;width: 24%;
+	background-image: url(../img/nscz/zzda_wxzbg.png);
+	background-repeat: round;
+	margin-right: 1%;
+	margin-bottom: 0.8rem;
+	height: 10rem;
+	border-radius: 10px;
+	background-size: 100% 100%;
+	cursor: pointer;
+	padding-left: 0.6rem;
+    padding-top: 0.325rem;
+}
+#big_czdk li{
+	background-image: url(../img/nscz/dkbj_wxz.png);
+}
+#big_zzda li.cur,#big_czdk li.cur{
+	background-image:url(../img/nscz/zzda_xzbg.png)
+}
+#big_czdk li.cur{
+	background-image:url(../img/nscz/czdk_big.png)
+}
+.nscz_main_lt_ul .nscz_ckl_1{
+	position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    outline: 0!important;
+    background-color: transparent;
+    -webkit-appearance: none;
+    border: 1.2px solid #fff;
+    text-align: center;
+    border-radius: 5px;
+}
+.nscz_main_lt_ul .cur .nscz_ckl_1{
+	background-color: #ffffff;
+	
+}
+.nscz_main_lt_ul .cur input[type=checkbox]:before{
+	color: #25C09D;
+}
+.nscz_main input[type=checkbox]:before,.xzgs_right input[type=checkbox]:before {
+    font-family: Muiicons;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 0;
+    background: 0 0;
+    -webkit-font-smoothing: antialiased;
+}
+.nscz_main input[type=checkbox]:before,.xzgs_right input[type=checkbox]:before {
+    content: '\2714';
+    font-size: 1.2rem;
+}
+
+.nscz_main_rt{
+    float: left;
+    width: 28%;
+    height: 100%;
+    background-color: #515564;
+}
+.nscz_main_rt li{
+	height: 6.2rem;
+	border: 1px solid #575d6c;
+	line-height: 6.2rem;
+	position: relative;
+	cursor: pointer;
+	border-radius: 1rem;
+}
+.zzda_main_zl{
+  height: 80px;
+}
+.zzda_main_zl img{
+  width: 60px;
+  height: 60px;
+    float: left;
+    margin: 10px;
+}
+.zzda_main_imgspan{
+  float: left;
+  color:#fff;
+  height: 80px;
+  line-height: 80px;
+  padding-left: 20px;
+}
+
+
+.zzda_main_c_li .sm{
+    padding:  5px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.nscz_bzlxul{
+	
+}
+.nscz_xznscz{
+	float: left;
+    width: 125px;
+    height: 100%;
+}
+.nscz_xznscz img{
+	margin-left: 2rem;
+    margin-top: 1.5rem;
+    width: 3.6rem;
+    float: left;
+}
+.nscz_jrnscz{
+	height: 50%;
+    right: 0;
+    position: absolute;
+    top: 33%;
+    background-image: url(../img/nscz/jr.png);
+    float: left;
+    width: 3rem;
+    background-repeat: no-repeat;
+}
+.nscz_bzlxul span{
+	font-size: 1.2rem;
+    margin-right: 3.2rem;
+    float: right;
+}
+.nscz_img_cs{
+	    width: 3rem;
+    margin-left: 2.6rem;
+}
+.nscz_bzlxul .cur{
+	background-color: #33cc99;
+}
+.f_right{
+  float: right;
+}
+/*滚动条*/
+::-webkit-scrollbar
+{
+    width: 16px;
+    height: 8px;
+    background-color: #F5F5F5;
+}
+ 
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+ 
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+
+.bscz_button{
+	padding:2.5rem 10%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.bscz_button a{
+	text-align: center;
+    height: 4.25rem;
+    width: 15.5rem;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    line-height: 3.2rem;
+    border: none;
+    color: #fff;
+    margin-right: 3rem;
+    display: inline-block;
+}
+.bscz_button .prev{
+	background-color: #EA5C5C;
+}
+.bscz_button .next{
+	background-color: #29ba8a;
+}
+.bscz_button .disable{
+	opacity: 0.6;
+	cursor: default;
+	
+}
+/**************************************************/
+.ns_zznz .content{
+	margin: 0 auto;
+    width: 80%;
+}
+.ns_zznz .content .sub-title {
+    font-weight: bold;
+    background-color: #515564;
+    height: 3.5rem;
+    line-height: 3.5rem;
+}
+.ns_zznz .content .sub-title .left {
+    float: left;
+    padding-left: 5rem;
+    font-size: 1.2rem;
+    width: 50%;
+}
+.ns_zznz .content .sub-title .right {
+    float: left;
+    padding-left: 5rem;
+    font-size: 1.2rem;
+    width: 50%;
+}
+.ns_zznz .content .info-operation  {
+    overflow: hidden;
+    background-color: #575d6c;
+    min-height: 37rem;
+    max-height: 37rem;
+}
+.ns_zznz .content .info-operation .left {
+           width: 48%;
+    vertical-align: top;
+    border-radius: 10px;
+    float: left;
+    background-color: #5c6472;
+    margin: 1%;
+}
+.ns_zznz .content .info-operation .nzinfo{
+	overflow: hidden;
+    border-bottom: 2px solid #575d6c;
+    vertical-align: center;
+    height: 5rem;
+    line-height: 5rem;
+}
+.ns_zznz .content .info-operation .nzinfo .mui-numbox-input{
+	margin-top: -2rem;
+	color: #000000; 
+}
+.ns_zznz .content .info-operation .right {
+    vertical-align: top;
+    width: 48%;
+    float: left;
+    background-color: #5c6472;
+    margin: 1%;
+}
+
+.ns_zznz .content .info-operation .left .nzinfo span{
+	width: 33.3%;
+    display: block;
+    float: left;
+    text-align: center;
+}
+.ns_zznz .content .info-operation .left .left_b{
+	 background-color: #515564;
+    height: 4rem;
+    line-height: 4rem;
+}
+.ns_zznz .content .info-operation .left .left_b .zj{
+	padding: 0 60px;
+    color: #23c78f;
+    text-align: right;
+    font-size: 1.2rem;
+}
+.ns_zznz .content .info-operation .right .nzinfo span {
+    width: 33.3%;
+    display: block;
+    float: left;
+    text-align: center;
+}
+.ns_zznz .content .info-operation .right .nzinfo a {
+	/* display: block; */
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #29ba8a;
+    border-radius: 50%;
+    line-height: 40px;
+    font-size: 37px;
+    float: left;
+    color: #5c6472;
+    margin: 0.75rem;
+}
+
+.ns_zznz .content .info-operation .right .nzinfo .disable{
+	opacity: 0.4;
+    cursor: default;
+}
+    
+.ns_zznz .content .info-operation .right .nzinfo button {
+    background-color: #29ba8a;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 31px;
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+    color: #5c6472;
+    margin: 0.75rem;
+}
+.ns_zznz .content .info-operation .right .right_b {
+    background-color: #515564;
+    height: 4rem;
+    line-height: 4rem;
+}
+.ns_zznz .content .info-operation .right .right_b .zj {
+    padding: 16px 60px;
+    color: #23c78f;
+    text-align: right;
+}
+.ns_zznz .content .info-operation .right .right_b .o_left{
+	width: 50%;
+	float: left;
+	text-align: center;
+}
+.ns_zznz .content .info-operation .right .right_b .o_left a{
+	padding: 1rem;
+    font-size: 1.2rem;
+}
+.ns_zznz .content .info-operation .right .right_b .o_left span{
+	padding:0  1rem;
+}
+/*************农事操作播种********************************/
+.ns_zznz .content .info-operation .xzgs_left{
+	width: 45%;
+    float: left;
+}
+.ns_zznz .content .info-operation .xzgs_left .info{
+	height: 8rem;
+    line-height: 8rem;
+	border-bottom: 1px solid #515564;
+	text-align: center;
+}
+.ns_zznz .content .info-operation .xzgs_left .info div{
+	width: 50%;
+	display: block;
+	float: left;
+	font-size: 1.2rem;
+	border-right: 1px solid #515564;
+}
+.ns_zznz .content .info-operation .xzgs_left .info .czmc img{
+	margin-top: 2.8rem;
+    margin-left: 26%;
+    float: left;
+}
+.ns_zznz .content .info-operation .xzgs_left .info .czmc span{
+	display: block;
+    float: left;
+    margin-left: 1rem;
+}
+.ns_zznz .content .info-operation .xzgs_right {
+    width: 55%;
+    float: left;
+    padding-top: 1rem;
+}
+.ns_zznz .content .info-operation .xzgs_right .line{
+	text-align: center;
+    width: 90%;
+    padding: 1rem 5%;
+}
+.ns_zznz .content .info-operation .xzgs_right .line button{
+    background: #24c79e;
+    color: #fff;
+    width: 120px;
+    height: 66px;
+    margin-right: 0.8rem;
+    margin-bottom: 1rem;
+}
+.ns_zznz .content .info-operation .xzgs_right .line .cur{
+	background: #188b69;
+}
+.ns_zznz .content .info-operation .xzgs_right .xzsl{
+	text-align: center;
+    margin: 3rem 0;
+}
+.ns_zznz .content .info-operation .xzgs_right .xzsl span{
+	font-size: 1.2rem;
+    padding: 0.8rem;
+}
+.mui-numbox{
+	width: 180px;
+    height: 3.2rem;
+}
+.mui-numbox-input{
+	color:#999;
+	font-size: 1.4rem;
+}
+/************gg：灌溉*******************/
+.ns_zznz .content .info-operation .xzgs_right .ggfs_ul{
+	margin: 0 2rem;
+    overflow: hidden;
+}
+.ns_zznz .content .info-operation .xzgs_right .ggfs_ul .item{
+	float: left;
+    width: 48%;
+    background-image: url(../img/nscz/ggfx_bg.png);
+    background-size: 100% 100%;
+    height: 12.5rem;
+    margin: 0 2% 1rem 0;
+    position: relative;
+}
+.ns_zznz .content .info-operation .xzgs_right .ggfs_ul .item.cur{
+	background-image: url(../img/nscz/ggfs_curbg.png);
+}
+.ns_zznz .content .info-operation .xzgs_right .ggfs_ul li span{
+	position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 1.5rem;
+}
+.ns_zznz .content .info-operation .xzgs_right .ggfs_ul li img{
+	position: absolute;
+    bottom: 3rem;
+    right: 2rem;
+}
+.ns_zznz .content .info-operation .xzgs_left .info.gg{
+	height: 5rem;
+    line-height: 5rem;
+}
+.ns_zznz .content .info-operation .xzgs_left .info.gg .czmc img {
+    margin-top: 1.2rem;
+}
+/************gg：采收*******************/
+.ns_zznz .content .info-operation .xzgs_right .nscs_ul{
+	padding: 0 4%;
+}
+.ns_zznz .content .info-operation .xzgs_right .nscs_ul li{
+	width: 44%;
+    height: 10.5rem;
+    margin-right: 4%;
+}
+.ns_zznz .content .info-operation .xzgs_right .nscs_ul .nscz_qymc2{
+	height: 4.75rem !important;
+}
+.ns_zznz .content .info-operation .xzgs_right .nscs_ul .nscz_qymc2 img{
+	height: 4.2rem;
+}
+.ns_zznz .content .info-operation .xzgs_right .nscs_ul .nscz_qymc2 span{
+	line-height: 4rem;
+	margin-left: 1.2rem;
+}
+.ns_zznz .content .info-operation .xzgs_right .nscs_ul li p{
+	height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: 1rem !important;
+}
+.ns_zznz .content .info-operation .xzgs_left .info.by{
+	height: 6rem;
+    line-height: 6rem;
+}
+.ns_zznz .content .info-operation .xzgs_left .info.by .czmc img {
+    margin-top: 1.8rem;
+}
+.ns_zznz .content .info-operation .xzgs_right .ggfs_ul.by img {
+    bottom: 1.8rem;
+    width: 4rem;
+    right: 1rem;
+}
+/************土地保育nscz_main*****************************/
+#nscz_main .selected-plots .plots {
+	overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+#nscz_main .p-plots-seek .plots .item .inner{
+	 cursor: default; 
+}
+#nscz_main .selected-plots ul li{
+	white-space: normal;
+    display: inline-block;
+    float: none;
+} 
+#nscz_main .p-plots-seek .plots .item.kongxian .inner{
+    cursor: pointer; 
+    background-color: #37917c;
+}
+#nscz_main .p-plots-seek .plots .item.kongxian .inner.cur{
+    background-color: #20B685;
+}
+.p-plots-seek .plots .item.kongxian .inner.cur{
+    background-color: #37917c;
+}
+.info-operation .nscz_main_lt_ul{
+	overflow: hidden;
+	padding-left: 1rem;
+}
+
+.info-operation .nscz_main_lt_ul>li{
+	width: 32% !important;
+}
+/****底部按钮*****/
+.nscz_main .operation,.ns_zznz .operation{
+    padding: 2.5rem 10%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+	width: 100%;
+}
+.nscz_main .operation a,.ns_zznz .operation a{
+  	height: 5rem;
+    width: 15.5rem;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    border: none;
+    color: #fff;
+    margin-right: 3rem;
+    padding: 0;
+    line-height: 5rem;
+}
+.nscz_main .operation .prev,.ns_zznz .operation .prev{
+	background-color: #EA5C5C;
+}
+.nscz_main .operation .next,.ns_zznz .operation .next{
+	background-color: #29ba8a;
+}
+#main_con{
+	height:  calc(100% - (3.75rem+10rem+6.625rem+7.25rem));
+}

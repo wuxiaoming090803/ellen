@@ -1,0 +1,321 @@
+.p-massif-details{
+	position: relative;
+	padding-bottom: 9rem;
+}
+.p-massif-details .content{
+	width:80%;
+	margin:0 auto;
+	background-color: #575D6C;
+}
+/* 所选地块的信息 */
+/*.p-massif-details .selected-plots{
+    padding: 0 3rem;
+    height: 4.625rem;
+    line-height: 4.5rem;
+    background-color: #4C505F;
+}
+
+.p-massif-details .selected-plots .left{
+	float: left;
+    font-size: 1.875rem;
+}
+.p-massif-details .selected-plots .right{
+	float: right;
+    font-size: 1.25rem;
+}*/
+.p-massif-details .selected-plots .right #area{
+	margin-right: 3rem;
+}
+/* 时间段的地块所属类型 */
+.p-massif-details .records{
+	padding-top: 4.5rem;
+	height: 14.125rem;
+	white-space: nowrap;
+    overflow-x: auto;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+.p-massif-details .records .empty{
+	font-size: 1.75rem;
+    text-align: center;
+    line-height: 4rem;
+}
+.p-massif-details .records ul{
+    min-width: 100%;
+}
+.p-massif-details .records .line{
+	width: 100%;
+    border-bottom: 1px solid #ABAEB6;
+}
+.p-massif-details .records .single{
+	padding-top: 3.5rem;
+	width:13.5rem;
+	text-align: center;
+	display: inline-block;
+}
+.p-massif-details .records .single .type{
+	position: relative;
+	line-height: 2.125rem;
+	font-size: 1.25rem;
+}
+.p-massif-details .records .single .type:before,
+.p-massif-details .records .single .type:after{
+	content: ' ';
+    position: absolute;
+    top: -6.75rem;
+    left: 3.6875rem;
+    width: 6.125rem;
+    height: 6.125rem;
+  	border-radius: 50%;
+}
+.p-massif-details .records .single .type:before{
+	background-color: #4C505F;
+}
+.p-massif-details .records .single.active .type:before{
+    background: -moz-linear-gradient(45deg, #25C7AE 0%, #23C78A 100%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#25C7AE), color-stop(100%,#23C78A));
+    background: -webkit-linear-gradient(45deg, #25C7AE 0%,#23C78A 100%);
+    background: -o-linear-gradient(45deg, #25C7AE 0%,#23C78A 100%);
+    background: -ms-linear-gradient(45deg, #25C7AE 0%,#23C78A 100%);
+    background: linear-gradient(to top right, #25C7AE 0%,#23C78A 100%);
+}
+.p-massif-details .records .single .type:after{
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.p-massif-details .records .single.baoyu .type:after{
+	 background-image: url(../img/massif_details/baoyu-progress.png);
+}
+.p-massif-details .records .single.zhongzhi{
+	cursor: pointer;
+}
+.p-massif-details .records .single.zhongzhi .type:after{
+	 background-image: url(../img/massif_details/zhongzhi-progress.png);
+}
+.p-massif-details .records .single.kongxian .type:after{
+	 background-image: url(../img/massif_details/kongxian-progress.png);
+}
+
+.p-massif-details .records .single .time{
+    font-size: 1.125rem;
+	line-height: 2.125rem;
+    color:#26C288;
+}
+
+/* 详细信息 */
+.p-massif-details .details{
+	position: relative;
+}
+.p-massif-details .details .title{
+	height:3.875rem;
+	line-height: 3.875rem;
+	background-color: #4C505F;
+}
+.p-massif-details .details .title .sub{
+    display: inline-block;
+    padding: 0 2rem;
+    height: 100%;
+    font-size: 1.5rem;
+}
+
+/* 标题相对应的详细信息 */
+.p-massif-details .details .wrapper{
+	min-height: 10.25rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.p-massif-details .details .list .empty-common{
+	text-align: center;
+    font-size: 1.75rem;
+    line-height: 10.25rem;
+}
+.p-massif-details .details .list#nscz .empty-common{
+	line-height: 6.25rem;
+}
+.p-massif-details .details .list:first-child {
+	display: block;
+}
+.p-massif-details .details .list .item{
+	float: left;
+    width: 50%;
+    min-height: 6rem;
+    line-height: 6rem;
+}
+.p-massif-details .details .list .item .caption ,
+.p-massif-details .details .list .item .value{
+    float: left;
+    text-align: center;
+    width: 50%;
+	font-size: 1.25rem;
+	background: url(../img/massif_details/division.png) no-repeat right center;
+	background-size: 5px 100%;
+}
+
+/* 投入品信息 */
+.p-massif-details .details .list#trpxx .item {
+    display: table;
+    width: 100%;
+    line-height: 2rem;
+}
+.p-massif-details .details .list#trpxx .item .caption{
+    display: table-cell;
+    float:none;
+    width: 40%;
+    vertical-align: middle;
+}
+.p-massif-details .details .list#trpxx .item .value{
+    display: table-cell;
+    float:none;
+	width: 60%;
+    vertical-align: middle;
+}
+
+/* caption的小logo */
+.p-massif-details .details .list .item .caption span{
+	position:relative;
+	padding-left: 4rem;
+}
+.p-massif-details .details .list .item .caption span:before{
+	content: ' ';
+    position: absolute;
+    left: 0;
+    top: -1rem;
+    width: 3.125rem;
+    height: 3.125rem;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+.p-massif-details .details .list .item .caption.zwmc span:before{
+	background-image: url(../img/massif_details/zwmc.png) ;
+}
+.p-massif-details .details .list .item .caption.zzfs span:before{
+	background-image: url(../img/massif_details/zzfs.png) ;
+}
+.p-massif-details .details .list .item .caption.zzmj span:before{
+	background-image: url(../img/massif_details/zzmj.png) ;
+}
+.p-massif-details .details .list .item .caption.fzr span:before{
+	background-image: url(../img/massif_details/fzr.png) ;
+}
+.p-massif-details .details .list .item .caption.zzsj span:before{
+	background-image: url(../img/massif_details/zzsj.png) ;
+}
+/*投入品*/
+.p-massif-details .details .list .item .caption.zz span:before{
+	background-image: url(../img/massif_details/zz.png) ;
+}
+.p-massif-details .details .list .item .caption.ny span:before{
+	background-image: url(../img/massif_details/ny.png) ;
+}
+.p-massif-details .details .list .item .caption.fl span:before{
+	background-image: url(../img/massif_details/fl.png) ;
+}
+
+
+/* 农事操作信息 */
+.p-massif-details .details .list#nscz{
+	padding: 2rem 0 ;
+	overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+.p-massif-details .details .list .solo{
+    display: inline-block;
+    padding-left: 3rem;
+    vertical-align: top;
+	width: 33%;
+}
+.p-massif-details .details .list .date{    
+	padding-left: 3rem;
+	margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    line-height: 2.125rem;
+    background: url(../img/massif_details/date.png) no-repeat left center;
+}
+/*.p-massif-details .message{
+	max-height: 360px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}*/
+.p-massif-details .message .inner{
+	line-height: 3.5rem;
+	font-size: 1.25rem;
+}
+.p-massif-details .message .inner .operate{
+	padding-right: 1.5rem;
+    font-weight: bold;
+}
+/* 采收信息 */
+.p-massif-details .details .list#csxx{
+	display: table;
+	width:100%;
+}
+.p-massif-details .list .recovery-yield{
+	display: table-cell;
+	width:50%;
+	border-right: 2px solid #5C6472
+}
+.p-massif-details .list .chart{
+    display: table-cell;
+    width: 50%;
+    vertical-align: middle;
+    text-align: center;
+}
+.p-massif-details .recovery-yield li{
+    display: table;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid #5C6472;
+    height: 6rem;
+    line-height: 6rem;
+    font-size: 1.25rem;
+}
+.p-massif-details .recovery-yield li.heading .left span{
+	display: inline-block;
+	padding-left: 2.5rem;
+    background: url(../img/massif_details/date.png) no-repeat left center;
+}
+.p-massif-details .recovery-yield li.heading .right span{
+	display: inline-block;
+	padding-left: 2.5rem;
+    background: url(../img/massif_details/recovery-yield.png) no-repeat left center;
+}
+.p-massif-details .recovery-yield li:last-child{
+	border-bottom: none;
+}
+.p-massif-details .recovery-yield .left{
+	display: table-cell;
+	width:50%;
+}
+.p-massif-details .recovery-yield .right{
+	display: table-cell;
+	width:50%;
+}
+.p-massif-details .chart .statistics{
+    /*position: absolute;
+    left: 50%;
+    top: 40%;
+    margin-left: -6rem;*/
+    font-size: 1.375rem;
+}
+.p-massif-details .chart .canvas{
+    float: left;
+    width: 60%;
+}
+.p-massif-details .chart .statistics .num{
+    display: inline-block;
+    margin-top: 2rem;
+	font-size: 4rem;
+    line-height: 3.5rem;
+    font-weight: bold;
+}
+
+/* 返回按钮 */
+.p-massif-details .back{
+    position: absolute;
+    left: 50%;
+    margin-left: -140px;
+    bottom: 1.5rem;
+}
+
+
