@@ -77,24 +77,23 @@
   <div class="swiper-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-          <!--  <div class="tool-panel m">
+          <div class="tool-panel m">
               <ul>
                   <li><img src="img/reward.png" class="journal-reward"/></li>
               </ul>
-           </div> -->
-           <video  src="test.mp4" muted="" x-webkit-airplay="true" playsinline webkit-playsinline="true" x5-video-player-fullscreen="false" x5-video-player-type="h5" autoplay="autoplay" loop muted controls>
+           </div>
+           <video  src="test.mp4" muted="" x-webkit-airplay="true" playsinline webkit-playsinline="true" x5-video-player-fullscreen="false" x5-video-player-type="h5" autoplay="autoplay" loop muted>
              
            </video>
 
       </div>
-    <!--   <div class="swiper-slide">
+     <div class="swiper-slide">
         <div class="tool-panel m">
               <ul>
                   <li><img src="img/reward.png" class="journal-reward"/></li>
               </ul>
            </div>
-        <video autoplay="autoplay" loop controls muted width="100%" height="100%" preload='auto' x-webkit-airplay='true' x5-video-player-type='h5' x5-video-player-fullscreen='true' x5-video-ignore-metadata='true'>
-            <source src="test2.mp4" type="video/mp4">
+        <video src="test2.mp4" muted="" x-webkit-airplay="true" playsinline webkit-playsinline="true" src="test2.mp4" x5-video-player-fullscreen="false" x5-video-player-type="h5" autoplay="autoplay" loop muted>
         </video>
       </div>
       <div class="swiper-slide">
@@ -103,10 +102,9 @@
                   <li><img src="img/reward.png" class="journal-reward"/></li>
               </ul>
            </div>
-          <video width="100%" height="100%" loop controls muted width="100%" height="100%" preload='auto' x-webkit-airplay='true' x5-video-player-type='h5' x5-video-player-fullscreen='true' x5-video-ignore-metadata='true'>
-              <source src="test.mp4" type="video/mp4">
+          <video src="test.mp4" muted="" x-webkit-airplay="true" playsinline webkit-playsinline="true" src="test2.mp4" x5-video-player-fullscreen="false" x5-video-player-type="h5" autoplay="autoplay" loop muted>
           </video>
-        </div> -->
+        </div>
       <div class="swiper-slide">Slide 4</div>
       <div class="swiper-slide">Slide 5</div>
     </div>
@@ -132,44 +130,7 @@ assets.forEach(function(src, index) {
     img.src = src;
   });
 });
-function animate(touches){
-  Promise.all(assets).then(function(images) {
-        var random = {
-        uniform: function(min, max) {
-          return min + (max - min) * Math.random();
-        },
-        uniformDiscrete: function(i, j) {
-          return i + Math.floor((j - i + 1) * random.uniform(0, 1));
-        },
-      };
-      var stage = new BubbleHearts();
-      var canvas = stage.canvas;
-      canvas.width = 210;
-      canvas.height = 300;
-      canvas.style['width'] = '80px';
-      canvas.style['height'] = '100px';
-      canvas.style['zIndex'] = "999";
-      canvas.style['position'] = 'absolute'
-      canvas.style["top"] = touches.clientY + "px";
-      canvas.style["left"] =touches.clientX + "px";
-      canvas.setAttribute("class","addCanvas");
-      document.body.appendChild(canvas);
-      let image = images[random.uniformDiscrete(0, images.length - 1)];
-      stage.bubble(image, 1000, function(lifespan) {
-       if(lifespan >= 0) {
-         stage.context.drawImage(
-           image,
-           image.width/ 2,
-           (image.height) * lifespan,
-           image.width * 3,
-           image.height * 3
-         );
-       } else {
-         return true;
-       }
-      });
-  })
-}
+
 Promise.all(assets).then(function(images) {
 
   var random = {
@@ -216,13 +177,18 @@ Promise.all(assets).then(function(images) {
           if(swiper.activeIndex >= 4){
              appendDom();
           }
-           // $(".orignCanvas").remove();
         },
-       doubleTap: function(event){
-       
-        $(".orignCanvas").css("zIndex" ,-1);
-          animate(event.changedTouches[0]);
-           $(".addCanvas").remove();
+       tap: function(event){
+          if($(".pause-status").length){
+              $(swiper.el).find("video")[0].play();
+              $(".pause-status").remove();
+          }else{
+            $(swiper.el).find("video")[0].pause();
+             var newHtml =[];
+             newHtml.push('<div class="pause-status"><h1>暂停</h1></div>');
+             $(swiper.el).append(newHtml.join(''))
+          }
+         
        },
       }
     });
