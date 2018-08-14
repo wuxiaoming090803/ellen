@@ -180,13 +180,13 @@ Promise.all(assets).then(function(images) {
         },
        tap: function(event){
           if($(".pause-status").length){
-              $(swiper.el).find("video")[0].play();
+              $(".swiper-slide-active").find("video")[0].play();
               $(".pause-status").remove();
           }else{
-            $(swiper.el).find("video")[0].pause();
+            $(".swiper-slide-active").find("video")[0].pause();
              var newHtml =[];
-             newHtml.push('<div class="pause-status"><h1>暂停</h1></div>');
-             $(swiper.el).append(newHtml.join(''))
+             newHtml.push('<span class="pause-status"></span>');
+             $(".swiper-slide-active").append(newHtml.join(''))
           }
          
        },
@@ -195,7 +195,7 @@ Promise.all(assets).then(function(images) {
     function appendDom(){
       var html = [];
       html.push('<div class="swiper-slide"><div class="tool-panel m"><ul><li><img src="img/reward.png" class="journal-reward add"/></li></ul></div>');
-      html.push('<video loop controls muted width="100%" height="100%" x5-playsinline="" playsinline="" webkit-playsinline=""><source src="test2.mp4" type="video/mp4"></video></div>');
+      html.push('<video src="test2.mp4" muted="" x-webkit-airplay="true" playsinline webkit-playsinline="true"  x5-video-player-fullscreen="false" x5-video-player-type="h5" autoplay="autoplay" loop muted></video></div>');
       swiper.appendSlide(html.join(''))
       // $('.swiper-wrapper').append();
       swiper.update();
