@@ -47,7 +47,7 @@
     }
     .journal-reward {
       position: relative;
-      width: 1.5rem;   
+      width: 1rem;   
       display: block;
       z-index: 2;
     }
@@ -79,7 +79,7 @@
       <div class="swiper-slide">
           <div class="tool-panel m">
               <ul>
-                  <li><img src="img/reward.png" class="journal-reward"/></li>
+                  <li><img src="img/1.png" class="journal-reward"/></li>
               </ul>
            </div>
            <video  src="test.mp4" muted="" x-webkit-airplay="true" playsinline webkit-playsinline="true" x5-video-player-fullscreen="false" x5-video-player-type="h5" autoplay="autoplay" loop muted>
@@ -90,7 +90,7 @@
      <div class="swiper-slide">
         <div class="tool-panel m">
               <ul>
-                  <li><img src="img/reward.png" class="journal-reward"/></li>
+                  <li><img src="img/1.png" class="journal-reward"/></li>
               </ul>
            </div>
         <video src="test2.mp4" muted="" x-webkit-airplay="true" playsinline webkit-playsinline="true" src="test2.mp4" x5-video-player-fullscreen="false" x5-video-player-type="h5" autoplay="autoplay" loop muted>
@@ -99,7 +99,7 @@
       <div class="swiper-slide">
         <div class="tool-panel m">
               <ul>
-                  <li><img src="img/reward.png" class="journal-reward"/></li>
+                  <li><img src="img/1.png" class="journal-reward"/></li>
               </ul>
            </div>
           <video src="test.mp4" muted="" x-webkit-airplay="true" playsinline webkit-playsinline="true" src="test2.mp4" x5-video-player-fullscreen="false" x5-video-player-type="h5" autoplay="autoplay" loop muted>
@@ -117,7 +117,7 @@
   <script>
   // 图片地址在此处更换  可换成你的图片
 var assets = [
-  'img/1.png',
+ 
   'img/2.png',
   'img/3.png',
   'img/4.png',
@@ -194,7 +194,7 @@ Promise.all(assets).then(function(images) {
     });
     function appendDom(){
       var html = [];
-      html.push('<div class="swiper-slide"><div class="tool-panel m"><ul><li><img src="img/reward.png" class="journal-reward add"/></li></ul></div>');
+      html.push('<div class="swiper-slide"><div class="tool-panel m"><ul><li><img src="img/1.png" class="journal-reward add"/></li></ul></div>');
       html.push('<video src="test2.mp4" muted="" x-webkit-airplay="true" playsinline webkit-playsinline="true"  x5-video-player-fullscreen="false" x5-video-player-type="h5" autoplay="autoplay" loop muted></video></div>');
       swiper.appendSlide(html.join(''))
       // $('.swiper-wrapper').append();
