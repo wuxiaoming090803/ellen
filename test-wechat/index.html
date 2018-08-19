@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.5.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/icons.css">
+  <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+  <style>
+  html, body {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+      }
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+      }
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-slide {
+        text-align: center;
+      
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .journal-reward {
+      position: relative;
+      width: 1rem;   
+      display: block;
+      z-index: 2;
+    }
+    .m {
+        position: absolute;
+        right: 10px;
+        bottom: 40%;
+
+    }
+    canvas{
+        z-index: 999;
+        position: absolute;  
+        bottom: 50%;
+        right: 0;
+    }
+    video{
+          width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+          object-fit: cover;
+        object-position: center center;
+    }
+	  .play-box{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 1000;
+    }
+    .play-box img{
+        width: 100px;
+    }
+	#output{
+		    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+	 z-index: 999;
+	}
+  </style>
+</head>
+<body>
+<div id="output"></div>
+<div class="play-box">
+  <img src="img/play1.png" class="play-img"/>
+</div>
+<div class="tool-panel m">
+              <ul class="grid">
+                  <li class="grid__item">
+                    <button class="icobutton icobutton--heart journal-reward"><span class="fa fa-heart"></span><span class="icobutton__text icobutton__text--side">10</span></button>
+                  </li>
+              </ul>
+           </div>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+	
+		<div class="swiper-slide">		
+				<!-- <i class="fa fa-play-circle-o"></i> -->
+				<video id="shakeVideo" x-webkit-airplay="true" webkit-playsinline="true" preload="auto" playsinline loop muted src="https://train.cesinstitute.com.cn/videoStorage/group1/M00/00/00/FAEBJ1tzfz-ALO7FAExfHCKrot0712.mp4"></video>
+		</div>
+	
+	
+     <div class="swiper-slide">
+           <video  src="https://train.cesinstitute.com.cn/videoStorage/group1/M00/00/00/FAEBJ1tzfz-ALO7FAExfHCKrot0712.mp4" x-webkit-airplay="true" webkit-playsinline="true" playsinline preload="auto" autoplay="autoplay" loop muted>        
+           </video>
+
+      </div>
+    <!-- <div class="swiper-slide">
+        <video src="https://train.cesinstitute.com.cn/videoStorage/group1/M00/00/00/FAEBJ1tzfP6AGzGPACxKKVnal18104.mp4" x5-video-player-type="h5">
+        </video>
+      </div>-->
+     <!-- <div class="swiper-slide">
+         <div class="tool-panel m">
+              <ul>
+                  <li><img src="img/1.png" class="journal-reward"/></li>
+              </ul>
+           </div>
+          <video src="https://train.cesinstitute.com.cn/videoStorage/group1/M00/00/00/FAEBJ1tzgQmAQZPdACX5-U37hB0669.mp4" x5-video-player-type="h5">
+        </video> -->
+		  <!-- <video src="https://train.cesinstitute.com.cn/videoStorage/group1/M00/00/00/FAEBJ1tzfP6AGzGPACxKKVnal18104.mp4" controls x-webkit-airplay="true" playsinline webkit-playsinline="true" src="test2.mp4" x5-video-player-fullscreen="false" x5-video-player-type="h5" autoplay="autoplay" loop muted>
+          </video> -->
+        </div>
+    </div>
+    <!-- Add Pagination -->
+  <!--   <div class="swiper-pagination"></div> -->
+  </div>
+    <script src="js/jquery-1.10.1.min.js"></script>
+  <script src="dist/swiper.min.js"></script>
+  <script>
+  	
+	
+	// var video, output;
+ //            var scale = 0.8;
+ //            var initialize = function() {
+ //                output = document.getElementById("output");
+ //                video = document.getElementById("shakeVideo");
+ //                video.addEventListener('loadeddata', captureImage);
+ //            };
+ //            var captureImage = function() {
+ //                var canvas = document.createElement("canvas");
+ //                canvas.width = video.videoWidth * scale;
+ //                canvas.height = video.videoHeight * scale;
+ //                canvas.getContext('2d').drawImage(video, 0, 0, canvas.width,
+ //                        canvas.height);
+
+ //                var img = document.createElement("img");
+ //                img.setAttribute('crossorigin', 'anonymous');
+ //                img.src = canvas.toDataURL("image/png");
+ //                img.width = $("#output").outerWidth(true);
+ //                img.height = $("#output").outerHeight(true);
+ //                output.appendChild(img);
+ //            };
+ //            initialize();
+	
+  var isFlag = false,arryIndex=[];
+    var swiper = new Swiper('.swiper-container', {
+      direction: 'vertical',
+      observer:true,
+      on: {
+        slideNextTransitionStart: function(){
+         
+         var flag =  isRepeat(swiper.activeIndex,arryIndex);
+         if(!flag){
+           arryIndex.push(swiper.activeIndex);
+            appendDom();
+         }
+          
+        },
+        slideChangeTransitionStart:function(){
+            $(".play-box").hide();
+            $(".tool-panel").hide();
+        },
+        slideChangeTransitionEnd:function(){
+            $(".play-box").show();
+            $(".tool-panel").show();
+        }
+      }
+    });
+    function isRepeat(activeIndex,arryIndex){
+      var repeat = false;
+    
+      if($.inArray(activeIndex,arryIndex) >= 0){
+         repeat = true;
+      }else{
+        repeat = false;
+      }
+      return repeat;
+    }
+    $("body").on("click","video",function(e){
+      e.stopPropagation();
+      e.preventDefault(); 
+        if($(".play-box").css("display") == "none"){
+               $(".swiper-slide-active").find("video")[0].pause();
+             $(".play-box").css("display","block");
+        
+          }else{
+              $(".swiper-slide-active").find("video")[0].play();
+              $(".play-box").css("display","none"); 
+             $("#output").remove();
+          }
+    });
+	   $("body").on("click",".play-box",function(e){
+      e.stopPropagation();
+      e.preventDefault();
+		    if($(".play-box").css("display") == "block"){
+              $(".swiper-slide-active").find("video")[0].play();
+              $(".play-box").css("display","none"); 
+			       $("#output").remove();
+          }else{
+            $(".swiper-slide-active").find("video")[0].pause();
+              $(".play-box").css("display","block"); 
+          }
+         
+    })
+	$(".swiper-slide-active").find("video").click();
+    function appendDom(){
+      var html = [];
+      html.push('<div class="swiper-slide">');
+      html.push('<video src="https://train.cesinstitute.com.cn/videoStorage/group1/M00/00/00/FAEBJ1tzgQmAQZPdACX5-U37hB0669.mp4" x-webkit-airplay="true" webkit-playsinline="true" playsinline loop muted></video></div>');
+      swiper.appendSlide(html.join(''))
+      // $('.swiper-wrapper').append();
+      swiper.update();
+    }
+  </script>
+<!--   <script src="js/flutter-hearts-zmt.js"></script> -->
+  <script src="js/mo.min.js"></script>
+  <script src="js/demo.js"></script>
+
+</body>
+</html>
