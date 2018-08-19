@@ -166,7 +166,7 @@
  //            };
  //            initialize();
 	
-  var isFlag = false,arryIndex=[];
+  var isFlag = false,arryIndex=[],isPlay = false;
     var swiper = new Swiper('.swiper-container', {
       direction: 'vertical',
       observer:true,
@@ -185,7 +185,10 @@
             $(".tool-panel").hide();
         },
         slideChangeTransitionEnd:function(){
-            $(".play-box").show();
+          if(!isPlay){
+               $(".play-box").show();
+          }
+           
             $(".tool-panel").show();
         }
       }
@@ -201,26 +204,27 @@
       return repeat;
     }
     $("body").on("click","video",function(e){
-
         if($(".play-box").css("display") == "none"){
                $(".swiper-slide-active").find("video")[0].pause();
              $(".play-box").css("display","block");
-        
+              isPlay = false;
           }else{
               $(".swiper-slide-active").find("video")[0].play();
               $(".play-box").css("display","none"); 
              $("#output").remove();
+             isPlay = true;
           }
     });
 	   $(".play-box").on("click",function(e){
-
 		    if($(".play-box").css("display") == "block"){
               $(".swiper-slide-active").find("video")[0].play();
               $(".play-box").css("display","none"); 
 			       $("#output").remove();
+             isPlay = true;
           }else{
             $(".swiper-slide-active").find("video")[0].pause();
               $(".play-box").css("display","block"); 
+              isPlay = false;
           }
          
     })
