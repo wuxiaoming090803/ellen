@@ -201,8 +201,7 @@
       return repeat;
     }
     $("body").on("click","video",function(e){
-      e.stopPropagation();
-      e.preventDefault(); 
+
         if($(".play-box").css("display") == "none"){
                $(".swiper-slide-active").find("video")[0].pause();
              $(".play-box").css("display","block");
@@ -214,8 +213,7 @@
           }
     });
 	   $("body").on("click",".play-box",function(e){
-      e.stopPropagation();
-      e.preventDefault();
+
 		    if($(".play-box").css("display") == "block"){
               $(".swiper-slide-active").find("video")[0].play();
               $(".play-box").css("display","none"); 
