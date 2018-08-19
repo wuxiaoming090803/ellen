@@ -110,12 +110,12 @@
 	
 		<div class="swiper-slide">		
 				<!-- <i class="fa fa-play-circle-o"></i> -->
-				<video id="shakeVideo" x-webkit-airplay="true" webkit-playsinline="true" preload="auto" playsinline loop muted src="test.mp4"></video>
+				<video id="shakeVideo" x-webkit-airplay="true" webkit-playsinline="true" preload="auto" playsinline loop src="test.mp4"></video>
 		</div>
 	
 	
      <div class="swiper-slide">
-           <video  src="test2.mp4" x-webkit-airplay="true" webkit-playsinline="true" playsinline preload="auto" loop muted>        
+           <video  src="test2.mp4" x-webkit-airplay="true" webkit-playsinline="true" playsinline preload="auto"  loop >        
            </video>
 
       </div>
@@ -166,7 +166,7 @@
  //            };
  //            initialize();
 	
-  var isFlag = false,arryIndex=[],isPlay = false;
+  var isFlag = false,arryIndex=[];
     var swiper = new Swiper('.swiper-container', {
       direction: 'vertical',
       observer:true,
@@ -183,16 +183,21 @@
         slideChangeTransitionStart:function(){
             $(".play-box").hide();
             $(".tool-panel").hide();
+
         },
-        slideChangeTransitionEnd:function(){
-          if(!isPlay){
-               $(".play-box").show();
-          }
-           
+        slideChangeTransitionEnd:function(){ 
+        var arry = $(".swiper-slide > video");
+        for(var i = 0; i<arry.length;i++){
+          $(arry[i])[0].pause();
+        }
             $(".tool-panel").show();
+            $(".play-box").show();
         }
       }
     });
+    // $(".swiper-slide-active>video")[0].addEventListener('play', function () {
+    //   $(".play-box").hide();
+    // }, false);
     function isRepeat(activeIndex,arryIndex){
       var repeat = false;
     
@@ -203,7 +208,7 @@
       }
       return repeat;
     }
-    $("body").on("click","video",function(e){
+    $("body").on("click","tap",function(e){
         if($(".play-box").css("display") == "none"){
                $(".swiper-slide-active").find("video")[0].pause();
              $(".play-box").css("display","block");
@@ -215,11 +220,11 @@
              isPlay = true;
           }
     });
-	   $(".play-box").on("click",function(e){
-		    if($(".play-box").css("display") == "block"){
+     $(".play-box").on("tap",function(e){
+        if($(".play-box").css("display") == "block"){
               $(".swiper-slide-active").find("video")[0].play();
               $(".play-box").css("display","none"); 
-			       $("#output").remove();
+             $("#output").remove();
              isPlay = true;
           }else{
             $(".swiper-slide-active").find("video")[0].pause();
@@ -228,7 +233,7 @@
           }
          
     })
-	// $(".swiper-slide-active").find("video").click();
+  // $(".swiper-slide-active").find("video").click();
     function appendDom(){
       var html = [];
       html.push('<div class="swiper-slide">');
