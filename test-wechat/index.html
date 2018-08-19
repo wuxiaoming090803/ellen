@@ -206,7 +206,7 @@
       }
       return repeat;
     }
-    $("body").on("tap","video",function(e){
+    $("body").on("click","video",function(e){
         if($(".play-box").css("display") == "none"){
                $(".swiper-slide-active").find("video")[0].pause();
              $(".play-box").css("display","block");
@@ -218,7 +218,7 @@
              isPlay = true;
           }
     });
-	   $(".play-box").on("tap",function(e){
+	   $(".play-box").on("click",function(e){
 		    if($(".play-box").css("display") == "block"){
               $(".swiper-slide-active").find("video")[0].play();
               $(".play-box").css("display","none"); 
