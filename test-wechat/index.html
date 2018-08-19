@@ -215,7 +215,11 @@
       }
       return repeat;
     }
-    $("body").on("touch","video",function(e){
+    $("body").on("click","video",function(e){
+       if(e.originalEvent.touches){
+          //touch事件处理
+          return false;
+      }else{
         if($(".play-box").css("display") == "none"){
                $(".swiper-slide-active").find("video")[0].pause();
              $(".play-box").css("display","block");
@@ -226,6 +230,7 @@
              $("#output").remove();
             
           }
+        }
     });
 	   $(".play-box").on("click",function(e){
 		    if($(".play-box").css("display") == "block"){
