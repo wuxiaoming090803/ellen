@@ -204,7 +204,7 @@
             $(".tool-panel").hide();
         },
         slideChangeTransitionEnd:function(){
-            var arry = $(".swiper-slide > video");
+            var arry = $(".swiper-slide >.wrapper>video");
           for(var i = 0; i<arry.length;i++){
             $(arry[i])[0].pause();
           }
