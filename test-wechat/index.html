@@ -85,7 +85,6 @@
           tap-highlight-color:rgba(0, 0, 0, 0)
     }
 	  .play-box{
-      display: none;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -128,7 +127,7 @@
 		<div class="swiper-slide">		
 				<!-- <i class="fa fa-play-circle-o"></i> -->
         <div class="wrapper">
-				  <video id="shakeVideo" x-webkit-airplay="true" controls webkit-playsinline="true" preload="auto" playsinline loop src="test.mp4"></video>
+				  <video id="shakeVideo" x-webkit-airplay="true"  webkit-playsinline="true" preload="auto" playsinline loop src="test.mp4"></video>
         </div>
 		</div>
 	
@@ -200,18 +199,18 @@
          }
           
         },
-        // slideChangeTransitionStart:function(){
-        //     $(".play-box").hide();
-        //     $(".tool-panel").hide();
-        // },
-        // slideChangeTransitionEnd:function(){
-        //     var arry = $(".swiper-slide >.wrapper>video");
-        //   for(var i = 0; i<arry.length;i++){
-        //     $(arry[i])[0].pause();
-        //   }
-        //    $(".tool-panel").show();
-        //     $(".play-box").show();
-        // }
+        slideChangeTransitionStart:function(){
+            $(".play-box").hide();
+            $(".tool-panel").hide();
+        },
+        slideChangeTransitionEnd:function(){
+            var arry = $(".swiper-slide >.wrapper>video");
+          for(var i = 0; i<arry.length;i++){
+            $(arry[i])[0].pause();
+          }
+           $(".tool-panel").show();
+            $(".play-box").show();
+        }
       }
     });
 
@@ -225,36 +224,36 @@
       }
       return repeat;
     }
-    // $("body").on("click",".wrapper",function(e){
-    //    if(e.originalEvent.touches){
-    //       //touch事件处理
-    //       return false;
-    //   }else{
-    //     if($(".play-box").css("display") == "none"){
-    //            $(".swiper-slide-active").find("video")[0].pause();
-    //          $(".play-box").css("display","block");
+    $("body").on("click",".wrapper",function(e){
+       if(e.originalEvent.touches){
+          //touch事件处理
+          return false;
+      }else{
+        if($(".play-box").css("display") == "none"){
+               $(".swiper-slide-active").find("video")[0].pause();
+             $(".play-box").css("display","block");
              
-    //       }else{
-    //           $(".swiper-slide-active").find("video")[0].play();
-    //           $(".play-box").css("display","none"); 
-    //          $("#output").remove();
+          }else{
+              $(".swiper-slide-active").find("video")[0].play();
+              $(".play-box").css("display","none"); 
+             $("#output").remove();
             
-    //       }
-    //     }
-    // });
-	   // $(".play-box").on("click",function(e){
-		  //   if($(".play-box").css("display") == "block"){
-    //           $(".swiper-slide-active").find("video")[0].play();
-    //           $(".play-box").css("display","none"); 
-			 //       $("#output").remove();
+          }
+        }
+    });
+	   $(".play-box").on("click",function(e){
+		    if($(".play-box").css("display") == "block"){
+              $(".swiper-slide-active").find("video")[0].play();
+              $(".play-box").css("display","none"); 
+			       $("#output").remove();
             
-    //       }else{
-    //         $(".swiper-slide-active").find("video")[0].pause();
-    //           $(".play-box").css("display","block"); 
+          }else{
+            $(".swiper-slide-active").find("video")[0].pause();
+              $(".play-box").css("display","block"); 
              
-    //       }
+          }
          
-   // })
+    })
 	// $(".swiper-slide-active").find("video").click();
     function appendDom(){
       var html = [];
