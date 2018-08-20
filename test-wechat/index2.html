@@ -142,7 +142,7 @@
               </ul>
            </div>
           <img class="poster" src="http://10.250.218.64:8888/group2/M00/00/00/FAEBJlt2kBmAVtatACxKKVnal18974.jpg"/>
-				  <video id="shakeVideo" x-webkit-airplay="true"  webkit-playsinline="true" preload="auto" playsinline loop src="test.mp4"></video>
+				  <video id="shakeVideo" x-webkit-airplay="true"  x5-video-player-type='h5' x5-video-player-fullscreen='false' webkit-playsinline="true" preload="auto" playsinline loop src="test.mp4"></video>
 		</div>
 	
 	
@@ -155,7 +155,7 @@
                   </li>
               </ul>
            </div>
-           <video  src="test2.mp4" x-webkit-airplay="true" webkit-playsinline="true" playsinline preload="auto" loop >        
+           <video  src="test2.mp4" x-webkit-airplay="true" webkit-playsinline="true" x5-video-player-type='h5' x5-video-player-fullscreen='false'  playsinline preload="auto" loop >        
            </video>
       </div>
 
@@ -200,9 +200,7 @@
           init();
             
         },
-        sliderMove:function(){
-             $(".play-box").animate({opacity:"0"});
-        }
+    
       }
     });
 
@@ -250,8 +248,7 @@
             $(".swiper-slide-active").find("video")[0].pause();
               $(".play-box").css("display","block"); 
              
-          }
-         
+          }  
     })
 	// $(".swiper-slide-active").find("video").click();
     function appendDom(){
