@@ -90,7 +90,7 @@
           -o-tap-highlight-color:rgba(0, 0, 0, 0); 
           tap-highlight-color:rgba(0, 0, 0, 0)
     }
-	  .play-box{
+	  .play-box,.play-load{
         position: absolute;
         top: 50%;
         left: 50%;
@@ -216,9 +216,7 @@
       }
       return repeat;
     }
-    $('#shakeVideo')[0].addEventListener('loadstart',function(){
-      $('.play-load').css('display','block')
-    })
+
     $('#shakeVideo')[0].addEventListener('loadedmetadata',function(){
       $('.play-load').css('display','none')
     })
@@ -234,6 +232,7 @@
           }else{
               $(".swiper-slide-active").find("video")[0].play();
               $(".play-box").css("display","none"); 
+              $('.play-load').css('display','block')
                $(".swiper-slide-active").find(".poster").remove();
             
           }
@@ -243,6 +242,7 @@
 		    if($(".play-box").css("display") == "block"){
               $(".swiper-slide-active").find("video")[0].play();
               $(".play-box").css("display","none"); 
+              $('.play-load').css('display','block')
 			       $(".swiper-slide-active").find(".poster").remove();
             
           }else{
