@@ -218,7 +218,8 @@
     }
 
     $('#shakeVideo')[0].addEventListener('loadedmetadata',function(){
-      $('.play-load').css('display','none')
+      $('.play-load').css('display','none');
+       $(".swiper-slide-active").find(".poster").remove();
     })
     $("body").on("click","video",function(e){
        if(e.originalEvent.touches){
@@ -233,7 +234,7 @@
               $(".swiper-slide-active").find("video")[0].play();
               $(".play-box").css("display","none"); 
               $('.play-load').css('display','block')
-               $(".swiper-slide-active").find(".poster").remove();
+               //$(".swiper-slide-active").find(".poster").remove();
             
           }
         }
@@ -243,7 +244,7 @@
               $(".swiper-slide-active").find("video")[0].play();
               $(".play-box").css("display","none"); 
               $('.play-load').css('display','block')
-			       $(".swiper-slide-active").find(".poster").remove();
+			      
             
           }else{
             $(".swiper-slide-active").find("video")[0].pause();
