@@ -175,8 +175,7 @@
       direction: 'vertical',
       observer:true,
       on: {
-        slideNextTransitionStart: function(){
-         
+        slideNextTransitionStart: function(){        
          var flag =  isRepeat(swiper.activeIndex,arryIndex);
          if(!flag){
            arryIndex.push(swiper.activeIndex);
@@ -217,11 +216,18 @@
 
     $('#shakeVideo')[0].addEventListener('pause',function(){
        // $('.play-load').css('display','none');
-       $(".swiper-slide-active > video").setAttribute("x5-video-player-type","h5");
+       $(".swiper-slide-active > video").css({
+        "height":"1px",
+        "width":"1px"
+       });
+       $(".play-box").css("display","block");
     })
     $('#shakeVideo')[0].addEventListener('play',function(){
-       // $('.play-load').css('display','none');
-       $(".swiper-slide-active > video").setAttribute("x5-video-player-type"," ");
+       $(".swiper-slide-active > video").css({
+        "height":"100%",
+        "width":"100%"
+       });
+       $(".play-box").css("display","none"); 
     })
     $("body").on("click","video",function(e){
        if(e.originalEvent.touches){
