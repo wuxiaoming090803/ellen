@@ -240,10 +240,9 @@
              
           }else{
               $(".swiper-slide-active").find("video")[0].play();
-               $(".play-box").css("display","none"); 
+              $(".play-box").css("display","none"); 
               // $('.play-load').css('display','block')
                //$(".swiper-slide-active").find(".poster").remove();
-            
           }
         }
     });
@@ -251,6 +250,7 @@
 		    if($(".play-box").css("display") == "block"){
               $(".swiper-slide-active").find("video")[0].play();
                $(".play-box").css("display","none"); 
+               $(".swiper-slide-active").find("img").remove();
               // $('.play-load').css('display','block')
 			      
             
