@@ -111,9 +111,9 @@
 </head>
 <body>
 <div id="output"></div>
-<div class="play-box">
+<!-- <div class="play-box">
   <img src="img/play1.png" class="play-img"/>
-</div>
+</div> -->
 <div class="tool-panel m">
               <ul class="grid">
                   <li class="grid__item">
@@ -127,10 +127,9 @@
 		<div class="swiper-slide">		
 				<!-- <i class="fa fa-play-circle-o"></i> -->
         <div class="wrapper">
-				  <video id="shakeVideo" x-webkit-airplay="true"  webkit-playsinline="true" preload="auto" playsinline loop src="test.mp4"></video>
+				  <video id="shakeVideo" x-webkit-airplay="true" controls webkit-playsinline="true" preload="auto" playsinline loop src="test.mp4"></video>
         </div>
 		</div>
-	
 	
      <div class="swiper-slide">
        <div class="wrapper">
@@ -200,7 +199,7 @@
           
         },
         slideChangeTransitionStart:function(){
-            $(".play-box").hide();
+            // $(".play-box").hide();
             $(".tool-panel").hide();
         },
         slideChangeTransitionEnd:function(){
@@ -209,7 +208,7 @@
             $(arry[i])[0].pause();
           }
            $(".tool-panel").show();
-            $(".play-box").show();
+            // $(".play-box").show();
         }
       }
     });
@@ -231,11 +230,11 @@
       }else{
         if($(".play-box").css("display") == "none"){
                $(".swiper-slide-active").find("video")[0].pause();
-             $(".play-box").css("display","block");
+             // $(".play-box").css("display","block");
              
           }else{
               $(".swiper-slide-active").find("video")[0].play();
-              $(".play-box").css("display","none"); 
+              // $(".play-box").css("display","none"); 
              $("#output").remove();
             
           }
@@ -244,12 +243,12 @@
 	   $(".play-box").on("click",function(e){
 		    if($(".play-box").css("display") == "block"){
               $(".swiper-slide-active").find("video")[0].play();
-              $(".play-box").css("display","none"); 
+              // $(".play-box").css("display","none"); 
 			       $("#output").remove();
             
           }else{
             $(".swiper-slide-active").find("video")[0].pause();
-              $(".play-box").css("display","block"); 
+              // $(".play-box").css("display","block"); 
              
           }
          
@@ -258,7 +257,7 @@
     function appendDom(){
       var html = [];
       html.push('<div class="swiper-slide">');
-      html.push('<video src="test.mp4" x-webkit-airplay="true" webkit-playsinline="true" playsinline loop muted></video></div>');
+      html.push('<video src="test.mp4" x-webkit-airplay="true" webkit-playsinline="true" controls playsinline loop muted></video></div>');
       swiper.appendSlide(html.join(''))
       // $('.swiper-wrapper').append();
       swiper.update();
