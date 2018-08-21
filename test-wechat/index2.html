@@ -122,12 +122,12 @@
 </head>
 <body>
 
-<div class="play-box">
+<!-- <div class="play-box">
   <img src="img/play.png" class="play-img"/>
 </div>
 <div class="play-load">
   <img src="img/loading.gif" class="play-img"/>
-</div>
+</div> -->
   <div class="swiper-container">
     <div class="swiper-wrapper">
 	
@@ -141,7 +141,7 @@
               </ul>
            </div>
           <img class="poster" src="http://10.250.218.64:8888/group2/M00/00/00/FAEBJlt2kBmAVtatACxKKVnal18974.jpg"/>
-				  <video id="shakeVideo" x-webkit-airplay="true"  x5-video-player-type='h5' x5-video-player-fullscreen='false' webkit-playsinline="true" preload="auto" playsinline loop src="test.mp4"></video>
+				  <video id="shakeVideo" x-webkit-airplay="true"  x5-video-player-type='h5' x5-video-player-fullscreen='false' webkit-playsinline="true" controls preload="auto" playsinline loop src="test.mp4"></video>
 		</div>
 	
 	
@@ -154,7 +154,7 @@
                   </li>
               </ul>
            </div>
-           <video  src="test2.mp4" x-webkit-airplay="true" webkit-playsinline="true" x5-video-player-type='h5' x5-video-player-fullscreen='false'  playsinline preload="auto" loop >        
+           <video  src="test2.mp4" x-webkit-airplay="true" webkit-playsinline="true" x5-video-player-type='h5' x5-video-player-fullscreen='false' controls  playsinline preload="auto" loop >        
            </video>
       </div>
 
@@ -184,7 +184,7 @@
           
         },
         slideChangeTransitionStart:function(){
-            $(".play-box").hide();
+            // $(".play-box").hide();
            
             // $(".tool-panel").hide();
         },
@@ -194,7 +194,7 @@
             $(arry[i])[0].pause();
           }
            // $(".tool-panel").show();
-           $(".play-box").show();
+           // $(".play-box").show();
         //$(".play-box").animate({opacity:"1"});
           init();
             
@@ -214,10 +214,10 @@
       return repeat;
     }
 
-    $('#shakeVideo')[0].addEventListener('loadedmetadata',function(){
-      $('.play-load').css('display','none');
-       $(".swiper-slide-active").find(".poster").remove();
-    })
+    // $('#shakeVideo')[0].addEventListener('loadedmetadata',function(){
+    //   $('.play-load').css('display','none');
+    //    $(".swiper-slide-active").find(".poster").remove();
+    // })
     $("body").on("click","video",function(e){
        if(e.originalEvent.touches){
           //touch事件处理
@@ -225,12 +225,12 @@
       }else{
         if($(".play-box").css("display") == "none"){
                $(".swiper-slide-active").find("video")[0].pause();
-             $(".play-box").css("display","block");
+             // $(".play-box").css("display","block");
              
           }else{
               $(".swiper-slide-active").find("video")[0].play();
-              $(".play-box").css("display","none"); 
-              $('.play-load').css('display','block')
+              // $(".play-box").css("display","none"); 
+              // $('.play-load').css('display','block')
                //$(".swiper-slide-active").find(".poster").remove();
             
           }
@@ -239,13 +239,13 @@
 	   $(".play-box").on("click",function(e){
 		    if($(".play-box").css("display") == "block"){
               $(".swiper-slide-active").find("video")[0].play();
-              $(".play-box").css("display","none"); 
-              $('.play-load').css('display','block')
+              // $(".play-box").css("display","none"); 
+              // $('.play-load').css('display','block')
 			      
             
           }else{
             $(".swiper-slide-active").find("video")[0].pause();
-              $(".play-box").css("display","block"); 
+              // $(".play-box").css("display","block"); 
              
           }  
     })
