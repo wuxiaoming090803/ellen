@@ -9,221 +9,246 @@
         document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
     </script>
   <style>
-  html, body {
-        position: relative;
-        height: 100%;
-        overflow: auto;
-      }
-      body {
-        background: #eee;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        color:#000;
-        margin: 0;
-        padding: 0;
-      }
-      .swiper-container {
-        width: 100%;
-        height: 100%;
-      }
-      .swiper-slide {
-        text-align: center;
-        background: #fff;
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
+     *{
+      padding:0;
+      margin:0;
+      list-style: none;
     }
-    .journal-reward {
+    html,body{
+      width:100%;
+      background-color: #ffad10;
+/*      background: url("img/bg.jpg") 0 0 no-repeat;
+      background-size: 100% 100%;*/
+      height: 100%;
+    }
+    .bg-img{
+      position: absolute;
+      top: 0;
+      left:0;
+      width: 100%;
+      height: 7.2rem;
+    }
+    .redbag-content{
+      width: 4.9rem;
+      height: 4.8rem;
+      margin: 0 auto;
       position: relative;
-      width: 1rem;   
-      display: block;
-      z-index: 2;
+      padding-top: 1.07rem;
     }
-    .m {
-        position: absolute;
-        right: 10px;
-        bottom: 40%;
-
-    }
-  
-    canvas{
-   /*     z-index: 999;
-        position: absolute;  
-        bottom: 0;
-        right: 0;
-        width: 100%;
-        height: 100%*/
-    }
-    video{
-        position: relative;
-        overflow: hidden;
-        height: 100%;
-        width: 100%;
-          object-fit: cover;
-        object-position: center center;
-       /* display: none;*/
-    }
-    .screen{
+    .redbag-content img{
       width: 100%;
       height: 100%;
+    }
+    .coin-box{
+       position: absolute;
+      top: 2.7rem;
+      font-size: 0.6rem;
+      left: 50%;
+      font-weight: 900;
+      transform: translateX(-50%);
+      color: #e64c32;
+    }
+    .info{
+      text-align: center;
+    font-size: 0.2rem;
+    position: absolute;
+    bottom: 1.49rem;
+    width: 3.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+    .redbag-content .coin-img{
+      position: absolute;
+      top:4.4rem;
+      left: 50%;
+      width: 0.94rem;
+      height: 0.94rem;
+      transform: translateX(-50%);
+    }
+    .list-info{
+        width: 7.1rem;
+        background: url("img/bg-1.png") 0 0 no-repeat;
+        background-size:100% 100%;
+       /* opacity: 0.5;*/
+        font-size: 0.3rem;
+        margin: 1.33rem auto 0 auto;
+    }
+    .list-info .title{
+            text-align: center;
+        margin-bottom: 0.22rem;
+            padding-top: 0.24rem;
+    }
+    .list-info .title .tooltip{
+      font-size:0.35rem;
+    }
+    .list-info li{
+          display: flex;
+          padding: 0 0 0.1rem 0.07rem;
+    }
+    .list-info li .icon-box{
+          flex: 0 0 1.14rem;
+      padding-right: 0.32rem;
+    }
+    .icon-box img{
+          border-radius: 50%;
+    width: 100%;
+    }
+    .list-info li .text-box{
+          display: flex;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex: 1;
+    flex: 1;
+    line-height: 0.5rem;
+    }
+    .list-info li .text-box p:first-child{
+      font-size: 0.32rem;
+      color: #454545
+    }
+     .list-info li .text-box p:last-child{
+      font-size: 0.25rem;
+      color: #717171
+    }
+    .coin-detail {
+      color: #101010;
+      font-size: 0.28rem;
+      padding-right:0.25rem;
+    }
+    .coin-detail h3{
+      line-height: 0.6rem;
+    }
+    .title .line{
+          width: 1.9rem;
+      vertical-align: middle;
+      height: 1;
+      height: 1px;
+      display: inline-block;
+      border-top: 1px solid #b29d73;
+    }
+    .rule-box{
+        font-size: 0.3rem;
+        color: #fff;
+        z-index: 100;
+     margin-bottom: 0.5rem;
+    padding: 0.3rem 0.2rem 0 0.2rem;
+   /* bottom: 20px;*/
+    }
+    .rule-box .title{
+          margin-bottom: 0.28rem;
+    }
+    .rule-box .title .line{
+          border-top: 1px solid #fff;
+          width: 2.15rem;
+    }
+    .rule-detail p{
+      font-size: 0.28rem;
+      padding: 0 0.1rem;
+    }
+    .footer{
+        overflow: hidden;
+        height: 1.1rem;
+    }
+    .footer img{
+      width: 100%;
     }
   </style>
 </head>
 <body>
-<div class="screen">
- <div class="tool-panel m">
-              <ul>
-                  <li><img src="img/1.png" class="journal-reward"/></li>
-              </ul>
-           </div>
-           <video  src="test.mp4" controls x-webkit-airplay="true" playsinline webkit-playsinline="true" loop x5-video-player-type='h5' x5-video-player-fullscreen='true'>
-           </video>
-</div>
-<div class="screen">
-
-           <video  src="test2.mp4" controls  x-webkit-airplay="true" playsinline webkit-playsinline="true" loop x5-video-player-type='h5' x5-video-player-fullscreen='true'>
-           </video>
-</div>
-<!--   <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-          <div class="tool-panel m">
-              <ul>
-                  <li><img src="img/1.png" class="journal-reward"/></li>
-              </ul>
-           </div>
-           <video id="shakeVideo" src="test.mp4"  controls x-webkit-airplay="true" playsinline webkit-playsinline="true"  autoplay="autoplay" loop>
-           </video>
-         
-      </div>
-     <div class="swiper-slide">
-        <div class="tool-panel m">
-              <ul>
-                  <li><img src="img/1.png" class="journal-reward"/></li>
-              </ul>
-           </div>
-        <video src="test2.mp4" x-webkit-airplay="true" playsinline webkit-playsinline="true" src="test2.mp4" controls loop >
-        </video>
-      </div>
-      <div class="swiper-slide">
-        <div class="tool-panel m">
-              <ul>
-                  <li><img src="img/1.png" class="journal-reward"/></li>
-              </ul>
-           </div>
-          <video src="test.mp4" muted="" x-webkit-airplay="true" playsinline webkit-playsinline="true" src="test2.mp4" x5-video-player-fullscreen="true" x5-video-player-type="h5" autoplay="autoplay" loop muted>
-          </video>
-        </div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
+ <img src="img/bg-top.png" class="bg-img" /> 
+    <div class="redbag-content">
+        <img src="img/redbag.png" class="redbag-img"/>
+        <p class="coin-box"><span class="coin" id="coin">6.07</span><span>stc</span></p>
+        <p class="info">恭喜您获得<span class="coin detail">6.07</span>灵光币</p>
+        <img src="img/coin.png" class="coin-img"/>
     </div>
-    <!-- Add Pagination -->
-  <!--   <div class="swiper-pagination"></div> -->
- 
+    <div class="list-info">
+        <p class="title">
+            <span class="line"></span>
+            <span class="tooltip">看朋友的手机如何</span>
+            <span class="line"></span>
+        </p>
+        <ul>
+          <li>
+            <div class="icon-box">
+                <img src="img/user.jpg" class="user-icon"/>
+            </div>
+            <div class="text-box">
+              <p>张三</p>
+              <p>2018-08-30 12：08：09</p>
+            </div>
+            <div class="coin-detail">
+                <h3>6<span>stc</span></h3>
+            </div>
+          </li>
+          <li>
+            <div class="icon-box">
+                <img src="img/user.jpg" class="user-icon"/>
+            </div>
+            <div class="text-box">
+              <p>张三</p>
+              <p>2018-08-30 12：08：09</p>
+            </div>
+            <div class="coin-detail">
+                <h3>6<span>stc</span></h3>
+            </div>
+          </li>
+          <li>
+            <div class="icon-box">
+                <img src="img/user.jpg" class="user-icon"/>
+            </div>
+            <div class="text-box">
+              <p>张三</p>
+              <p>2018-08-30 12：08：09</p>
+            </div>
+            <div class="coin-detail">
+                <h3>6<span>stc</span></h3>
+            </div>
+          </li>
+          <li>
+            <div class="icon-box">
+                <img src="img/user.jpg" class="user-icon"/>
+            </div>
+            <div class="text-box">
+              <p>张三</p>
+              <p>2018-08-30 12：08：09</p>
+            </div>
+            <div class="coin-detail">
+                <h3>6<span>stc</span></h3>
+            </div>
+          </li>
+          <li>
+            <div class="icon-box">
+                <img src="img/user.jpg" class="user-icon"/>
+            </div>
+            <div class="text-box">
+              <p>张三</p>
+              <p>2018-08-30 12：08：09</p>
+            </div>
+            <div class="coin-detail">
+                <h3>6<span>stc</span></h3>
+            </div>
+          </li>
+        </ul>
+    </div>
+    <div class="rule-box">
+         <p class="title">
+            <span class="line"></span>
+            <span class="tooltip">看朋友的手机如何</span>
+            <span class="line"></span>
+        </p>
+        <div class="rule-detail">
+            <p>1.描述描述描述描述描述描述描述描述描述描述描述描</p>
+            <p>2.述描述描述描述描述描述描述描述描述描述描述描述</p>
+            <p>3.描述描述描述描述描述描</p>
+        </div>
+    </div>
+  <div class="footer">
+    <img src="img/wave.png" class="footer-img" />
+  </div>
   <script src="js/jquery-1.10.1.min.js"></script>
-  <script src="dist/swiper.min.js"></script>
-  <script src="js/flutter-hearts-zmt.js"></script>
-  <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
   <script>
-  // 图片地址在此处更换  可换成你的图片
-var assets = [
- 
-  'img/2.png',
-  'img/3.png',
-  'img/4.png',
-  'img/5.png',
-];
-assets.forEach(function(src, index) {
-  assets[index] = new Promise(function(resolve) {
-    var img = new Image;
-    img.onload = resolve.bind(null, img);
-    img.src = src;
-  });
-});
-
-Promise.all(assets).then(function(images) {
-
-  var random = {
-    uniform: function(min, max) {
-      return min + (max - min) * Math.random();
-    },
-    uniformDiscrete: function(i, j) {
-      return i + Math.floor((j - i + 1) * random.uniform(0, 1));
-    },
-  };
- 
-  var stage = new BubbleHearts();
-  var canvas = stage.canvas;
-  canvas.width = 170;
-  canvas.height = 300;
-  canvas.style['width'] = '80px';
-  canvas.style['height'] = '90px';
-  canvas.style['zIndex'] = "999";
-  document.body.appendChild(canvas);
-  //journal-reward 为赏桃的按钮 
-  canvas.setAttribute("class","orignCanvas");
-  var list = document.getElementsByClassName('journal-reward');
-  for(var i = 0;i<list.length;i++){
-    list[i].addEventListener("click",function() {
-    //随机飘动
-    $(".addCanvas").remove();
-     $(".orignCanvas").css("zIndex" ,999)
-    stage.bubble(images[random.uniformDiscrete(0, images.length - 1)],1000);
-
-    }, false);
-  }
-  $(".swiper-wrapper").on("click",".add",function(event){
-       event.stopPropagation();
-       event.preventDefault(); 
-       stage.bubble(images[random.uniformDiscrete(0, images.length - 1)]);
-    })
-  });
-    var swiper = new Swiper('.swiper-container', {
-      direction: 'vertical',
-      observer:true,
-      on: {
-        slideChange: function(event,index){
-         
-          if(swiper.activeIndex >= 4){
-             appendDom();
-          }
-        },
-       tap: function(event){
-          if($(".pause-status").length){
-              $(".swiper-slide-active").find("video")[0].play();
-              $(".pause-status").remove();
-          }else{
-            $(".swiper-slide-active").find("video")[0].pause();
-             var newHtml =[];
-             newHtml.push('<span class="pause-status"></span>');
-             $(".swiper-slide-active").append(newHtml.join(''))
-          }
-         
-       },
-      }
-    });
-      document.addEventListener('WeixinJSBridgeReady',function(){  
-               document.getElementById('shakeVideo').play();  
-          },false)
-     
-    function appendDom(){
-      var html = [];
-      html.push('<div class="swiper-slide"><div class="tool-panel m"><ul><li><img src="img/1.png" class="journal-reward add"/></li></ul></div>');
-      html.push('<video src="test2.mp4" muted="" x-webkit-airplay="true" playsinline webkit-playsinline="true"  x5-video-player-fullscreen="false" x5-video-player-type="h5" autoplay="autoplay" loop muted></video></div>');
-      swiper.appendSlide(html.join(''))
-      // $('.swiper-wrapper').append();
-      swiper.update();
-    }
+  
   </script>
 </body>
 </html>
