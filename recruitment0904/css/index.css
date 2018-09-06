@@ -9,8 +9,11 @@ html,body{
 	color:#fff;
 	background: #ccc;
 	height: 100%;
-	transform: scale(1.05) translateY(-1.5rem);
+	/*transform: scale(1.05) translateY(-1.5rem);*/
+	transform: scale(1.05);
     transform-origin: top center;
+    position: fixed;
+    left:0;
 }
 #btn{
 	position: fixed;
@@ -88,7 +91,7 @@ html,body{
 	box-shadow: 3px 5px 18px -2px #000;
     background: linear-gradient(to bottom,#3AABEF 0%,#1383D6 50%,#3AABEF 100%);
 }
-.T1:after,.T3:after,.T5:after,.T11:after,.T12:after{
+.T1:after,.T3:after,.T5:after,.T11:after,.T12:after,.specialTitle:after{
 	content: "";
     width: 0.6rem;
     height: 0.5rem;
@@ -101,6 +104,14 @@ html,body{
 }
 .people{
 	width:3.4rem;
+	position: relative;
+}
+.specialTitle{
+	position: absolute;
+    left: 3.5rem;
+    top: -1.5rem;
+    width: 4.5rem;
+    display: none;
 }
 .tree,
 .cloud{
@@ -700,7 +711,7 @@ html,body{
 #house5{
 	right: 0rem;
     top: 34rem;
-    z-index: 16;
+    z-index: 49;
 }
 #house5 img{
 	width:11rem;
@@ -765,6 +776,7 @@ html,body{
 #house14{
     left: 0rem;
     top: 187.1rem;
+    z-index: 44;
 }
 #house14 img{
 	width:10.5rem;
@@ -774,8 +786,8 @@ html,body{
 
 #mp3Btn{
     position: absolute;
-    left: 2.5rem;
-    top: 3.8rem;
+    left:2.5rem;
+    top: 2rem;
     background: url(../images/yinyue.png) 0 0; 
     background-size: 100% 100%;
     width: 2rem;
@@ -786,6 +798,23 @@ html,body{
     animation: rotating 1.2s linear infinite;
     -webkit-animation: rotating 1.2s linear infinite;
    
+}
+#erweima{
+    position: absolute;
+    left: 6.2rem;
+    top: 234rem;
+    z-index: 200;
+}
+#erweima img{
+	width:7.8rem;
+}
+.man5{
+	position: absolute;
+    left: 4.5rem;
+    top: 198.7rem;
+}
+.man5 img{
+	width: 3.4rem;
 }
 .fistMove{
 	

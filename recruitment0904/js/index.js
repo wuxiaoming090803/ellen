@@ -41,8 +41,7 @@
 				 		$this.addClass("playing1");
 				 	}
 			 })
-			 
-			 
+			$(document).bind('mousewheel', function(event, delta) { return false; });
 	        function setRem(){
 	            var w=document.documentElement.clientWidth; /*获取浏览器可是区域的宽度*/
 	            //console.log(w);
@@ -128,7 +127,7 @@
 					"2":{
 						x:"6.5",
 						y:"18.2",
-						value:"1998年搬至康吉大厦4楼并获评上海市高新技术企业"
+						value:"1998年搬至康吉大厦并获评上海市高新技术企业"
 					},
 					 "3":{
 					 	x:"1",
@@ -158,12 +157,12 @@
 					 "8":{
 					 	x:"2.5",
 					 	y:"92",
-					 	value:"在2008年，我完成股份制改革，更名上海中信信息发展股份有限公司"
+					 	value:"在2008年，我完成股份制改革，更名为上海中信信息发展股份有限公司"
 					 },
 					 "9":{
 					 	x:"1.6",
 					 	y:"105.5",
-					 	value:"2009年，我获得上海市科技小巨人企业"
+					 	value:"2009年，我获得上海市科技小巨人企业称号"
 					 },
 					 "10":{
 					 	x:"2",
@@ -178,7 +177,7 @@
 					 "12":{
 					 	x:"6.3",
 					 	y:"155.8",
-					 	value:"2015年，6月我在深交所创业板成功上市！"
+					 	value:"2015年6月11日我在深交所创业板成功上市！"
 					 },
 					 "13":{
 					 	x:"6.3",
@@ -188,12 +187,12 @@
 					 "14":{
 					 	x:"3.3",
 					 	y:"179.8",
-					 	value:"2018年，与霍尼韦尔科技事业部共同创立区块链实验室"
+					 	value:"2018年，在上海设立信息发展-霍尼韦尔联合创新实验室"
 					 },
 					 "15":{
 					 	x:"3.3",
 					 	y:"193.8",
-					 	value:"2018年，与阿里巴巴达成在人工智能领域的框架合作协议，联合推出AI+行业解决方案"
+					 	value:"2018年，我又和阿里巴巴达成在人工智能领域的框架合作协议"
 					 }
 					 
 	        };
@@ -450,7 +449,12 @@
 			var scroll = new BScroll($wrapper, {
 				    probeType:2,
 				    momentum:false,
-				    tap:true
+				    tap:true,
+				    bounce:false,
+				    scrollX:false,
+				    preventDefaultException:{
+				    	tagName: /^(img|TEXTAREA|BUTTON|IMG)$/
+				    }
 				 });
 				  
 		   scroll.on("beforeScrollStart",function(){
@@ -462,7 +466,7 @@
 		   	  
 		   })
 		    scroll.on('scroll', function (pos) {
-		    	var y =(Math.abs(pos.y)/setFontSize)+ Number(map["1"].y);
+		    	var y =(Math.abs(pos.y)/setFontSize)+ Number(map["2"].y);
 				var dot = compare(y,oldY);
 				oldY = y;
 				$man1.css({"transform":"translate("+dot.x+"rem,"+dot.y+"rem)"});
@@ -551,7 +555,7 @@
 		   	  		 
 		   	  	}
 	   	  	}
-	   		for(var s=logoList.length-1;s>=0;s--){
+	   		/*for(var s=logoList.length-1;s>=0;s--){
 	   			var logoHeight=Number(logoList[s].y);
 		  		if(newY <logoHeight-2){
 		  			$(".logo"+s).removeClass("bigMore");
@@ -559,10 +563,18 @@
 		  			$(".logo"+s).addClass("bigMore");
 		  			break;
 		  		}
-	   		}
+	   		}*/
+	   		for(var s=logoList.length-1;s>=0;s--){
+		  		var logoHeight=Number(logoList[s].y);
+		  		if(newY > logoHeight-1&& newY < logoHeight+3.5){
+		  			$(".logo"+s).addClass("bigMore");
+		  		}else{
+		  			$(".logo"+s).removeClass("bigMore");
+		  		}
+		  	}
 	   		for(var u=houseList.length-1;u>=0;u--){
 		  		var houseHeight=Number(houseList[u].y);
-		  		if(newY > houseHeight&& newY < houseHeight+2){
+		  		if(newY > houseHeight-0.8&& newY < houseHeight+2){
 		  			$("#house"+(u+1)).addClass("bigMore1");
 		  		}else{
 		  			$("#house"+(u+1)).removeClass("bigMore1");
@@ -577,7 +589,13 @@
 	   	  		var newDot = {
 	   	  			"x":newX,"y":newY
 	   	  		}
-	   	  		
+	   	  		if(newY>=198.8 && newY<=210.2){
+	   	  			$(".man5").hide();
+	   	  			$(".specialTitle").show();
+	   	  		}else{
+	   	  			$(".man5").show();
+	   	  			$(".specialTitle").hide();
+	   	  		}
 	   	  		return newDot;
 	   	  	}
 	   	  }
@@ -600,9 +618,12 @@
 			if(newdot >= map["10"].y && newdot < map["26"].y){
 				$mainImg.attr("src","images/man2.gif");
 			} 
-			if(newdot >= map["26"].y){
+			if(newdot >= map["26"].y && newdot < map["55"].y){
 				$mainImg.attr("src","images/man3.png");
 			}	
+			if(newdot >= map["55"].y ){
+				$mainImg.attr("src","images/man4.png");
+			}
 	   		//判断左侧
 	   		if(minX - maxX < 0){
 	   			var newX = Math.abs(newdot - Math.abs(Number(min.y)))/ newRate + Number(min.x);
