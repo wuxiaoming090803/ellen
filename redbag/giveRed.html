@@ -54,6 +54,14 @@
 				transform: translateX(-100%);
 				transition: all 0.7s;
 			}
+			.red-category.pin-active .pin-red{
+				transform: translateX(0);
+				transition: all 0.7s;
+			}
+			.red-category.pin-active .soon-red{
+				transform: translateX(10%);
+				transition: all 0.7s;
+			}
 			.red-bag{
 			    height: 100%;
 			    display: flex;
@@ -67,6 +75,7 @@
 			.soon-red{
 				transform: translateX(10%);
 			}
+			
 			.red-bag span:first-child,.red-number span:first-child{
 				line-height: 1rem;
     				padding-left: 0.15rem;
@@ -139,17 +148,62 @@
 				    border-radius: 8px;
 				    color: #fff;
 				    border-bottom-width: 0;
-			    border-top-width: 0;
-			    border-left-width: 0;
-			    border-right-width: 0;
+				    border-top-width: 0;
+				    border-left-width: 0;
+				    border-right-width: 0;
 				    background-color: #e80808;
 			}
 			.submit.disable{
 				opacity: 0.5;
 			}
+			.cover{
+				position: absolute;
+				left: 0;
+			    top: 0;
+			    right: 0;
+			    z-index: 1;
+			    bottom: 0;
+			    display: none;
+			    background-color: #000;
+			    opacity: .75;
+			}
+			.cover>div{
+				position: absolute;
+			    right: 10px;
+			    top: 5px;
+			    color: #1296db;
+			    font-size: 0.3rem;
+			}
+			.cover>div>i{
+				 color: #1296db;
+			    font-size: 0.35rem;
+			    display: inline-block;
+			    font-weight: bold;
+			    animation:mymove .5s infinite;
+   			   -webkit-animation:mymove .5s infinite; /* Safari 和 Chrome */
+			}
+			@keyframes mymove{
+				0%{
+					transform: translateY(0.15rem);
+				}
+				100%{
+					transform: translateY(0);
+				}
+			}
+			@-webkit-keyframes mymove {
+					0%{
+					transform: translateY(0.15rem);
+				}
+				100%{
+					transform: translateY(0);
+				}
+			}
 		</style>
 	</head>
 	<body>
+		<div class="cover">
+			<div>点击按钮,进行分享<i class="iconfont icon-changjiantou"></i></div>
+		</div>
 		<div class="container">
 			<div class="red-category clearfix">
 				<div class="pin-red red-bag">
@@ -193,17 +247,28 @@
 		</div>
 		<script src="js/jquery-1.10.1.min.js"></script>
 		<script>
+			var flag = "soon";
+			$(".cover").on("click",function(){
+				$(this).css("display","none")
+			})
 			function toggle(){
-				var flag = "soon";
 				if(flag == "soon"){
-					$(".red-category").addClass("active");
+					$(".red-category").removeClass("pin-active").addClass("active");
+					$(".soon-red").addClass("current");
+					$(".pin-red").removeClass("current");
+					flag = "pin"
+				}else{
+					$(".red-category").removeClass("active").addClass("pin-active");
+					$(".pin-red").addClass("current");
+					$(".soon-red").removeClass("current");
+					flag = "soon"
 				}
 			}
 			function submit(){
 				if($(".submit").hasClass("disable")){
 					return false;
 				}else{
-					
+					$(".cover").css("display","block")
 				}
 			}
 			function validNum(){
