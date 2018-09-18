@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>发红包</title>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+		<link rel="stylesheet" href="font/iconfont.css" />
+		<script type="text/javascript">
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+		</script>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				font-family: PingFangSC-Regular;
+				background-color: #ddd;
+				    overflow: hidden;
+			}
+			i {
+				font-style: normal;
+			}
+			
+			 .clearfix:after {content:"."; display:block; height:0; visibility:hidden; clear:both; }
+			.clearfix { *zoom:1; }
+			.container{
+				width: 6.78rem;
+				margin:0.4rem auto 0 auto;
+				font-size: 0.24rem;
+				    overflow: hidden;
+			}
+			.red-number{
+				height: 1rem;
+			    font-size: 0.3rem;
+			    display: flex;
+			    background: #fff;
+			    border-radius: 8px;
+			    justify-content: space-between;
+			}
+			.red-category{
+				width: 14rem;
+				transition: all 0.7s;
+			}
+			.red-category.active .pin-red{
+				transform: translateX(-100%);
+				transition: all 0.7s;
+			}
+			.red-category.active .soon-red{
+				transform: translateX(-100%);
+				transition: all 0.7s;
+			}
+			.red-bag{
+			    height: 100%;
+			    display: flex;
+			    background: #fff;
+			    border-radius: 8px;
+			    font-size: 0.3rem;
+			    float: left;
+			    width: 6.78rem;
+			    justify-content: space-between;
+			}
+			.soon-red{
+				transform: translateX(10%);
+			}
+			.red-bag span:first-child,.red-number span:first-child{
+				line-height: 1rem;
+    				padding-left: 0.15rem;
+    			
+			}
+			.red-bag span:last-child,.red-number span:last-child{
+				line-height: 1rem;
+    				padding-right: 0.15rem;
+			}
+			.iconfont{
+				 font-size: 0.3rem;
+   				 color: #efb336;
+			}
+			.number-box{
+				position: relative;
+				display: inline-block;
+			}
+			.number-box input{
+				font-size: 0.3rem;
+			    width: 1rem;
+			    text-align: center;
+			    outline: none;
+			    height: 0.5rem;
+			}
+			.red-number .number-box input{
+				  width: 1.5rem;
+			}
+			.toggle{
+				padding: 0.1rem 0;
+			}
+			.toggle a{
+				color:#1095c1
+			}
+			.detail{
+				height: 1.2rem;
+				border-radius: 8px;
+			}
+			.detail textarea{
+				width: 100%;
+				height: 98%;
+				border-radius: 8px;
+			    outline: none;
+			    border-bottom-width: 0;
+			    border-top-width: 0;
+			    border-left-width: 0;
+			    border-right-width: 0;
+			    font-size: 0.3rem;
+			}
+			.coin-box{
+				 height: 1.5rem;
+			}
+			.coin-box h3{
+				    text-align: center;
+				    line-height: 1.5rem;
+				    font-size: 0.67rem;
+				  
+			}
+			.coin-box h3 i{
+				font-size: 0.4rem;
+    				padding-left: 0.1rem;
+			}
+			.submit{
+				    font-size: 0.35rem;
+				    width: 6rem;
+				    display: block;
+				    outline: none;
+				    height: 0.87rem;
+				    margin: 0 auto 0.2rem auto;
+				    border-radius: 8px;
+				    color: #fff;
+				    background-color: #e80808;
+			}
+			.submit.disable{
+				opacity: 0.5;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="red-category clearfix">
+				<div class="pin-red red-bag">
+					<span>
+						<i class="iconfont icon-pin"></i>
+						总金额
+					</span>
+					<span class="number-box">
+						<input type="number" class="number" placeholder="0.00" onkeyup="validNum()"/>
+						<i>元</i>
+					</span>
+				</div>
+				<div class="soon-red red-bag">
+					<span>
+						单个金额
+					</span>
+					<span class="number-box">
+						<input type="number" class="number" placeholder="0.00"/>
+						<i>元</i>
+					</span>
+				</div>
+			</div>
+			<p class="toggle">当前为拼手气红包，<a onclick="toggle()" class="info">改为普通红包</a></p>
+			<div class="red-number">
+					<span>
+						红包个数
+					</span>
+					<span class="number-box">
+						<input type="number" class="number" placeholder="填写个数" onkeyup="validTotal()"/>
+						<i>个</i>
+					</span>
+			</div>
+			<p class="toggle">本群共<i class="person">6</i>人</p>
+			<div class="detail">
+				<textarea placeholder="恭喜发财，大吉大利"></textarea>
+			</div>
+			<div class="coin-box">
+				<h3><span class="total">0.00</span><i>stc</i></h3>
+			</div>
+			<button class="submit disable" onclick="submit()">塞进红包</button>
+		</div>
+		<script src="js/jquery-1.10.1.min.js"></script>
+		<script>
+			function toggle(){
+				var flag = "soon";
+				if(flag == "soon"){
+					$(".red-category").addClass("active");
+				}
+			}
+			function submit(){
+				if($(".submit").hasClass("disable")){
+					return false;
+				}else{
+					
+				}
+			}
+			function validNum(){
+				$(".submit").removeClass("disable");
+			}
+			function validTotal(){
+				$(".submit").removeClass("disable");
+			}
+		</script>
+	</body>
+</html>
